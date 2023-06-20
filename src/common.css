@@ -4,11 +4,11 @@
   --clr-accent-bg: #3584e4;
   --clr-accent-fg: #ffffff;
   --clr-card-bg: #fafafa;
-  --clr-shdw: #00000080;
 
   --bdr-radius: 12px;
-  --shdw-size: 12px;
   --pdn-size: 18px;
+
+  --shdw-settings: 0px 0px 12px #00000080;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,9 +36,59 @@ body {
   margin: 0px;
   padding: 0px;
   justify-content: center;
-  box-shadow: 0 0 var(--shdw-size) var(--clr-shdw);
+  box-shadow: var(--shdw-settings);
   background-color: var(--clr-card-bg);
   border-radius: var(--bdr-radius);
+  z-index: 10;
+}
+
+.card {
+  padding: var(--pdn-size);
+  background-color: var(--clr-card-bg);
+  border-radius: var(--bdr-radius);
+  box-shadow: var(--shdw-settings);
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-view {
+  display: grid;
+}
+
+.list-view,
+.grid-view {
+  gap: 12px;
+  padding: 12px;
+}
+
+.genre-card {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/background.webp);
+  background-repeat: no-repeat;
+  height: 300px;
+  margin: 30px;
+  color: #f0f0f0;
+
+  transition-duration: 250ms;
+}
+
+.genre-card:hover {
+  transform: scale(102%);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 240px;
+  text-align: center;
+  height: 90vh;
 }
 
 .navbar > ul {
@@ -56,11 +106,13 @@ body {
   padding: var(--pdn-size);
 }
 
-.current-page {
+.navbar > ul > li.current-page {
   font-weight: bold;
 }
 
-.navbar > ul > *:hover, .current-page {
+.navbar > ul > *:hover,
+.navbar > ul > li.current-page {
   background-color: var(--clr-accent-bg);
   color: var(--clr-accent-fg);
+  cursor: pointer;
 }
