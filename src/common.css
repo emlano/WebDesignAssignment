@@ -1,0 +1,66 @@
+:root {
+  --clr-bg: #ffffff;
+  --clr-fg: #242424;
+  --clr-accent-bg: #3584e4;
+  --clr-accent-fg: #ffffff;
+  --clr-card-bg: #fafafa;
+  --clr-shdw: #00000080;
+
+  --bdr-radius: 12px;
+  --shdw-size: 12px;
+  --pdn-size: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-bg: #242424;
+    --clr-fg: #c0c0c0;
+    --clr-accent-bg: #aecef4;
+    --clr-accent-fg: #242424;
+    --clr-card-bg: #303030;
+  }
+}
+
+body {
+  margin: 0px;
+  padding: 0 var(--pdn-size);
+  color: var(--clr-fg);
+  background-color: var(--clr-bg);
+  font-family: sans;
+}
+
+.navbar {
+  display: flex;
+  position: sticky;
+  top: var(--pdn-size);
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  box-shadow: 0 0 var(--shdw-size) var(--clr-shdw);
+  background-color: var(--clr-card-bg);
+  border-radius: var(--bdr-radius);
+}
+
+.navbar > ul {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  gap: 3px;
+  width: fit-content;
+
+  border-radius: var(--bdr-radius);
+}
+
+.navbar > ul > * {
+  list-style-type: none;
+  padding: var(--pdn-size);
+}
+
+.current-page {
+  font-weight: bold;
+}
+
+.navbar > ul > *:hover, .current-page {
+  background-color: var(--clr-accent-bg);
+  color: var(--clr-accent-fg);
+}
