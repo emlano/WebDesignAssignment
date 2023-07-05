@@ -1,33 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>Splash Page</title>
         <style>
             @import "common.css";
 
             #title {
-                display: flexbox;
-                width: 650px;
+                width: 350px;
                 padding: 25px;
                 margin-left: auto;
                 margin-right: auto;
-                vertical-align: top;
                 text-align: center;
             }
 
             #box {
                 display: grid;
-                width: 900px;
+                grid-auto-rows: auto;
+                grid-template-areas: "a a a";
+                width: 800px;
                 margin-left: auto;
                 margin-right: auto;
-                flex-flow: column, wrap;
+            }
+
+            .cardheader {
+                margin-left: auto;
+                margin-right: auto;
+                width: 500px;
                 text-align: center;
-                vertical-align: 200%;
+                border-radius: 15%;
+                margin-bottom: 20px;
             }
 
             .card {
-
+                width: 200px;
+                height: 200px;
+                margin-bottom: 20px;
+                margin-right: 20px;
+                text-align: center;
             }
+
+            .card > img {
+                border-radius: 5%;
+                width: 200px;
+                height: 200px;
+            }
+            
         </style>
     </head>
     <body>
@@ -35,11 +53,14 @@
             <h1>A Peek Into Movie Genres</h1>
             <p>Presentation Splash Page</p>
         </div>
+        <div class="cardheader">
+            <h2>Group Members and Assigned Roles</h2>
+            <p>Tutorial Group - D1</p>
+            <br>
+        </div>
         <div id="box">
-            <div class="cardheader">
-                <h2>Group Members and Assigned Roles</h2>
-                <p>Tutorial Group - D1</p>
-                <br>
+            <div class="card">
+                <img src="img/splash-icon-cinema-beginning.jpg" alt="splash-cinema-icon">
             </div>
             <div class="card"">
                 <h3>Student 1</h3>
@@ -64,6 +85,9 @@
                 <p>K. H. Wickramasinghe</p>
                 <p>IIT No. 20221922</p>
                 <p>UoW No. w1985649</p>
+            </div>
+            <div class="card">
+                <img src="img/splash-icon-cinema-end.jpg" alt="splash-cinema-icon">
             </div>
         </div>
     </body>
