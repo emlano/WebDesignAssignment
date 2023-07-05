@@ -2,7 +2,28 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <!--Refresh to main page after 4 seconds-->
+        <meta http-equiv="refresh" content="4;url=main/index.html">
         <title>Splash Page</title>
+        <script>
+            var count = 3;
+            // Set a interval of 1 seconds
+            const timer = setInterval(countDown, 1000);
+
+            // After a second count down time
+            function countDown() {
+                document.getElementById("timeLeft").innerHTML=count;
+                stopTimer();
+                count--;
+            }
+
+            // If count is at 0, stop timer
+            function stopTimer() {
+                if (count == 0) {
+                    clearInterval(timer);
+                }
+            }
+        </script>
         <style>
             @import "common.css";
 
@@ -44,6 +65,13 @@
                 border-radius: 5%;
                 width: 200px;
                 height: 200px;
+            }
+
+            #timer {
+                width: 200px;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
             }
             
         </style>
@@ -90,5 +118,6 @@
                 <img src="img/splash-icon-cinema-end.jpg" alt="splash-cinema-icon">
             </div>
         </div>
+        <div id="timer">Redirecting in...<span id="timeLeft">4</span></div>
     </body>
 </html>
