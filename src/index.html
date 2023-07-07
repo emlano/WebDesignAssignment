@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <!-- Refresh to main page after 4 seconds -->
-        <meta http-equiv="refresh" content="4;url=main/index.html">
+        <!-- <meta http-equiv="refresh" content="4;url=main/index.html"> -->
         <title>Splash Page</title>
         <script>
             let count = 3;
@@ -13,13 +13,10 @@
             // After a second count down time
             function countDown() {
                 document.getElementById("timeLeft").innerHTML=count;
-                stopTimer();
                 count--;
-            }
 
-            // If count is at 0, stop timer
-            function stopTimer() {
-                if (count == 0) {
+                // If count is less than 0, stop counting
+                if (count < 0) {
                     clearInterval(timer);
                 }
             }
