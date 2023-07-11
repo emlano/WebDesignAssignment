@@ -1,3 +1,4 @@
+/* Global variables to be used throughout the site */
 :root {
   --clr-bg: #ffffff;
   --clr-fg: #242424;
@@ -11,6 +12,7 @@
   --shdw-settings: 0px 0px 12px #00000080;
 }
 
+/* Adapt to system-wide dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --clr-bg: #242424;
@@ -29,6 +31,7 @@ body {
   font-family: sans;
 }
 
+/* Navbar component styles */
 .navbar {
   display: flex;
   position: sticky;
@@ -40,55 +43,6 @@ body {
   background-color: var(--clr-card-bg);
   border-radius: var(--bdr-radius);
   z-index: 10;
-}
-
-.card {
-  padding: var(--pdn-size);
-  background-color: var(--clr-card-bg);
-  border-radius: var(--bdr-radius);
-  box-shadow: var(--shdw-settings);
-}
-
-.list-view {
-  display: flex;
-  flex-direction: column;
-}
-
-.grid-view {
-  display: grid;
-}
-
-.list-view,
-.grid-view {
-  gap: 12px;
-  padding: 12px;
-}
-
-.genre-card {
-  font-size: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(images/background.webp);
-  background-repeat: no-repeat;
-  height: 300px;
-  margin: 30px;
-  color: #f0f0f0;
-
-  transition-duration: 250ms;
-}
-
-.genre-card:hover {
-  transform: scale(102%);
-}
-
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 240px;
-  text-align: center;
-  height: 90vh;
 }
 
 .navbar > ul {
@@ -121,4 +75,58 @@ body {
   background-color: var(--clr-accent-bg);
   color: var(--clr-accent-fg);
   cursor: pointer;
+}
+
+/* Generic card styling */
+.card {
+  padding: var(--pdn-size);
+  background-color: var(--clr-card-bg);
+  border-radius: var(--bdr-radius);
+  box-shadow: var(--shdw-settings);
+}
+
+/* Basic list view container styling */
+.list-view {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Basic grid view container styling */
+.grid-view {
+  display: grid;
+}
+
+.list-view,
+.grid-view {
+  gap: 12px;
+  padding: 12px;
+}
+
+/* Styling for large cards to be used as category/genre entrypoints */
+.genre-card {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/background.webp);
+  background-repeat: no-repeat;
+  height: 300px;
+  margin: 30px;
+  color: #f0f0f0;
+
+  transition-duration: 250ms;
+}
+
+.genre-card:hover {
+  transform: scale(102%);
+}
+
+/* Hero text styling */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 240px;
+  text-align: center;
+  height: 90vh;
 }
