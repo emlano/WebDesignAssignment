@@ -36,7 +36,7 @@ body {
   display: flex;
   position: sticky;
   top: var(--pdn-size);
-  margin: 0px;
+  margin: calc(var(--pdn-size) / 3);
   padding: 0px;
   justify-content: center;
   box-shadow: var(--shdw-settings);
@@ -48,30 +48,33 @@ body {
 .navbar > ul {
   display: flex;
   margin: 0px;
-  padding: 0px;
+  padding: calc(var(--pdn-size) / 3);
   gap: 3px;
   width: fit-content;
-
   border-radius: var(--bdr-radius);
 }
 
 .navbar > ul > li {
   list-style-type: none;
-  padding: var(--pdn-size);
+  padding: calc(var(--pdn-size) / 2);
   text-decoration: none;
+  border-radius: calc(var(--bdr-radius) / 2);
 }
 
-.navbar > ul > li > a {
+.navbar > ul > li > * {
   color: inherit;
-  background-color: inherit;
+  background-color: none;
   text-decoration: inherit;
+  transition: inherit;
 }
 
-.navbar > ul > li.current-page {
+.navbar > ul > li#current-page {
   font-weight: bold;
+  text-decoration: underline;
 }
 
-.navbar > ul > li:hover {
+.navbar > ul > li:hover,
+.navbar > ul > li:active {
   background-color: var(--clr-accent-bg);
   color: var(--clr-accent-fg);
   cursor: pointer;
