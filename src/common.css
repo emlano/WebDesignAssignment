@@ -56,12 +56,13 @@ body {
 
 .navbar > ul > li {
   list-style-type: none;
-  padding: calc(var(--pdn-size) / 2);
   text-decoration: none;
   border-radius: calc(var(--bdr-radius) / 2);
 }
 
 .navbar > ul > li > * {
+  display: block;
+  padding: calc(var(--pdn-size) / 2);
   color: inherit;
   background-color: none;
   text-decoration: inherit;
