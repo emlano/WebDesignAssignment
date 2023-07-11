@@ -101,17 +101,23 @@ body {
   border-radius: var(--bdr-radius);
 }
 
-.navbar > ul > * {
+.navbar > ul > li {
   list-style-type: none;
   padding: var(--pdn-size);
+  text-decoration: none;
+}
+
+.navbar > ul > li > a {
+  color: inherit;
+  background-color: inherit;
+  text-decoration: inherit;
 }
 
 .navbar > ul > li.current-page {
   font-weight: bold;
 }
 
-.navbar > ul > *:hover,
-.navbar > ul > li.current-page {
+.navbar > ul > li:hover {
   background-color: var(--clr-accent-bg);
   color: var(--clr-accent-fg);
   cursor: pointer;
