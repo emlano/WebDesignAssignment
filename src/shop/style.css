@@ -1,0 +1,6 @@
+@import "../common.css";
+
+#header {
+    text-align: center;
+    padding-top: 2vh;
+}
