@@ -1,140 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <!-- Refresh to main page after 4 seconds -->
-        <!-- <meta http-equiv="refresh" content="4;url=main/index.html"> -->
-        <title>Splash Page</title>
-        <script>
-            let count = 3;
-            // Set a interval of 1 seconds
-            const timer = setInterval(countDown, 1000);
+  <head>
+    <meta charset="UTF-8">
+    <!-- Refresh to main page after 4 seconds -->
+    <meta http-equiv="refresh" content="4;url=main/index.html">
+    <title>Splash Page</title>
+    <script>
+      let count = 3;
+      // Set a interval of 1 seconds
+      const timer = setInterval(countDown, 1000);
 
-            // After a second count down time
-            function countDown() {
-                document.getElementById("timeLeft").innerHTML=count;
-                count--;
+      // After a second count down time
+      function countDown() {
+          document.getElementById("timeLeft").innerHTML=count;
+          count--;
 
-                // If count is less than 0, stop counting
-                if (count < 0) {
-                    clearInterval(timer);
-                }
-            }
-        </script>
-        <style>
-            /* Inherit from shared css */
-            @import "common.css";
+          // If count is less than 0, stop counting
+          if (count < 0) {
+              clearInterval(timer);
+          }
+      }
+    </script>
+    <style>
+      /* Inherit from shared css */
+      @import "common.css";
 
-            /* Title and subtitle of the page, center and align text */
-            #title {
-                width: 350px;
-                padding: 25px;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-            }
+      /* Title and subtitle of the page, center and align text */
+      #title {
+        width: 350px;
+        padding: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
 
-            /* Create grid layout */
-            #box {
-                display: grid;
-                grid-auto-rows: auto;
-                grid-template-areas: "a a a";
-                width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-            }
+      /* Create grid layout */
+      #box {
+        display: grid;
+        grid-template-areas: "a a a";
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-            /* Header before the cards themselves */
-            .cardheader {
-                margin-left: auto;
-                margin-right: auto;
-                width: 500px;
-                text-align: center;
-                margin-bottom: 20px;
-            }
+      /* Header before the cards themselves */
+      .cardheader {
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-            /* class 'card' inherits from common.css directly, only defined attributes
-            mentioned here are overridden */
-            .card {
-                width: 200px;
-                height: 200px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 20px;
-                margin-right: 20px;
-                text-align: center;
-            }
+      /* class 'card' inherits from common.css directly, only defined attributes
+      mentioned here are overridden */
+      .card {
+        width: 200px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        text-align: center;
+      }
 
-            /* Set images to fit in within a card */
-            .card > img {
-                border-radius: 5%;
-                width: 200px;
-                height: 200px;
-            }
+      /* Set images to fit in within a card */
+      .card > img {
+        border-radius: 5%;
+        width: 200px;
+        height: 200px;
+      }
 
-            /* Redirection count down, with border */ 
-            #timer {
-                width: 150px;
-                margin-top: 20px;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-                padding: 12px;
-                border-radius: 12px;
-                border-color: --clr-fg;
-                border-style: solid;
-                box-shadow: var(--shdw-settings);
-            }
-            
-        </style>
-    </head>
-    <body>
-        <!-- Page title -->
-        <div id="title">
-            <h1>A Peek Into Movie Genres</h1>
-            <p>Presentation Splash Page</p>
-        </div>
-        <!-- Card title -->
-        <div class="cardheader">
-            <h2>Group Members and Assigned Roles</h2>
-            <p>Tutorial Group - D1</p>
-            <br>
-        </div>
-        <!-- Grid which holds the cards -->
-        <div id="box">
-            <!-- Import images to be used in the first and last cards -->
-            <div class="card">
-                <img src="img/splash-icon-cinema-beginning.jpg" alt="splash-cinema-icon">
-            </div>
-            <div class="card"">
-                <h3>Student 1</h3>
-                <p>A. M. Nadil Dulaj</p>
-                <p>IIT No. 20220498</p>
-                <p>UoW No. w1998828</p>
-            </div>
-            <div class="card">
-                <h3>Student 2</h3>
-                <p>M. I. A. Ahmed</p>
-                <p>IIT No. 20220503</p>
-                <p>UoW No. w1998830</p>
-            </div>
-            <div class="card">
-                <h3>Student 3</h3>
-                <p>V. A. Udhayakkumar</p>
-                <p>IIT No. 20210994</p>
-                <p>UoW No. w2004477</p>
-            </div>
-            <div class="card">
-                <h3>Student 4</h3>
-                <p>K. H. Wickramasinghe</p>
-                <p>IIT No. 20221922</p>
-                <p>UoW No. w1985649</p>
-            </div>
-            <div class="card">
-                <img src="img/splash-icon-cinema-end.jpg" alt="splash-cinema-icon">
-            </div>
-        </div>
-        <!-- Redirection counter -->
-        <div id="timer">Redirecting in... <span id="timeLeft">4</span></div>
-    </body>
+      /* Redirection count down, with border */ 
+      #timer {
+        width: 150px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 12px;
+        border-radius: 12px;
+        border-color: --clr-fg;
+        border-style: solid;
+        box-shadow: var(--shdw-settings);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page title -->
+    <div id="title">
+      <h1>A Peek Into Movie Genres</h1>
+      <p>Presentation Splash Page</p>
+    </div>
+    <!-- Card title -->
+    <div class="cardheader">
+      <h2>Group Members and Assigned Roles</h2>
+      <p>Tutorial Group - D1</p>
+      <br>
+    </div>
+    <!-- Grid which holds the cards -->
+    <div id="box">
+      <!-- Import images to be used in the first and last cards -->
+      <div class="card">
+        <img src="img/splash-icon-cinema-beginning.jpg" alt="splash-cinema-icon">
+      </div>
+      <div class="card"">
+        <h3>Student 1</h3>
+        <p>A. M. Nadil Dulaj</p>
+        <p>IIT No. 20220498</p>
+        <p>UoW No. w1998828</p>
+      </div>
+      <div class="card">
+        <h3>Student 2</h3>
+        <p>M. I. A. Ahmed</p>
+        <p>IIT No. 20220503</p>
+        <p>UoW No. w1998830</p>
+      </div>
+      <div class="card">
+        <h3>Student 3</h3>
+        <p>V. A. Udhayakkumar</p>
+        <p>IIT No. 20210994</p>
+        <p>UoW No. w2004477</p>
+      </div>
+      <div class="card">
+        <h3>Student 4</h3>
+        <p>K. H. Wickramasinghe</p>
+        <p>IIT No. 20221922</p>
+        <p>UoW No. w1985649</p>
+      </div>
+      <div class="card">
+        <img src="img/splash-icon-cinema-end.jpg" alt="splash-cinema-icon">
+      </div>
+    </div>
+      <!-- Redirection counter -->
+    <div id="timer">Redirecting in... <span id="timeLeft">4</span></div>
+  </body>
 </html>
