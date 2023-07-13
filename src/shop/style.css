@@ -28,7 +28,7 @@
 /* Configure item cards */
 #item-catalogue > .card {
     width: 200px;
-    height: 300px;
+    height: 400px;
     margin: 20px;
 }
 
@@ -85,3 +85,53 @@
     margin-right: auto;
     width: 30px;
 }
+
+/* Let user choose how many items they want */
+#item-catalogue > .card > .item-amount {
+    text-align: center;
+    padding-top: 8%;
+}
+
+/* Add to card button */
+#item-catalogue > .card > .buy-button {
+    width: 200px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: large;
+    font-family: inherit;
+    color: var(--clr-card-bg);
+    background-color: var(--clr-accent-bg);
+    border: 2px;
+    border-radius: 6px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+/* Add to cart button animation */
+#item-catalogue > .card > .buy-button:hover {
+    transform: scale(112%);
+}
+
+/* Add to cart button click feedback */
+#item-catalogue > .card > .buy-button:active {
+    background-color: var(--clr-accent-fg);
+    color: var(--clr-fg);
+}
+
+/* Item quantity getter */
+#item-catalogue > .card > .item-amount > .amount {
+    width: 3em;
+    font-family: inherit;
+    font-size: medium;
+    background-color: var(--clr-card-bg);
+    color: var(--clr-card-fg);
+    border: 3px;
+    border-radius: 6px;
+    border-style: solid;
+    box-shadow: var(--shdw-settings);
+}
+
