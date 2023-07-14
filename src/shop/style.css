@@ -119,6 +119,7 @@
 /* Add to cart button click feedback */
 #item-catalogue > .card > .buy-button:active {
     background-color: var(--clr-accent-fg);
+    transform: scale(102%);
     color: var(--clr-fg);
 }
 
@@ -133,5 +134,24 @@
     border-radius: 6px;
     border-style: solid;
     box-shadow: var(--shdw-settings);
+}
+
+#cart {
+    width: 400px;
+    height: 600px;
+    position: fixed;
+    top: 8%;
+    right: 3%;
+    bottom: 80%;
+    box-shadow: var(--shdw-settings);
+    background-color: var(--clr-card-bg);
+    border-radius: var(--bdr-radius);
+    backdrop-filter: blur(12px);
+    transition-duration: 250ms;
+
+}
+
+#cart:hover {
+    transform: scale(105%);
 }
 

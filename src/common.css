@@ -4,7 +4,7 @@
   --clr-fg: #242424;
   --clr-accent-bg: #3584e4;
   --clr-accent-fg: #ffffff;
-  --clr-card-bg: #fafafa;
+  --clr-card-bg: #fafafaf0;
 
   --bdr-radius: 12px;
   --pdn-size: 18px;
@@ -19,7 +19,7 @@
     --clr-fg: #c0c0c0;
     --clr-accent-bg: #aecef4;
     --clr-accent-fg: #242424;
-    --clr-card-bg: #303030;
+    --clr-card-bg: #303030f0;
   }
 }
 
@@ -42,6 +42,7 @@ body {
   box-shadow: var(--shdw-settings);
   background-color: var(--clr-card-bg);
   border-radius: var(--bdr-radius);
+  backdrop-filter: blur(12px);
   z-index: 10;
 }
 
