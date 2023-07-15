@@ -179,8 +179,12 @@
     height: 200px;
 }
 
-#cart > #cart-listing > div {
-    background-color: black;
-    width: 100px;
-    height: 100px;
+#cart > #cart-placeholder {
+    text-align: center;
+    font-family: inherit;
+    font-size: larger;
+    font-weight: bold;
+    color: var(--clr-accent-bg);
+    text-shadow: var(--shdw-settings);
+    margin-top: 50%;
 }
