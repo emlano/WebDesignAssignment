@@ -114,6 +114,7 @@
 /* Add to cart button animation */
 #item-catalogue > .card > .buy-button:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 /* Add to cart button click feedback */
@@ -148,10 +149,26 @@
     border-radius: var(--bdr-radius);
     backdrop-filter: blur(12px);
     transition-duration: 250ms;
-
+    transform-origin: top center;
 }
 
-#cart:hover {
-    transform: scale(105%);
+.hide-cart {
+    scale: 0%;
+    opacity: 20%;
 }
 
+.show-cart {
+    scale: 100%;
+    opacity: 100%;
+}
+
+.navbar > ul > #cart-button {
+    position: absolute;
+    right: 11%;
+}
+
+.navbar > ul > #cart-button > div > img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
