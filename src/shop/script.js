@@ -1,6 +1,7 @@
  const cart = document.getElementById("cart");
  const cartButton = document.getElementById("cart-button");
  const allBuyButtons = document.querySelectorAll('.buy-button');
+ 
  var cartArray = [];
 
  for (var i = 0; i < allBuyButtons.length; i++) {
@@ -31,10 +32,47 @@
         return;
     }
 
-    cartArray.push(item);
-    clearCart();
+    for (var i = 0; i < cartArray.length; i++) {
+        if (cartArray[i].name == item.name && cartArray[i].price == item.price) {
+            cartArray[i].amount = cartArray[i].amount + item.amount;
+            return;
+        }
+    }
 
- }
+    cartArray.push(item);
+}
+
+function fillCartTable() {
+    var totalPrice = 0;
+    var outputString = "<table id=\"cart-listing\">" + "<tr class=\"item-rows\">";
+    outputString += "<th id=\"item-name\">Item</th>";
+    outputString += "<th>Amount</th>" + "<th>Price</th>" + "</tr>";
+
+    for (var i = 0; i < cartArray.length; i++) {
+        var priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
+        totalPrice += parseFloat(priceOfAll);
+        outputString += "<tr>" + "<td>" + cartArray[i].name +"</td>";
+        outputString += "<td class=\"listed-amount\">" + cartArray[i].amount + "</td>";
+        outputString += "<td>" + priceOfAll + "</td>";
+        outputString += "</tr>";
+    }
+
+    totalPrice = totalPrice.toFixed(2);
+
+    outputString += "</table>" + "<button id=\"clear-cart-enabled\">Clear Cart</button>";
+    outputString += "<button id=\"checkout-enabled\">Check Out</button>";
+    outputString += "<div id=\"total-price\">";
+    outputString += "<p>Total&nbsp;&nbsp;</p>" + "<p>$&nbsp;" + totalPrice + "</p>";
+
+    cart.innerHTML=outputString;
+    const clearCartButton = document.getElementById('clear-cart-enabled');
+}
+
+function normalizePrice(price, amount) {
+    var decimal = price * amount;
+    decimal = decimal.toFixed(2);
+    return decimal;
+}
 
  function clearCart() {
     cart.innerHTML="<p id=\"cart-placeholder\">No Items in Cart!</p>" +
@@ -45,14 +83,20 @@
  }
 
 cartButton.addEventListener('click', (event) => {
+    if (cartArray.length != 0) { fillCartTable(); }
     cart.classList.toggle("show-cart");
     event.stopPropagation();
 })
 
 document.addEventListener('click', (event) => {
     if (event.target.closest('#cart')) {
-        return;
-    }
+        if (event.target.closest('#clear-cart-enabled')) {
+            clearCart();
+        }
 
-    cart.classList.remove('show-cart');
+        return;
+    
+    } else {
+        cart.classList.remove('show-cart');
+    }
 })
