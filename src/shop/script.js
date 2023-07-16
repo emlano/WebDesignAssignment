@@ -32,7 +32,16 @@
     }
 
     cartArray.push(item);
-    console.log(cartArray);
+    clearCart();
+
+ }
+
+ function clearCart() {
+    cart.innerHTML="<p id=\"cart-placeholder\">No Items in Cart!</p>" +
+    "<div id=\"clear-cart-disabled\">Clear Cart</div>" + 
+    "<div id=\"checkout-disabled\">Check Out</div>";
+    cartArray = [];
+
  }
 
 cartButton.addEventListener('click', (event) => {
