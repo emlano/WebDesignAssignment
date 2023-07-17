@@ -179,7 +179,6 @@
     font-size: larger;
     font-weight: bold;
     color: var(--clr-accent-bg);
-    text-shadow: var(--shdw-settings);
     margin-top: 50%;
 }
 
@@ -192,8 +191,8 @@
     width: 300px;
     height: 30px;
     left: 50px;
-    background-color: #c0c0c050;
-    color: #24242480;
+    background-color: #c0c0c070;
+    color: #242424aa;
     border-radius: 6px;
     font-size: large;
     font-family: inherit;
@@ -208,8 +207,8 @@
     width: 300px;
     height: 30px;
     left: 50px;
-    background-color: #c0c0c050;
-    color: #24242480;
+    background-color: #c0c0c070;
+    color: #242424aa;
     border-radius: 6px;
     font-size: large;
     font-family: inherit;
@@ -276,12 +275,33 @@
 #cart > #cart-listing {
     margin-left: auto;
     margin-right: auto;
-    width: 375px;
-    height: 200px;
-    text-align: left;
+    width: 400px;
+    padding: 3%;
 }
 
-#cart > #cart-listing > .listed-amount {
+#cart > #cart-listing #item-name {
+    text-align: left;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+#cart > #cart-listing #item-amount {
+    text-align: center;
+}
+
+#cart > #cart-listing #item-price {
+    text-align: end;
+}
+
+#cart #item-rows {
+    line-height: 40px;
+}
+
+#cart > #cart-listing .item-price {
+    text-align: right;
+}
+
+#cart > #cart-listing .listed-amount {
     text-align: center;
 }
 

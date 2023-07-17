@@ -46,14 +46,14 @@ function fillCartTable() {
     var totalPrice = 0;
     var outputString = "<table id=\"cart-listing\">" + "<tr class=\"item-rows\">";
     outputString += "<th id=\"item-name\">Item</th>";
-    outputString += "<th>Amount</th>" + "<th>Price</th>" + "</tr>";
+    outputString += "<th id=\"item-amount\">Amount</th>" + "<th id=\"item-price\">Price</th>" + "</tr>";
 
     for (var i = 0; i < cartArray.length; i++) {
         var priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
         totalPrice += parseFloat(priceOfAll);
-        outputString += "<tr>" + "<td>" + cartArray[i].name +"</td>";
-        outputString += "<td class=\"listed-amount\">" + cartArray[i].amount + "</td>";
-        outputString += "<td>" + priceOfAll + "</td>";
+        outputString += "<tr id=\"item-rows\">" + "<td>" + cartArray[i].name +"</td>";
+        outputString += "<td class=\"listed-amount\">" + cartArray[i].amount + "&nbsp;pcs.</td>";
+        outputString += "<td class=\"item-price\">$&emsp;" + priceOfAll + "</td>";
         outputString += "</tr>";
     }
 
