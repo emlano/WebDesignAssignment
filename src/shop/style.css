@@ -137,6 +137,7 @@
     box-shadow: var(--shdw-settings);
 }
 
+/* Shopping cart panel, opens when shopping cart button is clicked */
 #cart {
     width: 400px;
     height: 600px;
@@ -152,27 +153,28 @@
     transform-origin: top center;
 }
 
+/* Shopping cart is hidden from view at start */
 .hide-cart {
     scale: 0%;
     opacity: 20%;
 }
 
+/* When cart button is clicked, drop down shopping cart panel */
 .show-cart {
     scale: 100%;
     opacity: 100%;
 }
 
+/* Styling for shopping cart button */
 .navbar > ul > #cart-button {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
     position: absolute;
     right: 11%;
 }
 
-.navbar > ul > #cart-button > div > img {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-
+/* Styling shopping cart placeholder text, which is displayed when cart is empty */
 #cart > #cart-placeholder {
     text-align: center;
     font-family: inherit;
@@ -182,6 +184,7 @@
     margin-top: 50%;
 }
 
+/* Greyed out 'clear cart' button, displayed when cart is empty */
 #cart > #clear-cart-disabled {
     display: flex;
     position: absolute;
@@ -198,6 +201,7 @@
     font-family: inherit;
 }
 
+/* Greyed out 'check out' button, displayed when cart is empty */
 #cart > #checkout-disabled {
     display: flex;
     position: absolute;
@@ -214,6 +218,7 @@
     font-family: inherit;
 }
 
+/* Usable 'clear cart' button, displayed when cart is not empty */
 #cart > #clear-cart-enabled {
     position: absolute;
     bottom: 20%;
@@ -232,6 +237,7 @@
     transition-duration: 250ms;
 }
 
+/* Usable 'check out' button, displayed when cart is not empty */
 #cart > #checkout-enabled {
     position: absolute;
     bottom: 10%;
@@ -250,28 +256,33 @@
     transition-duration: 250ms;
 }
 
+/* Animate usable 'clear cart' button on hover */
 #cart > #clear-cart-enabled:hover {
     transform: scale(112%);
     cursor: pointer;
 }
 
+/* Animate usable 'check out' button on hover */
 #cart > #checkout-enabled:hover {
     transform: scale(112%);
     cursor: pointer;
 }
 
+/* Animate usable 'clear cart' button when clicked */
 #cart > #clear-cart-enabled:active {
     background-color: var(--clr-accent-fg);
     transform: scale(102%);
     color: var(--clr-fg);
 }
 
+/* Animate usable 'check out' button on clicked */
 #cart > #checkout-enabled:active {
     background-color: var(--clr-accent-fg);
     transform: scale(102%);
     color: var(--clr-fg);
 }
 
+/* Shows a table when the cart is not empty, listing items added to cart */
 #cart > #cart-listing {
     margin-left: auto;
     margin-right: auto;
@@ -279,32 +290,39 @@
     padding: 3%;
 }
 
-#cart > #cart-listing #item-name {
+/* Styles table heading item-name */
+#cart > #cart-listing #item-name-heading {
     text-align: left;
     padding-top: 4%;
     padding-bottom: 4%;
 }
 
-#cart > #cart-listing #item-amount {
+/* Styles table heading item-amount */
+#cart > #cart-listing #item-amount-heading {
     text-align: center;
 }
 
-#cart > #cart-listing #item-price {
+/* Styles table heading item-price */
+#cart > #cart-listing #item-price-heading {
     text-align: end;
 }
 
+/* Styling for each row of the table */
 #cart #item-rows {
     line-height: 40px;
 }
 
+/* Styling for displayed price of each items */
 #cart > #cart-listing .item-price {
     text-align: right;
 }
 
+/* Styling for choosen amount of items */
 #cart > #cart-listing .listed-amount {
     text-align: center;
 }
 
+/* Styling for Total price panel, displayed at the bottom of the cart */
 #cart > #total-price {
     display: flex;
     position: absolute;
@@ -324,7 +342,27 @@
 
 }
 
+/* Styling for total price text */
 #cart > #total-price > p {
     margin: 10px;
     text-align: center;
+}
+
+/* Styling for cart icon at navigation bar, changes color, depending on user preference or theme */
+#cart-button #cart-icon {
+    filter:none;
+}
+
+#cart-button:hover #cart-icon {
+    filter:invert();
+}
+
+@media (prefers-color-scheme: dark) {
+    #cart-button #cart-icon {
+        filter: invert();
+    }
+
+    #cart-button:hover #cart-icon {
+        filter: none;
+    }
 }

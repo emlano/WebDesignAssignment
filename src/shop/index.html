@@ -17,7 +17,8 @@
         <li><a href="/.">Quiz</a></li>
         <li><a href="../map">Site Map</a></li>
         <li><a href="../aboutus">About Us</a></li>
-        <li id="cart-button"><div><!-- <img src="../img/shopping-cart.svg" alt="cart"> -->Cart</div></li>
+        <!-- Opens shopping cart -->
+        <li id="cart-button"><img src="../img/material_shopping_cart.svg" id="cart-icon" alt="cart_icon">Cart</li>
       </ul>
     </nav>
     <!-- Page headers and sub headers -->
@@ -47,7 +48,8 @@
         <!-- Add to card button, adds the required item to the cart -->
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
-      <div class="card" id="card1">
+      <!-- Second Item Card -->
+      <div class="card">
         <div class="item">
           <img src="../img/placeholder-movie.jpg" alt="item-2-image">
         </div>
@@ -61,7 +63,8 @@
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
-      <div class="card" id="card2">
+      <!-- Third Item Card -->
+      <div class="card">
         <div class="item">
           <img src="../img/placeholder-movie.jpg" alt="item-3-image">
         </div>
@@ -75,7 +78,8 @@
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
-      <div class="card" id="card3">
+      <!-- Fourth Item Card -->
+      <div class="card">
         <div class="item">
           <img src="../img/placeholder-movie.jpg" alt="item-4-image">
         </div>
@@ -89,7 +93,8 @@
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
-      <div class="card" id="card4">
+      <!-- Fifth Item Card -->
+      <div class="card">
         <div class="item">
           <img src="../img/placeholder-movie.jpg" alt="item-5-image">
         </div>
@@ -103,7 +108,8 @@
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
-      <div class="card" id="card5">
+      <!-- Sixth Item Card -->
+      <div class="card">
         <div class="item">
           <img src="../img/placeholder-movie.jpg" alt="item-6-image">
         </div>
@@ -118,9 +124,13 @@
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
     </div>
+    <!-- Shopping Cart panel, Hidden from view at load in -->
     <div id="cart" class="hide-cart">
+      <!-- When no items are in cart, Show a placeholder text -->
       <p id="cart-placeholder">No Items in Cart!</p>
+      <!-- Shows a greyed out "Clear Cart" button mockup, notifies user a yet unclickable button exists,  -->
       <div id="clear-cart-disabled">Clear Cart</div>
+      <!-- Greyed out check out button mockup -->
       <div id="checkout-disabled">Check Out</div> 
     </div>
   </body>
