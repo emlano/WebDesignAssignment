@@ -2,6 +2,8 @@
  const cart = document.getElementById("cart");
  const cartButton = document.getElementById("cart-button");
  const allBuyButtons = document.querySelectorAll('.buy-button');
+ const screenBlur = document.getElementById("screen-blur");
+ const alertButton = document.getElementById("close-alert");
  
 //  Initiate cart, all items are stored here
  var cartArray = [];
@@ -25,9 +27,10 @@
     var itemPrice = itemInfo.querySelector('.price').innerText.slice(2);
     // Get the amount of items required by the user
     var itemAmount = element.parentNode.querySelector('.item-amount').querySelector('.amount').value;
-    // Convert price and amount to float and int respectively
+    // Convert price float respectively
     itemPrice = parseFloat(itemPrice);
     itemAmount = parseInt(itemAmount);
+    console.log(itemAmount);
     // Send data to be stored in cart
     storeDataInCart(itemName, itemPrice, itemAmount);
  }
@@ -40,9 +43,10 @@
         amount : itemAmount,
     }
     
-    // Check if the user has entered and unreasonable number for amount required
+    // Check if the user has entered an unreasonable number for amount required
     // If yes, do not add object to cart
-    if (item.amount < 1 || item.amount > 5) {
+    if (item.amount < 1 || item.amount > 5 || item.amount == "NaN") {
+        screenBlur.classList.toggle("show-screen-blur");
         return;
     }
 
@@ -143,5 +147,16 @@ document.addEventListener('click', (event) => {
     // If click didn't occur within the cart panel, close cart
     } else {
         cart.classList.remove('show-cart');
+    }
+})
+
+// Event listener for alert 'OK' button, when clicked closes alert
+alertButton.addEventListener('click', (event) => {
+    // Check if alert is open
+    if (screenBlur.classList.contains("show-screen-blur")) {
+        // Closes alert
+        screenBlur.classList.remove("show-screen-blur");
+        // Stop propagation of click
+        event.stopPropagation();
     }
 })

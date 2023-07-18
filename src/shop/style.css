@@ -366,3 +366,86 @@
         filter: none;
     }
 }
+
+/* Alert box background, blurs background and prevents user from interacting with the background*/
+#screen-blur {
+    position: fixed;
+    top: 1vh;
+    left: 1vw;
+    width: 98vw;
+    height: 99vh;
+    backdrop-filter: blur(5px);
+    transition-duration: 250ms;
+}
+
+/* Hide screenblur and alert window on start/when 'OK' button is pressed */
+.hide-screen-blur {
+    scale: 0%;
+}
+
+/* Show screenblur and alert when user enters a invalid item-amount */
+.show-screen-blur {
+    scale: 100%;
+}
+
+/* Styling for alert box */
+#screen-blur > #alert-box {
+    position: absolute;
+    height: 200px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-card-bg);
+    border: 5px;
+    border-radius: 12px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    box-shadow: var(--shdw-settings);
+}
+
+/* Styling for alert message header */
+#screen-blur > #alert-box > #alert-header {
+    color: var(--clr-accent-bg);
+    font-size: 150%;
+    font-family: inherit;
+    margin: 7%;
+}
+
+/* Styling for alert text */
+#screen-blur > #alert-box > #alert-text {
+    color: inherit;
+    font-family: inherit;
+    font-size: large;
+    margin: 8%;
+}
+
+/* Styling for alert 'OK' button, when pressed closes alert */
+#screen-blur > #alert-box > #close-alert {
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    right: 50px;
+    bottom: 25px;
+    font-size: large;
+    font-family: inherit;
+    background-color: var(--clr-accent-bg);
+    border: 2px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    border-radius: 6px;
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+/* Animate alert button on hover */
+#screen-blur > #alert-box > #close-alert:hover {
+    transform: scale(112%);
+}
+
+/* Animate alert button on active */
+#screen-blur > #alert-box > #close-alert:active {
+    transform: scale(102%);
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
+}
