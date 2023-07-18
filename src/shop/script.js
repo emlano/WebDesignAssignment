@@ -36,7 +36,7 @@
  function storeDataInCart(itemName, itemPrice, itemAmount) {
     // Check if the user has entered an unreasonable value for amount required
     // If yes, do not add object to cart
-    if (isNaN(itemAmount) || itemAmount.toString().indexOf('.') != -1) {
+    if (itemAmount.toString().indexOf('.') != -1) {
         screenBlur.classList.toggle("show-screen-blur");
         return;
     }
@@ -44,7 +44,7 @@
     itemAmount = parseInt(itemAmount);
 
     // Check if the itemAmount is in range
-    if (itemAmount < 1 || itemAmount > 5) {
+    if (itemAmount < 1 || itemAmount > 5 || isNaN(itemAmount)) {
         screenBlur.classList.toggle("show-screen-blur");
         return;
     }
