@@ -145,5 +145,21 @@
         <button id="close-alert">OK</button>
       </div>
     </div>
+    <div id="checkout-confirm" class="hide-screen-blur">
+      <form id="confirmation-dialog" onsubmit="return false">
+        <p id="confirm-header"><b>...Almost done!</b></p>
+        <p id="confirm-subheader">Just need little bit more info...</p>
+        <div class="form-items">
+          <span for="customer-name">Tell us your name!&emsp;&emsp;&emsp;</span>
+          <input type="text" name="customer-name" id="text-input-name" required>
+        </div>
+        <div class="form-items">
+          <span for="customer-email">And your email!&emsp;&emsp;&emsp;&emsp;</span>
+          <input type="email" name="customer-email" id="text-input-email" required>
+        </div>
+        <button id="confirm-button" onclick="return">Confirm</button>
+        <button type="reset" id="cancel-button">Cancel</button>
+      </form>
+    </div>
   </body>
 </html>

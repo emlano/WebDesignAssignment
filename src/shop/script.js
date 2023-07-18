@@ -4,9 +4,16 @@
  const allBuyButtons = document.querySelectorAll('.buy-button');
  const screenBlur = document.getElementById("screen-blur");
  const alertButton = document.getElementById("close-alert");
+ const checkoutConfirmPanel = document.getElementById("checkout-confirm");
+ const checkoutConfirm = document.getElementById("confirm-button");
+ const checkoutCancel = document.getElementById("cancel-button");
+ const checkoutName = document.getElementById("text-input-name");
+ const checkoutEmail = document.getElementById("text-input-email");
  
-//  Initiate cart, all items are stored here
+//  Initiate cart, all items are stored here, and customer name, email
  var cartArray = [];
+ var customerName = "";
+ var customerEmail = "";
 
 //  Add event listeners for all 'add to cart' buttons
  for (var i = 0; i < allBuyButtons.length; i++) {
@@ -105,7 +112,6 @@ function fillCartTable() {
     // Push the complete string into the cart tag
     cart.innerHTML=outputString;
     // Create a variable to initialize a even listener for the clear cart button
-    const clearCartButton = document.getElementById('clear-cart-enabled');
 }
 
 // Get price of all items of the same type up to two decimal numbers
@@ -156,6 +162,15 @@ document.addEventListener('click', (event) => {
     }
 })
 
+document.addEventListener('click', (event) => {
+    if (event.target.closest("#cart")) {
+        if (event.target.closest("#checkout-enabled")) {
+            cart.classList.remove('show-cart');
+            checkoutConfirmPanel.classList.toggle("show-screen-blur");
+        }
+    }
+})
+
 // Event listener for alert 'OK' button, when clicked closes alert
 alertButton.addEventListener('click', (event) => {
     // Check if alert is open
@@ -164,5 +179,25 @@ alertButton.addEventListener('click', (event) => {
         screenBlur.classList.remove("show-screen-blur");
         // Stop propagation of click
         event.stopPropagation();
+    }
+})
+
+checkoutConfirm.addEventListener('click', (event) => {
+    if (checkoutName.value == "" || !(() => {
+        var regex = /\S+@\S+\.\S+/;
+        return regex.test(checkoutEmail);
+    })) {
+        console.log("hello")
+        return;
+    
+    } else {
+        customerName = checkoutName.value;
+        customerEmail = checkoutEmail.value;
+    } 
+})
+
+checkoutCancel.addEventListener('click', (event) => {
+    if (checkoutConfirmPanel.classList.contains("show-screen-blur")) {
+        checkoutConfirmPanel.classList.remove("show-screen-blur");
     }
 })

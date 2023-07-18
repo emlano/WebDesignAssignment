@@ -455,3 +455,129 @@
     background-color: var(--clr-bg);
     color: var(--clr-fg);
 }
+
+#checkout-confirm {
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: 99vw;
+    height: 99vh;
+    backdrop-filter: blur(5px);
+    transition-duration: 250ms;
+}
+
+#checkout-confirm > #confirmation-dialog {
+    position: absolute;
+    display: flexbox;
+    height: 400px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-card-bg);
+    border: 5px;
+    border-radius: 12px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    box-shadow: var(--shdw-settings); 
+}
+
+#checkout-confirm > #confirmation-dialog > #confirm-header {
+    color: var(--clr-accent-bg);
+    font-size: 175%;
+    font-family: inherit;
+    margin: 9%;
+}
+
+#checkout-confirm > #confirmation-dialog > #confirm-subheader {
+    color: var(--clr-fg);
+    font-size: larger;
+    font-family: inherit;
+    margin: 7%;
+}
+
+#checkout-confirm > #confirmation-dialog > .form-items {
+    margin: 5%;
+    color: var(--clr-fg);
+    font-family: inherit;
+    font-size: large;
+}
+
+.form-items > #text-input-name {
+    height: 24px;
+    width: 200px;
+    background-color: var(--clr-card-bg);
+    border: 3px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: var(--clr-fg);
+    color: var(--clr-fg);
+    box-shadow: var(--shdw-settings);
+}
+.form-items > #text-input-email {
+    height: 24px;
+    width: 200px;
+    background-color: var(--clr-card-bg);
+    border: 3px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: var(--clr-fg);
+    color: var(--clr-fg);
+    box-shadow: var(--shdw-settings);
+}
+
+#checkout-confirm > #confirmation-dialog > #confirm-button {
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    right: 200px;
+    bottom: 25px;
+    font-size: large;
+    color: var(--clr-bg);
+    font-family: inherit;
+    background-color: var(--clr-accent-bg);
+    border: 2px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    border-radius: 6px;
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+#checkout-confirm > #confirmation-dialog > #cancel-button {
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    right: 50px;
+    bottom: 25px;
+    font-size: large;
+    color: var(--clr-bg);
+    font-family: inherit;
+    background-color: var(--clr-accent-bg);
+    border: 2px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    border-radius: 6px;
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+#checkout-confirm > #confirmation-dialog > #confirm-button:hover {
+    transform: scale(112%);
+}
+
+#checkout-confirm > #confirmation-dialog > #cancel-button:hover {
+    transform: scale(112%);
+}
+
+#checkout-confirm > #confirmation-dialog > #confirm-button:active {
+    transform: scale(102%);
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
+}
+
+#checkout-confirm > #confirmation-dialog > #cancel-button:active {
+    transform: scale(102%);
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
+}
