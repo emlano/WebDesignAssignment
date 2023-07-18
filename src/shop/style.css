@@ -489,7 +489,7 @@
     color: var(--clr-accent-bg);
     font-size: 175%;
     font-family: inherit;
-    margin: 9%;
+    margin: 7%;
 }
 
 /* Confirmation dialog sub header */
@@ -497,12 +497,16 @@
     color: var(--clr-fg);
     font-size: larger;
     font-family: inherit;
-    margin: 7%;
+    margin-left: 30%;
 }
 
 /* Confirmation dialog form prompts */
 #checkout-confirm > #confirmation-dialog > .form-items {
-    margin: 5%;
+    display: grid;
+    height: 150px;
+    grid-template-areas: "a a";
+    justify-content: space-evenly;
+    align-content: space-evenly;
     color: var(--clr-fg);
     font-family: inherit;
     font-size: large;
