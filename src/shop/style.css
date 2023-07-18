@@ -1,0 +1,451 @@
+@import "../common.css";
+
+/* Page main header */
+#header {
+    text-align: center;
+    padding-top: 2vh;
+}
+
+/* Page subheader */
+#header-two {
+    text-align: center;
+    font-size: medium;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Store catalogue acts as a container holding item cards */
+#item-catalogue {
+    width: 850px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-areas: "a a a";
+}
+
+/* Configure item cards */
+#item-catalogue > .card {
+    width: 200px;
+    height: 400px;
+    margin: 20px;
+}
+
+/* Item class holds the item image and item information panels */
+#item-catalogue > .card > .item {
+    background-color: grey;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    transition-duration: 250ms;
+}
+
+/* On hove enlargen item image */
+#item-catalogue > .card > .item:hover {
+    transform: scale(118%);
+}
+
+#item-catalogue > .card > .item > img {
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+}
+
+/* Item information panel, contained by a solid border */
+#item-catalogue > .card > .item-info {
+    width: 200px;
+    height: 70px;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    border-radius: inherit;
+    box-shadow: inherit;
+}
+
+/* Item price, accent colored to draw attention */
+#item-catalogue > .card > .item-info > .price {
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    width: 60px;
+    font-weight: bold;
+    font-size: large;
+    color: var(--clr-accent-bg);
+}
+
+/* Item name */
+#item-catalogue > .card > .item-info > .item-name {
+    margin-top: 4%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+}
+
+/* Let user choose how many items they want */
+#item-catalogue > .card > .item-amount {
+    text-align: center;
+    padding-top: 8%;
+}
+
+/* Add to card button */
+#item-catalogue > .card > .buy-button {
+    width: 200px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: large;
+    font-family: inherit;
+    color: var(--clr-card-bg);
+    background-color: var(--clr-accent-bg);
+    border: 2px;
+    border-radius: 6px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+/* Add to cart button animation */
+#item-catalogue > .card > .buy-button:hover {
+    transform: scale(112%);
+    cursor: pointer;
+}
+
+/* Add to cart button click feedback */
+#item-catalogue > .card > .buy-button:active {
+    background-color: var(--clr-accent-fg);
+    transform: scale(102%);
+    color: var(--clr-fg);
+}
+
+/* Item quantity getter */
+#item-catalogue > .card > .item-amount > .amount {
+    width: 3em;
+    font-family: inherit;
+    font-size: medium;
+    background-color: var(--clr-card-bg);
+    color: var(--clr-card-fg);
+    border: 3px;
+    border-radius: 6px;
+    border-style: solid;
+    box-shadow: var(--shdw-settings);
+}
+
+/* Shopping cart panel, opens when shopping cart button is clicked */
+#cart {
+    width: 400px;
+    height: 600px;
+    position: fixed;
+    top: 8%;
+    right: 3%;
+    bottom: 80%;
+    box-shadow: var(--shdw-settings);
+    background-color: var(--clr-card-bg);
+    border-radius: var(--bdr-radius);
+    backdrop-filter: blur(12px);
+    transition-duration: 250ms;
+    transform-origin: top center;
+}
+
+/* Shopping cart is hidden from view at start */
+.hide-cart {
+    scale: 0%;
+    opacity: 20%;
+}
+
+/* When cart button is clicked, drop down shopping cart panel */
+.show-cart {
+    scale: 100%;
+    opacity: 100%;
+}
+
+/* Styling for shopping cart button */
+.navbar > ul > #cart-button {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    position: absolute;
+    right: 11%;
+}
+
+/* Styling shopping cart placeholder text, which is displayed when cart is empty */
+#cart > #cart-placeholder {
+    text-align: center;
+    font-family: inherit;
+    font-size: larger;
+    font-weight: bold;
+    color: var(--clr-accent-bg);
+    margin-top: 50%;
+}
+
+/* Greyed out 'clear cart' button, displayed when cart is empty */
+#cart > #clear-cart-disabled {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: 20%;
+    width: 300px;
+    height: 30px;
+    left: 50px;
+    background-color: #c0c0c070;
+    color: #242424aa;
+    border-radius: 6px;
+    font-size: large;
+    font-family: inherit;
+}
+
+/* Greyed out 'check out' button, displayed when cart is empty */
+#cart > #checkout-disabled {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: 10%;
+    width: 300px;
+    height: 30px;
+    left: 50px;
+    background-color: #c0c0c070;
+    color: #242424aa;
+    border-radius: 6px;
+    font-size: large;
+    font-family: inherit;
+}
+
+/* Usable 'clear cart' button, displayed when cart is not empty */
+#cart > #clear-cart-enabled {
+    position: absolute;
+    bottom: 20%;
+    width: 300px;
+    height: 30px;
+    left: 50px;
+    color: var(--clr-card-bg);
+    background-color: var(--clr-accent-bg);
+    font-family: inherit;
+    font-size: large;
+    border: 2px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: var(--clr-fg);
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+/* Usable 'check out' button, displayed when cart is not empty */
+#cart > #checkout-enabled {
+    position: absolute;
+    bottom: 10%;
+    width: 300px;
+    height: 30px;
+    left: 50px;
+    color: var(--clr-card-bg);
+    background-color: var(--clr-accent-bg);
+    font-family: inherit;
+    font-size: large;
+    border: 2px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: var(--clr-fg);
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+/* Animate usable 'clear cart' button on hover */
+#cart > #clear-cart-enabled:hover {
+    transform: scale(112%);
+    cursor: pointer;
+}
+
+/* Animate usable 'check out' button on hover */
+#cart > #checkout-enabled:hover {
+    transform: scale(112%);
+    cursor: pointer;
+}
+
+/* Animate usable 'clear cart' button when clicked */
+#cart > #clear-cart-enabled:active {
+    background-color: var(--clr-accent-fg);
+    transform: scale(102%);
+    color: var(--clr-fg);
+}
+
+/* Animate usable 'check out' button on clicked */
+#cart > #checkout-enabled:active {
+    background-color: var(--clr-accent-fg);
+    transform: scale(102%);
+    color: var(--clr-fg);
+}
+
+/* Shows a table when the cart is not empty, listing items added to cart */
+#cart > #cart-listing {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    padding: 3%;
+}
+
+/* Styles table heading item-name */
+#cart > #cart-listing #item-name-heading {
+    text-align: left;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+/* Styles table heading item-amount */
+#cart > #cart-listing #item-amount-heading {
+    text-align: center;
+}
+
+/* Styles table heading item-price */
+#cart > #cart-listing #item-price-heading {
+    text-align: end;
+}
+
+/* Styling for each row of the table */
+#cart #item-rows {
+    line-height: 40px;
+}
+
+/* Styling for displayed price of each items */
+#cart > #cart-listing .item-price {
+    text-align: right;
+}
+
+/* Styling for choosen amount of items */
+#cart > #cart-listing .listed-amount {
+    text-align: center;
+}
+
+/* Styling for Total price panel, displayed at the bottom of the cart */
+#cart > #total-price {
+    display: flex;
+    position: absolute;
+    width: 300px;
+    left: 50px;
+    bottom: 30%;
+    color: var(--clr-accent-bg);
+    font-size: larger;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    border: 3px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: var(--clr-fg);
+    box-shadow: var(--shdw-settings);
+
+}
+
+/* Styling for total price text */
+#cart > #total-price > p {
+    margin: 10px;
+    text-align: center;
+}
+
+/* Styling for cart icon at navigation bar, changes color, depending on user preference or theme */
+#cart-button #cart-icon {
+    filter:none;
+}
+
+#cart-button:hover #cart-icon {
+    filter:invert();
+}
+
+@media (prefers-color-scheme: dark) {
+    #cart-button #cart-icon {
+        filter: invert();
+    }
+
+    #cart-button:hover #cart-icon {
+        filter: none;
+    }
+}
+
+/* Alert box background, blurs background and prevents user from interacting with the background*/
+#screen-blur {
+    position: fixed;
+    top: 1vh;
+    left: 1vw;
+    width: 98vw;
+    height: 99vh;
+    backdrop-filter: blur(5px);
+    transition-duration: 250ms;
+}
+
+/* Hide screenblur and alert window on start/when 'OK' button is pressed */
+.hide-screen-blur {
+    scale: 0%;
+}
+
+/* Show screenblur and alert when user enters a invalid item-amount */
+.show-screen-blur {
+    scale: 100%;
+}
+
+/* Styling for alert box */
+#screen-blur > #alert-box {
+    position: absolute;
+    height: 200px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-card-bg);
+    border: 5px;
+    border-radius: 12px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    box-shadow: var(--shdw-settings);
+}
+
+/* Styling for alert message header */
+#screen-blur > #alert-box > #alert-header {
+    color: var(--clr-accent-bg);
+    font-size: 150%;
+    font-family: inherit;
+    margin: 7%;
+}
+
+/* Styling for alert text */
+#screen-blur > #alert-box > #alert-text {
+    color: inherit;
+    font-family: inherit;
+    font-size: large;
+    margin: 8%;
+}
+
+/* Styling for alert 'OK' button, when pressed closes alert */
+#screen-blur > #alert-box > #close-alert {
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    right: 50px;
+    bottom: 25px;
+    font-size: large;
+    font-family: inherit;
+    background-color: var(--clr-accent-bg);
+    border: 2px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    border-radius: 6px;
+    box-shadow: var(--shdw-settings);
+    transition-duration: 250ms;
+}
+
+/* Animate alert button on hover */
+#screen-blur > #alert-box > #close-alert:hover {
+    transform: scale(112%);
+}
+
+/* Animate alert button on active */
+#screen-blur > #alert-box > #close-alert:active {
+    transform: scale(102%);
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
+}
