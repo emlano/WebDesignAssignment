@@ -79,11 +79,24 @@
 function fillCartTable() {
     // Initialize variable to calculate total
     var totalPrice = 0;
-    // Initialize string that would be passed to markup with 'innerHTML'
-    var outputString = "<table id=\"cart-listing\">" + "<tr class=\"item-rows\">";
-    // Add table headers
-    outputString += "<th id=\"item-name-heading\">Item</th>";
-    outputString += "<th id=\"item-amount-heading\">Amount</th>" + "<th id=\"item-price-heading\">Price</th>" + "</tr>";
+    // Initialize all element containers
+    var table, tr, th, td, clearCartButton, checkoutButton, total, para;
+    // Create table element with data
+    table = elementFrom("table", "id", "cart-listing", "");
+    // Create table row element
+    tr = elementFrom("tr", "class", "item-rows", "");
+    // Create table header element
+    th = elementFrom("th", "id", "item-name-heading", "Item");
+    // Add table header element to table row
+    tr.appendChild(th);
+
+    th = elementFrom("th", "id", "item-amount-heading", "Amount");
+    tr.appendChild(th);
+
+    th = elementFrom("th", "id", "item-price-heading", "Price");
+    tr.appendChild(th);
+    // Add table row element to table
+    table.appendChild(tr);
 
     // Iterate through the array
     for (var i = 0; i < cartArray.length; i++) {
@@ -91,27 +104,62 @@ function fillCartTable() {
         var priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
         // Increment total with that value
         totalPrice += parseFloat(priceOfAll);
-        // Write item row into the table
-        outputString += "<tr id=\"item-rows\">" + "<td>" + cartArray[i].name +"</td>";
-        outputString += "<td class=\"listed-amount\">" + cartArray[i].amount + "&nbsp;pcs.</td>";
-        outputString += "<td class=\"item-price\">$&emsp;" + priceOfAll + "</td>";
-        // Write row end
-        outputString += "</tr>";
+        // Create table row element
+        tr = elementFrom("tr", "class", "item-rows", "");
+        // Create table data element
+        td = elementFrom("td", "", "", cartArray[i].name);
+        // Append table data element to table row
+        tr.appendChild(td);
+
+        td = elementFrom("td", "class", "listed-amount", cartArray[i].amount + " pcs.");
+        tr.appendChild(td);
+
+        td = elementFrom("td", "class", "item-price", "$    " + priceOfAll);
+        tr.appendChild(td);
+        // Append table row to table
+        table.appendChild(tr);
+        // Replace all contents of cart element with the table element 
+        cart.replaceChildren(table);
     }
 
     // Get total price up to 2 decimal places
     totalPrice = totalPrice.toFixed(2);
+    // Create clear cart button
+    clearCartButton = elementFrom("button", "id", "clear-cart-enabled", "Clear Cart");
+    // Add button to cart panel
+    cart.appendChild(clearCartButton);
+    // Create check out button
+    checkoutButton = elementFrom("button", "id", "checkout-enabled", "Check Out");
+    cart.appendChild(checkoutButton);
+    // Create total div
+    total = elementFrom("div", "id", "total-price", "");
+    // Create total div contents
+    para = elementFrom("p", "", "", "Total  ");
+    total.appendChild(para);
 
-    // Write end of the table, clear card, checkout buttons
-    outputString += "</table>" + "<button id=\"clear-cart-enabled\">Clear Cart</button>";
-    outputString += "<button id=\"checkout-enabled\">Check Out</button>";
-    // Write total to the cart
-    outputString += "<div id=\"total-price\">";
-    outputString += "<p>Total&nbsp;&nbsp;</p>" + "<p>$&nbsp;" + totalPrice + "</p>";
+    para = elementFrom("p", "", "", "$ " + totalPrice);
+    total.appendChild(para);
+    
+    // Add total div to cart element
+    cart.appendChild(total)
+}
 
-    // Push the complete string into the cart tag
-    cart.innerHTML=outputString;
-    // Create a variable to initialize a even listener for the clear cart button
+// Create a HTML element from passed in data
+// Type -> element type
+// Group -> element group ( id/class )
+// GroupID -> group name
+// innerData -> Text within the element
+function elementFrom(type, group, groupID, innerData) {
+    let element = document.createElement(type);
+    // If group given, set element group
+    if (group != "") {
+        element.setAttribute(group, groupID);
+    }
+    // If innertext given set innerText
+    if (innerData != "") {
+        element.innerText=innerData;
+    }
+    return element; 
 }
 
 // Get price of all items of the same type up to two decimal numbers
@@ -123,9 +171,21 @@ function normalizePrice(price, amount) {
 
 // If clear cart button is pressed, replace written HTML with the placeholder HTML
  function clearCart() {
-    cart.innerHTML="<p id=\"cart-placeholder\">No Items in Cart!</p>" +
-    "<div id=\"clear-cart-disabled\">Clear Cart</div>" + 
-    "<div id=\"checkout-disabled\">Check Out</div>";
+    // Initialize placeholder element containers
+    var para, clearCartButton, checkoutButton
+    // Create placeholder text element
+    para = elementFrom("p", "id", "cart-placeholder", "No Items in Cart!");
+    // Create disabled cart buttons
+    clearCartButton = elementFrom("div", "id", "clear-cart-disabled", "Clear Cart");
+    // Creaete disabled checkout buttons
+    checkoutButton = elementFrom("div", "id", "checkout-disabled", "Check Out");
+
+    // Replace all elements within cart element with newly created para element
+    cart.replaceChildren(para);
+    // Append disabled buttons to cart
+    cart.appendChild(clearCartButton);
+    cart.appendChild(checkoutButton);
+
     // Empty cart
     cartArray = [];
 
@@ -162,10 +222,15 @@ document.addEventListener('click', (event) => {
     }
 })
 
+// Event listner for check out button in cart
 document.addEventListener('click', (event) => {
+    // Check if click occured within cart element
     if (event.target.closest("#cart")) {
+        //  Check if checkout button was clicked
         if (event.target.closest("#checkout-enabled")) {
+            // Hide cart
             cart.classList.remove('show-cart');
+            // Show checkout confirmation dialog
             checkoutConfirmPanel.classList.toggle("show-screen-blur");
         }
     }
@@ -182,21 +247,24 @@ alertButton.addEventListener('click', (event) => {
     }
 })
 
+// Event listner for checkout confirmation dialog, confirm button
 checkoutConfirm.addEventListener('click', (event) => {
+    // Check if name field is empty or email field is invalid, return if true
     if (checkoutName.value == "" || !(() => {
         var regex = /\S+@\S+\.\S+/;
         return regex.test(checkoutEmail);
     })) {
-        console.log("hello")
         return;
-    
+    // Else store customer name and email
     } else {
         customerName = checkoutName.value;
         customerEmail = checkoutEmail.value;
     } 
 })
 
+// Event listner for checkout dialog cancel button
 checkoutCancel.addEventListener('click', (event) => {
+    // Hide checkout confirmation dialog when pressed
     if (checkoutConfirmPanel.classList.contains("show-screen-blur")) {
         checkoutConfirmPanel.classList.remove("show-screen-blur");
     }

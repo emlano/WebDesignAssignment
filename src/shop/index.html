@@ -145,19 +145,28 @@
         <button id="close-alert">OK</button>
       </div>
     </div>
+    <!-- Checkout confirmation dialog -->
     <div id="checkout-confirm" class="hide-screen-blur">
+      <!-- Stop form auto submission -->
       <form id="confirmation-dialog" onsubmit="return false">
+        <!-- Dialog header -->
         <p id="confirm-header"><b>...Almost done!</b></p>
+        <!-- Dialog subheader -->
         <p id="confirm-subheader">Just need little bit more info...</p>
+        <!-- Form elements/ prompts -->
         <div class="form-items">
+          <!-- Get customer name -->
           <span for="customer-name">Tell us your name!&emsp;&emsp;&emsp;</span>
           <input type="text" name="customer-name" id="text-input-name" required>
         </div>
         <div class="form-items">
+          <!-- Get customer email -->
           <span for="customer-email">And your email!&emsp;&emsp;&emsp;&emsp;</span>
           <input type="email" name="customer-email" id="text-input-email" required>
         </div>
+        <!-- When pressed validate name and email and store them in local storage -->
         <button id="confirm-button" onclick="return">Confirm</button>
+        <!-- Cancel checkout and return to page -->
         <button type="reset" id="cancel-button">Cancel</button>
       </form>
     </div>

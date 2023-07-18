@@ -456,6 +456,7 @@
     color: var(--clr-fg);
 }
 
+/* Checkout confirmation dialog background */
 #checkout-confirm {
     position: fixed;
     top: 0vh;
@@ -466,6 +467,7 @@
     transition-duration: 250ms;
 }
 
+/* Confirmation dialog message box */
 #checkout-confirm > #confirmation-dialog {
     position: absolute;
     display: flexbox;
@@ -482,6 +484,7 @@
     box-shadow: var(--shdw-settings); 
 }
 
+/* Confirmation dialog header */
 #checkout-confirm > #confirmation-dialog > #confirm-header {
     color: var(--clr-accent-bg);
     font-size: 175%;
@@ -489,6 +492,7 @@
     margin: 9%;
 }
 
+/* Confirmation dialog sub header */
 #checkout-confirm > #confirmation-dialog > #confirm-subheader {
     color: var(--clr-fg);
     font-size: larger;
@@ -496,6 +500,7 @@
     margin: 7%;
 }
 
+/* Confirmation dialog form prompts */
 #checkout-confirm > #confirmation-dialog > .form-items {
     margin: 5%;
     color: var(--clr-fg);
@@ -503,6 +508,7 @@
     font-size: large;
 }
 
+/* Text input box for customer name for Checkout confirmation dialog */
 .form-items > #text-input-name {
     height: 24px;
     width: 200px;
@@ -514,6 +520,8 @@
     color: var(--clr-fg);
     box-shadow: var(--shdw-settings);
 }
+
+/* Text input dialog for customer email for Checkout confirmation dialog */
 .form-items > #text-input-email {
     height: 24px;
     width: 200px;
@@ -526,6 +534,7 @@
     box-shadow: var(--shdw-settings);
 }
 
+/* Checkout confirmation dialog confirm button */
 #checkout-confirm > #confirmation-dialog > #confirm-button {
     position: absolute;
     height: 30px;
@@ -544,6 +553,7 @@
     transition-duration: 250ms;
 }
 
+/* Checkout confirmation dialog cancel button */
 #checkout-confirm > #confirmation-dialog > #cancel-button {
     position: absolute;
     height: 30px;
@@ -562,6 +572,7 @@
     transition-duration: 250ms;
 }
 
+/* Animations used for checkout confirmation dialog box */
 #checkout-confirm > #confirmation-dialog > #confirm-button:hover {
     transform: scale(112%);
 }
