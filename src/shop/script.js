@@ -139,9 +139,9 @@ function fillCartTable() {
 
     para = elementFrom("p", "", "", "$ " + totalPrice);
     total.appendChild(para);
-    
+
     // Add total div to cart element
-    cart.appendChild(total)
+    cart.appendChild(total);
 }
 
 // Create a HTML element from passed in data

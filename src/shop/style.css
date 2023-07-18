@@ -296,34 +296,34 @@
 }
 
 /* Styles table heading item-name */
-#cart > #cart-listing #item-name-heading {
+#cart > #cart-listing > .item-rows > #item-name-heading {
     text-align: left;
     padding-top: 4%;
     padding-bottom: 4%;
 }
 
 /* Styles table heading item-amount */
-#cart > #cart-listing #item-amount-heading {
+#cart > #cart-listing > .item-rows > #item-amount-heading {
     text-align: center;
 }
 
 /* Styles table heading item-price */
-#cart > #cart-listing #item-price-heading {
+#cart > #cart-listing > .item-rows > #item-price-heading {
     text-align: end;
 }
 
 /* Styling for each row of the table */
-#cart #item-rows {
+#cart > #cart-listing > .item-rows {
     line-height: 40px;
 }
 
 /* Styling for displayed price of each items */
-#cart > #cart-listing .item-price {
+#cart > #cart-listing > .item-rows > .item-price {
     text-align: right;
 }
 
 /* Styling for choosen amount of items */
-#cart > #cart-listing .listed-amount {
+#cart > #cart-listing > .item-rows > .listed-amount {
     text-align: center;
 }
 
@@ -354,20 +354,20 @@
 }
 
 /* Styling for cart icon at navigation bar, changes color, depending on user preference or theme */
-#cart-button #cart-icon {
+#cart-button > #cart-icon {
     filter:none;
 }
 
-#cart-button:hover #cart-icon {
+#cart-button:hover > #cart-icon {
     filter:invert();
 }
 
 @media (prefers-color-scheme: dark) {
-    #cart-button #cart-icon {
+    #cart-button > #cart-icon {
         filter: invert();
     }
 
-    #cart-button:hover #cart-icon {
+    #cart-button:hover > #cart-icon {
         filter: none;
     }
 }
