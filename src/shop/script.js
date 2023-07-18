@@ -27,27 +27,33 @@
     var itemPrice = itemInfo.querySelector('.price').innerText.slice(2);
     // Get the amount of items required by the user
     var itemAmount = element.parentNode.querySelector('.item-amount').querySelector('.amount').value;
-    // Convert price float respectively
+    // Convert price float
     itemPrice = parseFloat(itemPrice);
-    itemAmount = parseInt(itemAmount);
-    console.log(itemAmount);
     // Send data to be stored in cart
     storeDataInCart(itemName, itemPrice, itemAmount);
  }
 
  function storeDataInCart(itemName, itemPrice, itemAmount) {
+    // Check if the user has entered an unreasonable value for amount required
+    // If yes, do not add object to cart
+    if (isNaN(itemAmount) || itemAmount.toString().indexOf('.') != -1) {
+        screenBlur.classList.toggle("show-screen-blur");
+        return;
+    }
+
+    itemAmount = parseInt(itemAmount);
+
+    // Check if the itemAmount is in range
+    if (itemAmount < 1 || itemAmount > 5) {
+        screenBlur.classList.toggle("show-screen-blur");
+        return;
+    }
+
     // Create a object from passed in data
     const item = {
         name : itemName,
         price : itemPrice,
         amount : itemAmount,
-    }
-    
-    // Check if the user has entered an unreasonable number for amount required
-    // If yes, do not add object to cart
-    if (item.amount < 1 || item.amount > 5 || item.amount == "NaN") {
-        screenBlur.classList.toggle("show-screen-blur");
-        return;
     }
 
     // Iterate through array and check if item is already in cart
