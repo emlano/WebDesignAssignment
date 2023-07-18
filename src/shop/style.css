@@ -166,12 +166,17 @@
 }
 
 /* Styling for shopping cart button */
-.navbar > ul > #cart-button {
-    display: flex;
+.navbar > ul {
     align-items: center;
-    padding-right: 10px;
+}
+
+.navbar > ul > #cart-button {
+    display: inherit;
+    align-items: center;
+    padding: 2px;
+    padding-right: 13px;
     position: absolute;
-    right: 11%;
+    right: 10.5%;
 }
 
 /* Styling shopping cart placeholder text, which is displayed when cart is empty */
