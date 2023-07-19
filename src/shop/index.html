@@ -1,172 +1,183 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="en">
-    <title>Gift Store</title>
-    <!-- Import styles -->
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <!-- Create navigation bar -->
-    <nav class="navbar">
-      <ul>
-        <li><a href="../main">Home</a></li>
-        <li><a href="../comment">Comments</a></li>
-        <li id="current-page"><a href="./">Shop</a></li>
-        <li><a href="/.">Quiz</a></li>
-        <li><a href="../map">Site Map</a></li>
-        <li><a href="../aboutus">About Us</a></li>
-        <!-- Opens shopping cart -->
-        <li id="cart-button"><img src="../img/material_shopping_cart.svg" id="cart-icon" alt="cart_icon">Cart</li>
-      </ul>
-    </nav>
-    <!-- Page headers and sub headers -->
-    <h1 id="header">Welcome to the Store!</h1>
-    <h2 id="header-two">Get something to remember your favorite movies!</h2>
-    <!-- Store catagloue, contains 6 item cards -->
-    <div id="item-catalogue">
-      <!-- Each card displays a item image, price and item name -->
-      <div class="card">
-        <div class="item">
-          <!-- Item image source -->
-          <img src="../img/placeholder-movie.jpg" alt="item-1-image">
+
+<head>
+  <meta charset="en">
+  <title>Gift Store</title>
+  <!-- Import styles -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Create navigation bar -->
+  <nav>
+    <ul class="nav-start"></ul>
+    <ul class="nav-mid">
+      <li><a href="../main">Home</a></li>
+      <li><a href="../comment">Comments</a></li>
+      <li id="current-page"><a href="./">Shop</a></li>
+      <li><a href="/.">Quiz</a></li>
+      <li><a href="../map">Site Map</a></li>
+      <li><a href="../aboutus">About Us</a></li>
+    </ul>
+    <!-- Opens shopping cart -->
+    <ul class="nav-end">
+      <li id="cart-button">
+        <div>
+          <img src="../img/material_shopping_cart.svg" id="cart-icon" alt="cart_icon">
+          Cart
         </div>
-        <!-- Item information panel -->
-        <div class="item-info">
-          <!-- Item price -->
-          <p class="price">$&nbsp;69.99</p>
-          <!-- Item name -->
-          <p class="item-name">Item1</p>
-        </div>
-        <!-- Allow user to choose number of the same item -->
-        <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <!-- Get amount needed from user -->
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
-        </div>
-        <!-- Add to card button, adds the required item to the cart -->
-        <button class="buy-button" type="button">Add to Cart</button>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page headers and sub headers -->
+  <h1 id="header">Welcome to the Store!</h1>
+  <h2 id="header-two">Get something to remember your favorite movies!</h2>
+  <!-- Store catagloue, contains 6 item cards -->
+  <div id="item-catalogue">
+    <!-- Each card displays a item image, price and item name -->
+    <div class="card">
+      <div class="item">
+        <!-- Item image source -->
+        <img src="../img/placeholder-movie.jpg" alt="item-1-image">
       </div>
-      <!-- Second Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/placeholder-movie.jpg" alt="item-2-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;69.99</p>
-          <p class="item-name">Item2</p>
-        </div>
-        <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
+      <!-- Item information panel -->
+      <div class="item-info">
+        <!-- Item price -->
+        <p class="price">$&nbsp;69.99</p>
+        <!-- Item name -->
+        <p class="item-name">Item1</p>
       </div>
-      <!-- Third Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/placeholder-movie.jpg" alt="item-3-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;69.99</p>
-          <p class="item-name">Item3</p>
-        </div>
-        <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
+      <!-- Allow user to choose number of the same item -->
+      <div class="item-amount">
+        <label for="amount">Amount&nbsp;:&nbsp;</label>
+        <!-- Get amount needed from user -->
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
       </div>
-      <!-- Fourth Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/placeholder-movie.jpg" alt="item-4-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;69.99</p>
-          <p class="item-name">Item4</p>
-        </div>
-        <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
-      </div>
-      <!-- Fifth Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/placeholder-movie.jpg" alt="item-5-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;69.99</p>
-          <p class="item-name">Item5</p>
-        </div>
-        <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
-      </div>
-      <!-- Sixth Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/placeholder-movie.jpg" alt="item-6-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;69.99</p>
-          <p class="item-name">Item6</p>
-        </div>
-        <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
-      </div>
+      <!-- Add to card button, adds the required item to the cart -->
+      <button class="buy-button" type="button">Add to Cart</button>
     </div>
-    <!-- Shopping Cart panel, Hidden from view at load in -->
-    <div id="cart" class="hide-cart">
-      <!-- When no items are in cart, Show a placeholder text -->
-      <p id="cart-placeholder">No Items in Cart!</p>
-      <!-- Shows a greyed out "Clear Cart" button mockup, notifies user a yet unclickable button exists,  -->
-      <div id="clear-cart-disabled">Clear Cart</div>
-      <!-- Greyed out check out button mockup -->
-      <div id="checkout-disabled">Check Out</div> 
-    </div>
-    <!-- Create a background blur when user inputs a invalid 'item-amount' -->
-    <div id="screen-blur" class="hide-screen-blur">
-      <!-- Opens alert box -->
-      <div id="alert-box">
-        <!-- Alert header -->
-        <p id="alert-header"><b>Hey! there...</b></p>
-        <!-- Alert message -->
-        <p id="alert-text">You can <b>not</b> add that amount to cart!</p>
-        <!-- 'OK' button closes alert -->
-        <button id="close-alert">OK</button>
+    <!-- Second Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/placeholder-movie.jpg" alt="item-2-image">
       </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;69.99</p>
+        <p class="item-name">Item2</p>
+      </div>
+      <div class="item-amount">
+        <label for="amount">Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
     </div>
-    <!-- Checkout confirmation dialog -->
-    <div id="checkout-confirm" class="hide-screen-blur">
-      <!-- Stop form auto submission -->
-      <form id="confirmation-dialog" onsubmit="return false">
-        <!-- Dialog header -->
-        <p id="confirm-header"><b>...Almost done!</b></p>
-        <!-- Dialog subheader -->
-        <p id="confirm-subheader">Just need little bit more info...</p>
-        <!-- Form elements/ prompts -->
-        <div class="form-items">
-          <!-- Get customer name -->
-          <span for="customer-name">Tell us your name!&emsp;&emsp;&emsp;</span>
-          <input type="text" name="customer-name" id="text-input-name" required>
-          <!-- Get customer email -->
-          <span for="customer-email">And your email!&nbsp;&emsp;&emsp;&emsp;&emsp;</span>
-          <input type="email" name="customer-email" id="text-input-email" required>
-        </div>
-        <!-- When pressed validate name and email and store them in local storage -->
-        <button id="confirm-button" onclick="return">Confirm</button>
-        <!-- Cancel checkout and return to page -->
-        <button type="reset" id="cancel-button">Cancel</button>
-      </form>
+    <!-- Third Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/placeholder-movie.jpg" alt="item-3-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;69.99</p>
+        <p class="item-name">Item3</p>
+      </div>
+      <div class="item-amount">
+        <label for="amount">Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
     </div>
-  </body>
+    <!-- Fourth Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/placeholder-movie.jpg" alt="item-4-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;69.99</p>
+        <p class="item-name">Item4</p>
+      </div>
+      <div class="item-amount">
+        <label for="amount">Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
+    </div>
+    <!-- Fifth Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/placeholder-movie.jpg" alt="item-5-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;69.99</p>
+        <p class="item-name">Item5</p>
+      </div>
+      <div class="item-amount">
+        <label for="amount">Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
+    </div>
+    <!-- Sixth Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/placeholder-movie.jpg" alt="item-6-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;69.99</p>
+        <p class="item-name">Item6</p>
+      </div>
+      <div class="item-amount">
+        <label for="amount">Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
+    </div>
+  </div>
+  <!-- Shopping Cart panel, Hidden from view at load in -->
+  <div id="cart" class="hide-cart">
+    <!-- When no items are in cart, Show a placeholder text -->
+    <p id="cart-placeholder">No Items in Cart!</p>
+    <!-- Shows a greyed out "Clear Cart" button mockup, notifies user a yet unclickable button exists,  -->
+    <div id="clear-cart-disabled">Clear Cart</div>
+    <!-- Greyed out check out button mockup -->
+    <div id="checkout-disabled">Check Out</div>
+  </div>
+  <!-- Create a background blur when user inputs a invalid 'item-amount' -->
+  <div id="screen-blur" class="hide-screen-blur">
+    <!-- Opens alert box -->
+    <div id="alert-box">
+      <!-- Alert header -->
+      <p id="alert-header"><b>Hey! there...</b></p>
+      <!-- Alert message -->
+      <p id="alert-text">You can <b>not</b> add that amount to cart!</p>
+      <!-- 'OK' button closes alert -->
+      <button id="close-alert">OK</button>
+    </div>
+  </div>
+  <!-- Checkout confirmation dialog -->
+  <div id="checkout-confirm" class="hide-screen-blur">
+    <!-- Stop form auto submission -->
+    <form id="confirmation-dialog" onsubmit="return false">
+      <!-- Dialog header -->
+      <p id="confirm-header"><b>...Almost done!</b></p>
+      <!-- Dialog subheader -->
+      <p id="confirm-subheader">Just need little bit more info...</p>
+      <!-- Form elements/ prompts -->
+      <div class="form-items">
+        <!-- Get customer name -->
+        <span for="customer-name">Tell us your name!&emsp;&emsp;&emsp;</span>
+        <input type="text" name="customer-name" id="text-input-name" required>
+        <!-- Get customer email -->
+        <span for="customer-email">And your email!&nbsp;&emsp;&emsp;&emsp;&emsp;</span>
+        <input type="email" name="customer-email" id="text-input-email" required>
+      </div>
+      <!-- When pressed validate name and email and store them in local storage -->
+      <button id="confirm-button" onclick="return">Confirm</button>
+      <!-- Cancel checkout and return to page -->
+      <button type="reset" id="cancel-button">Cancel</button>
+    </form>
+  </div>
+</body>
+
 </html>

@@ -166,17 +166,9 @@
 }
 
 /* Styling for shopping cart button */
-.navbar > ul {
+nav > ul > #cart-button {
+    display: flex;
     align-items: center;
-}
-
-.navbar > ul > #cart-button {
-    display: inherit;
-    align-items: center;
-    padding: 2px;
-    padding-right: 13px;
-    position: absolute;
-    right: 10.5%;
 }
 
 /* Styling shopping cart placeholder text, which is displayed when cart is empty */
@@ -354,20 +346,20 @@
 }
 
 /* Styling for cart icon at navigation bar, changes color, depending on user preference or theme */
-#cart-button > #cart-icon {
-    filter:none;
+#cart-button #cart-icon {
+    filter: none;
 }
 
-#cart-button:hover > #cart-icon {
+#cart-button:hover #cart-icon {
     filter:invert();
 }
 
 @media (prefers-color-scheme: dark) {
-    #cart-button > #cart-icon {
+    #cart-button #cart-icon {
         filter: invert();
     }
 
-    #cart-button:hover > #cart-icon {
+    #cart-button:hover #cart-icon {
         filter: none;
     }
 }
