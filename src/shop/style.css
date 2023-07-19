@@ -150,7 +150,7 @@
     border-radius: var(--bdr-radius);
     backdrop-filter: blur(12px);
     transition-duration: 250ms;
-    transform-origin: top center;
+    transform-origin: top right;
 }
 
 /* Shopping cart is hidden from view at start */
@@ -169,6 +169,15 @@
 nav > ul > #cart-button {
     display: flex;
     align-items: center;
+}
+
+.navbar > ul > #cart-button {
+    display: inherit;
+    align-items: center;
+    padding: 2px;
+    padding-right: 13px;
+    position: absolute;
+    right: 1%;
 }
 
 /* Styling shopping cart placeholder text, which is displayed when cart is empty */
@@ -371,7 +380,7 @@ nav > ul > #cart-button {
     left: 0vw;
     width: 99vw;
     height: 99vh;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(24px);
     transition-duration: 250ms;
 }
 
@@ -394,10 +403,8 @@ nav > ul > #cart-button {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--clr-card-bg);
-    border: 5px;
+    border: 0px;
     border-radius: 12px;
-    border-color: var(--clr-fg);
-    border-style: solid;
     box-shadow: var(--shdw-settings);
 }
 
@@ -439,6 +446,7 @@ nav > ul > #cart-button {
 /* Animate alert button on hover */
 #screen-blur > #alert-box > #close-alert:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 /* Animate alert button on active */
@@ -455,7 +463,7 @@ nav > ul > #cart-button {
     left: 0vw;
     width: 99vw;
     height: 99vh;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(24px);
     transition-duration: 250ms;
 }
 
@@ -469,10 +477,8 @@ nav > ul > #cart-button {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--clr-card-bg);
-    border: 5px;
+    border: 0px;
     border-radius: 12px;
-    border-color: var(--clr-fg);
-    border-style: solid;
     box-shadow: var(--shdw-settings); 
 }
 
@@ -571,10 +577,12 @@ nav > ul > #cart-button {
 /* Animations used for checkout confirmation dialog box */
 #checkout-confirm > #confirmation-dialog > #confirm-button:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 #checkout-confirm > #confirmation-dialog > #cancel-button:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 #checkout-confirm > #confirmation-dialog > #confirm-button:active {

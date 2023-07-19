@@ -1,1 +1,21 @@
 @import url("../../common.css");
+
+#header {
+    text-align: center;
+    margin-top: 4vw;
+}
+
+#sub-header {
+    text-align: center;
+    font-size: medium;
+}
+
+#form {
+    display: flexbox;
+    margin-left: 50%;
+    margin-top: 50px;
+    transform: translateX(-50%);
+    background-color: black;
+    width: 800px;
+    height: 500px;
+}
