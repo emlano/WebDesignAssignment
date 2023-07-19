@@ -8,29 +8,38 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <ul>
+    <nav>
+      <ul class="nav-start"></ul>
+      <ul class="nav-mid">
         <li><a href="../../main">Home</a></li>
         <li><a href="../../comment">Comments</a></li>
         <li id="current-page"><a href="../">Shop</a></li>
-        <li><a href="/.">Quiz</a></li>
-        <li><a href="../map">Site Map</a></li>
-        <li><a href="../aboutus">About Us</a></li>
-        <!-- Opens shopping cart -->
+        <li><a href="../../quiz">Quiz</a></li>
+        <li><a href="../../map">Site Map</a></li>
+        <li><a href="../../aboutus">About Us</a></li>
       </ul>
+      <!-- Opens shopping cart -->
+      <ul class="nav-end"></ul>
     </nav>
     <h1 id="header">Invoice</h1>
     <h2 id="sub-header">Please enter and verify your details...</h2>
     <form id="form">
-      <section id="order-details">
+      <section id="order-details" class="card">
         <h3>Order Details</h3>
-        <span>Reference No.</span>
-        <span id="refNo"></span>
-        <span>Description</span>
-        <span>Gift store items</span>
-        <span>Cart Value (GBP)</span>
-        <span id="priceTotal"></span>
+        <div class="card">
+          <span>Reference No.</span>
+          <span id="refNo">asdfsfasdfsadf</span>
+        </div>
+        <div class="card">
+          <span>Description</span>
+          <span>Gift store items</span>
+        </div>
+        <div class="card">
+          <span>Cart Value (USD)</span>
+          <span id="priceTotal">788.99</span>
+        </div>
       </section>
+      <section class="card"></section>
     </form>
   </body>
 </html>
