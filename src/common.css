@@ -6,19 +6,26 @@
   --clr-accent-bg: #3584e4;
   --clr-accent-fg: #ffffff;
 
+  --clr-destruct-bg: #c01c28;
+  --clr-destruct-fg: #ffffff;
+
   --clr-card-bg: #fafafaa0;
+  --clr-card-fg: #1d1d1d;
   --clr-card-bdr: #24242440;
 
   --clr-nav-bg: #d0d0d0a0;
   --clr-nav-fg: #000000;
+
+  --clr-btn-bg: #e0e0e0;
+  --clr-btn-fg: #2f2f2f;
 
   --bdr-radius: 12px;
   --blr-radius: 24px;
   --pdn-size: 12px;
 
   --shdw-settings: 0px 0px 12px #00000080;
+  --shdw-settings-small: 0px 0px 6px #00000040;
   --bdr-settings: 1px solid var(--clr-card-bdr);
-  
   --trans-settings: cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
 }
 
@@ -31,20 +38,67 @@
     --clr-accent-bg: #aecef4;
     --clr-accent-fg: #1d1d1d;
 
+    --clr-destruct-bg: #ff7b63;
+    --clr-destruct-fg: #000000;
+
     --clr-card-bg: #303030a0;
+    --clr-card-fg: #e0e0e0;
     --clr-card-bdr: #80808040;
 
     --clr-nav-bg: #505050a0;
     --clr-nav-fg: #e0e0e0;
+
+    --clr-btn-bg: #a0a0a0;
+    --clr-btn-fg: #000000;
   }
 }
 
 body {
   margin: 0px;
   padding: 0 var(--pdn-size);
+
   color: var(--clr-fg);
   background-color: var(--clr-bg);
-  font-family: sans;
+
+  font-family: system-ui;
+
+  transition: var(--trans-settings);
+}
+
+/* General button styling */
+button {
+  font-weight: bold;
+  padding: calc(var(--pdn-size) / 2);
+
+  background-color: var(--clr-btn-bg);
+  color: var(--clr-btn-fg);
+
+  border-radius: calc(var(--bdr-radius) / 2);
+  border: var(--bdr-settings);
+
+  box-shadow: var(--shdw-settings-small);
+
+  transition: var(--trans-settings);
+}
+
+button:hover {
+  box-shadow: var(--shdw-settings);
+  transform: scale(102%);
+}
+
+button:active {
+  box-shadow: none;
+  transform: scale(98%);
+}
+
+.destructive {
+  background-color: var(--clr-destruct-bg);
+  color: var(--clr-destruct-fg);
+}
+
+.suggested {
+  background-color: var(--clr-accent-bg);
+  color: var(--clr-accent-fg);
 }
 
 /* Navbar component styles */
@@ -74,7 +128,7 @@ nav > ul {
   display: flex;
   flex: 1 1 0;
   margin: 0px;
-  gap: 3px;
+  gap: calc(var(--pdn-size) / 3);
   border-radius: var(--bdr-radius);
 }
 
@@ -125,6 +179,7 @@ nav > ul > li:active {
 .card {
   padding: var(--pdn-size);
 
+  color: var(--clr-card-fg);
   background-color: var(--clr-card-bg);
 
   border-radius: var(--bdr-radius);
@@ -170,4 +225,34 @@ nav > ul > li:active {
 
 .genre-card:hover {
   transform: scale(102%);
+}
+
+/* Dialog styles */
+dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: calc(var(--pdn-size) / 2);
+
+  scale: 0%;
+  backdrop-filter: none !important;
+
+  transition: var(--trans-settings);
+}
+
+dialog[open] {
+  scale: 100%;
+}
+
+dialog .dialog-header {
+  text-align: center;
+}
+
+dialog .dialog-text {
+  text-align: left;
+  font-style: italic;
+}
+
+.body-blur {
+  filter: blur(var(--blr-radius));
 }
