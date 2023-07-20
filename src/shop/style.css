@@ -101,7 +101,7 @@
     margin-top: 20px;
     font-size: large;
     font-family: inherit;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     border: 2px;
     border-radius: 6px;
@@ -231,7 +231,7 @@ nav > ul > #cart-button {
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;
@@ -250,7 +250,7 @@ nav > ul > #cart-button {
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;

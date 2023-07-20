@@ -14,7 +14,7 @@
  var cartArray = [];
 
 //  Add event listeners for all 'add to cart' buttons
- for (var i = 0; i < allBuyButtons.length; i++) {
+ for (let i = 0; i < allBuyButtons.length; i++) {
     // If clicked..
     allBuyButtons[i].addEventListener('click', function() {
         // Get data from that item panel
@@ -25,13 +25,13 @@
 
  function getData(element) {
     // Get clicked buttons' parent element
-    var itemInfo = element.parentNode.querySelector('.item-info');
+    let itemInfo = element.parentNode.querySelector('.item-info');
     // Get item name
-    var itemName = itemInfo.querySelector('.item-name').innerText;
+    let itemName = itemInfo.querySelector('.item-name').innerText;
     // Get item's price
-    var itemPrice = itemInfo.querySelector('.price').innerText.slice(2);
+    let itemPrice = itemInfo.querySelector('.price').innerText.slice(2);
     // Get the amount of items required by the user
-    var itemAmount = element.parentNode.querySelector('.item-amount').querySelector('.amount').value;
+    let itemAmount = element.parentNode.querySelector('.item-amount').querySelector('.amount').value;
     // Convert price float
     itemPrice = parseFloat(itemPrice);
     // Send data to be stored in cart
@@ -63,7 +63,7 @@
 
     // Iterate through array and check if item is already in cart
     // If yes, simply increase that items amount instead of pushing a new object into the array
-    for (var i = 0; i < cartArray.length; i++) {
+    for (let i = 0; i < cartArray.length; i++) {
         if (cartArray[i].name == item.name && cartArray[i].price == item.price) {
             cartArray[i].amount = cartArray[i].amount + item.amount;
             return;
@@ -78,7 +78,7 @@ function fillCartTable() {
     // Initialize variable to calculate total
     totalPrice = 0;
     // Initialize all element containers
-    var table, tr, th, td, clearCartButton, checkoutButton, total, para;
+    let table, tr, th, td, clearCartButton, checkoutButton, total, para;
     // Create table element with data
     table = elementFrom("table", "id", "cart-listing", "");
     // Create table row element
@@ -97,9 +97,9 @@ function fillCartTable() {
     table.appendChild(tr);
 
     // Iterate through the array
-    for (var i = 0; i < cartArray.length; i++) {
+    for (let i = 0; i < cartArray.length; i++) {
         // Get the price of all same type items in cart (item.price * item.amount)
-        var priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
+        let priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
         // Increment total with that value
         totalPrice += parseFloat(priceOfAll);
         // Create table row element

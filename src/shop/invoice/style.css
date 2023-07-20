@@ -10,6 +10,14 @@
     font-size: medium;
 }
 
+#section-note {
+    margin: 5%;
+}
+
+#section-note > span {
+    color: var(--clr-accent-bg);
+}
+
 #form {
     width: 90%;
     display: flexbox;
@@ -40,6 +48,10 @@
 
 
 #form > section > div > span {
-    width: 150px;
+    width: 200px;
     margin: 5%;
+}
+
+#form > section > div > span > strong {
+    color: var(--clr-accent-bg);
 }
