@@ -101,7 +101,7 @@
     margin-top: 20px;
     font-size: large;
     font-family: inherit;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     border: 2px;
     border-radius: 6px;
@@ -171,7 +171,6 @@ nav > ul > #cart-button {
     align-items: center;
 }
 
-<<<<<<< HEAD
 .navbar > ul > #cart-button {
     display: inherit;
     align-items: center;
@@ -181,8 +180,7 @@ nav > ul > #cart-button {
     right: 1%;
 }
 
-=======
->>>>>>> 2dd9e5e2732f32bc05e46cc3e7b3150f45508140
+>>>>>>>>> Temporary merge branch 2
 /* Styling shopping cart placeholder text, which is displayed when cart is empty */
 #cart > #cart-placeholder {
     text-align: center;
@@ -234,7 +232,7 @@ nav > ul > #cart-button {
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;
@@ -253,7 +251,7 @@ nav > ul > #cart-button {
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;

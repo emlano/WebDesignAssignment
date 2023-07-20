@@ -4,32 +4,55 @@
     <meta charset="en">
     <title>Check Out</title>
     <link rel="stylesheet" href="style.css">
-    <script src="../script.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <nav class="navbar">
-      <ul>
+    <nav>
+      <ul class="nav-start"></ul>
+      <ul class="nav-mid">
         <li><a href="../../main">Home</a></li>
         <li><a href="../../comment">Comments</a></li>
         <li id="current-page"><a href="../">Shop</a></li>
-        <li><a href="/.">Quiz</a></li>
-        <li><a href="../map">Site Map</a></li>
-        <li><a href="../aboutus">About Us</a></li>
-        <!-- Opens shopping cart -->
+        <li><a href="../../quiz">Quiz</a></li>
+        <li><a href="../../map">Site Map</a></li>
+        <li><a href="../../aboutus">About Us</a></li>
       </ul>
+      <!-- Opens shopping cart -->
+      <ul class="nav-end"></ul>
     </nav>
     <h1 id="header">Invoice</h1>
     <h2 id="sub-header">Please enter and verify your details...</h2>
     <form id="form">
-      <section id="order-details">
+      <section id="order-details" class="card">
         <h3>Order Details</h3>
-        <span>Reference No.</span>
-        <span id="refNo"></span>
-        <span>Description</span>
-        <span>Gift store items</span>
-        <span>Cart Value (GBP)</span>
-        <span id="priceTotal"></span>
+        <div class="card">
+          <span>Reference No.</span>
+          <span id="refNo"></span>
+        </div>
+        <div class="card">
+          <span>Description</span>
+          <span>Gift Store Items</span>
+        </div>
+        <div class="card">
+          <span>Cart Value (USD)</span>
+          <span id="priceTotal"></span>
+        </div>
+      </section>
+      <section class="card">
+        <h3>Payment Information</h3>
+        <p id="section-note"><span><strong>*</strong></span>&nbsp;Indicates a <span><strong>Required</strong></span> Field!</p>
+        <div class="card">
+          <span>Card Number <strong>*</strong></span>
+          <input type="text" name="card-no"  class="">
+        </div>
+        <div class="card">
+          <span>Card Owner <strong>*</strong></span>
+          <input type="text" name="holder-name" class="cardholder-name">
+        </div>
+        <div class="card">
+          <span>Expiry Date <strong>*</strong></span>
+          <input type="date" name="card-expiry-date" id="card-expiry-date">
+        </div>
       </section>
     </form>
   </body>
