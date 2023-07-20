@@ -12,8 +12,7 @@
  
 //  Initiate cart, all items are stored here, and customer name, email
  var cartArray = [];
- var customerName = "";
- var customerEmail = "";
+ var totalPrice = 0;
 
 //  Add event listeners for all 'add to cart' buttons
  for (var i = 0; i < allBuyButtons.length; i++) {
@@ -27,13 +26,13 @@
 
  function getData(element) {
     // Get clicked buttons' parent element
-    var itemInfo = element.parentNode.querySelector('.item-info');
+    let itemInfo = element.parentNode.querySelector('.item-info');
     // Get item name
-    var itemName = itemInfo.querySelector('.item-name').innerText;
+    let itemName = itemInfo.querySelector('.item-name').innerText;
     // Get item's price
-    var itemPrice = itemInfo.querySelector('.price').innerText.slice(2);
+    let itemPrice = itemInfo.querySelector('.price').innerText.slice(2);
     // Get the amount of items required by the user
-    var itemAmount = element.parentNode.querySelector('.item-amount').querySelector('.amount').value;
+    let itemAmount = element.parentNode.querySelector('.item-amount').querySelector('.amount').value;
     // Convert price float
     itemPrice = parseFloat(itemPrice);
     // Send data to be stored in cart
@@ -65,7 +64,7 @@
 
     // Iterate through array and check if item is already in cart
     // If yes, simply increase that items amount instead of pushing a new object into the array
-    for (var i = 0; i < cartArray.length; i++) {
+    for (let i = 0; i < cartArray.length; i++) {
         if (cartArray[i].name == item.name && cartArray[i].price == item.price) {
             cartArray[i].amount = cartArray[i].amount + item.amount;
             return;
@@ -78,9 +77,8 @@
 
 function fillCartTable() {
     // Initialize variable to calculate total
-    var totalPrice = 0;
     // Initialize all element containers
-    var table, tr, th, td, clearCartButton, checkoutButton, total, para;
+    let table, tr, th, td, clearCartButton, checkoutButton, total, para;
     // Create table element with data
     table = elementFrom("table", "id", "cart-listing", "");
     // Create table row element
@@ -99,9 +97,10 @@ function fillCartTable() {
     table.appendChild(tr);
 
     // Iterate through the array
-    for (var i = 0; i < cartArray.length; i++) {
+    for (let i = 0; i < cartArray.length; i++) {
+        totalPrice = 0;
         // Get the price of all same type items in cart (item.price * item.amount)
-        var priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
+        let priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
         // Increment total with that value
         totalPrice += parseFloat(priceOfAll);
         // Create table row element
@@ -126,10 +125,30 @@ function fillCartTable() {
     totalPrice = totalPrice.toFixed(2);
     // Create clear cart button
     clearCartButton = elementFrom("button", "id", "clear-cart-enabled", "Clear Cart");
+
+    // Event listner for the clear cart button in cart
+    clearCartButton.addEventListener('click', (event) => {
+        // Clear whole cart
+        clearCart();
+        // Close cart as it is empty
+        cart.classList.remove('show-cart');
+        event.stopPropagation();
+    })
+
     // Add button to cart panel
     cart.appendChild(clearCartButton);
+
     // Create check out button
     checkoutButton = elementFrom("button", "id", "checkout-enabled", "Check Out");
+
+    //  Event Listner for check out button in cart
+    checkoutButton.addEventListener('click', (event) => {
+        // Hide cart
+        cart.classList.remove('show-cart');
+        // Show checkout confirmation dialog
+        checkoutConfirmPanel.classList.toggle("show-screen-blur");
+    })
+
     cart.appendChild(checkoutButton);
     // Create total div
     total = elementFrom("div", "id", "total-price", "");
@@ -164,7 +183,7 @@ function elementFrom(type, group, groupID, innerData) {
 
 // Get price of all items of the same type up to two decimal numbers
 function normalizePrice(price, amount) {
-    var decimal = price * amount;
+    let decimal = price * amount;
     decimal = decimal.toFixed(2);
     return decimal;
 }
@@ -172,7 +191,7 @@ function normalizePrice(price, amount) {
 // If clear cart button is pressed, replace written HTML with the placeholder HTML
  function clearCart() {
     // Initialize placeholder element containers
-    var para, clearCartButton, checkoutButton
+    let para, clearCartButton, checkoutButton
     // Create placeholder text element
     para = elementFrom("p", "id", "cart-placeholder", "No Items in Cart!");
     // Create disabled cart buttons
@@ -201,38 +220,12 @@ cartButton.addEventListener('click', (event) => {
     event.stopPropagation();
 })
 
-// Event listner for the clear cart button in cart
-document.addEventListener('click', (event) => {
-    // Check if user clicked within the cart panel
-    if (event.target.closest('#cart')) {
-        // Check if user clicked on the clear cart button
-        if (event.target.closest('#clear-cart-enabled')) {
-            // Clear whole cart
-            clearCart();
-            // Close cart as it is empty
-            cart.classList.remove('show-cart');
-            event.stopPropagation();
-        }
-        // If clear cart button was not pressed ignore click
-        return;
-    
-    // If click didn't occur within the cart panel, close cart
-    } else {
-        cart.classList.remove('show-cart');
-    }
-})
-
-// Event listner for check out button in cart
-document.addEventListener('click', (event) => {
-    // Check if click occured within cart element
-    if (event.target.closest("#cart")) {
-        //  Check if checkout button was clicked
-        if (event.target.closest("#checkout-enabled")) {
-            // Hide cart
-            cart.classList.remove('show-cart');
-            // Show checkout confirmation dialog
-            checkoutConfirmPanel.classList.toggle("show-screen-blur");
-        }
+// While cart open, if click occures outside of cart panel
+window.addEventListener('click', (event) => {
+    if (!(event.target.closest("#cart"))) {
+        // Close cart
+        cart.classList.remove("show-cart");
+        event.stopPropagation();
     }
 })
 
@@ -254,11 +247,15 @@ checkoutConfirm.addEventListener('click', (event) => {
         var regex = /\S+@\S+\.\S+/;
         return regex.test(checkoutEmail);
     })) {
-        return;
+        badInput = document.getElementById("bad-input-warn");
+        // badInput.classList.toggle("show-cart"); FIX
     // Else store customer name and email
     } else {
-        customerName = checkoutName.value;
-        customerEmail = checkoutEmail.value;
+        sessionStorage.setItem("customerName", checkoutName.value);
+        sessionStorage.setItem("customerEmail", checkoutEmail.value);
+        sessionStorage.setItem("totalPrice", totalPrice);
+        window.location.replace("invoice/");
+
     } 
 })
 

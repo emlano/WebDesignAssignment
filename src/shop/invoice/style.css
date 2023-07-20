@@ -1,0 +1,57 @@
+@import url("../../common.css");
+
+#header {
+    text-align: center;
+    margin-top: 4vw;
+}
+
+#sub-header {
+    text-align: center;
+    font-size: medium;
+}
+
+#section-note {
+    margin: 5%;
+}
+
+#section-note > span {
+    color: var(--clr-accent-bg);
+}
+
+#form {
+    width: 90%;
+    display: flexbox;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form > section {
+    width: 60%;
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    display: flexbox;
+    height: max-content;
+}
+
+#form > section > div {
+    display: grid;
+    grid-template-areas: "a a";
+    width: 80%;
+    margin: inherit;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    justify-content: space-evenly;
+}
+
+
+#form > section > div > span {
+    width: 200px;
+    margin: 5%;
+}
+
+#form > section > div > span > strong {
+    color: var(--clr-accent-bg);
+}
