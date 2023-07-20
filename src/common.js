@@ -1,4 +1,4 @@
-export function showDialog(title, text, additionalButtons) {
+export function showDialog(title, text, additionalWidgets) {
   const dialog = document.createElement("dialog");
   const dialogTitle = document.createElement("h3");
   const dialogText = document.createElement("p");
@@ -24,8 +24,8 @@ export function showDialog(title, text, additionalButtons) {
 
   dialog.append(dialogTitle, dialogText);
 
-  if (additionalButtons !== undefined) {
-    dialog.append(...additionalButtons);
+  if (additionalWidgets !== undefined) {
+    dialog.append(...additionalWidgets);
   }
 
   dialog.append(closeButton);

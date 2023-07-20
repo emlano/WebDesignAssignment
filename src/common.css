@@ -129,7 +129,7 @@ nav > ul {
   display: flex;
   flex: 1 1 0;
   margin: 0px;
-  gap: 3px;
+  gap: calc(var(--pdn-size) / 3);
   border-radius: var(--bdr-radius);
 }
 
@@ -233,6 +233,7 @@ dialog {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: calc(var(--pdn-size) / 2);
 
   scale: 0%;
   backdrop-filter: none !important;
@@ -246,6 +247,11 @@ dialog[open] {
 
 dialog .dialog-header {
   text-align: center;
+}
+
+dialog .dialog-text {
+  text-align: left;
+  font-style: italic;
 }
 
 .body-blur {
