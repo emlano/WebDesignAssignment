@@ -1,3 +1,5 @@
+import {showDialog} from "../common.js";
+
 //  Get DOM tags and save them to variables
  const cart = document.getElementById("cart");
  const cartButton = document.getElementById("cart-button");
@@ -42,7 +44,7 @@
     // Check if the user has entered an unreasonable value for amount required
     // If yes, do not add object to cart
     if (itemAmount.toString().indexOf('.') != -1) {
-        screenBlur.classList.toggle("show-screen-blur");
+        showDialog("Hello There!", "You can't buy fractions of an item!");
         return;
     }
 
@@ -50,7 +52,7 @@
 
     // Check if the itemAmount is in range
     if (itemAmount < 1 || itemAmount > 5 || isNaN(itemAmount)) {
-        screenBlur.classList.toggle("show-screen-blur");
+        showDialog("Hello There!", "You can not add that many items to the cart!");
         return;
     }
 

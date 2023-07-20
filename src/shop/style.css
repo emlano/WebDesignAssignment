@@ -166,10 +166,12 @@
 }
 
 /* Styling for shopping cart button */
-.navbar > ul {
+nav > ul > #cart-button {
+    display: flex;
     align-items: center;
 }
 
+<<<<<<< HEAD
 .navbar > ul > #cart-button {
     display: inherit;
     align-items: center;
@@ -179,6 +181,8 @@
     right: 1%;
 }
 
+=======
+>>>>>>> 2dd9e5e2732f32bc05e46cc3e7b3150f45508140
 /* Styling shopping cart placeholder text, which is displayed when cart is empty */
 #cart > #cart-placeholder {
     text-align: center;
@@ -354,20 +358,20 @@
 }
 
 /* Styling for cart icon at navigation bar, changes color, depending on user preference or theme */
-#cart-button > #cart-icon {
-    filter:none;
+#cart-button #cart-icon {
+    filter: none;
 }
 
-#cart-button:hover > #cart-icon {
+#cart-button:hover #cart-icon {
     filter:invert();
 }
 
 @media (prefers-color-scheme: dark) {
-    #cart-button > #cart-icon {
+    #cart-button #cart-icon {
         filter: invert();
     }
 
-    #cart-button:hover > #cart-icon {
+    #cart-button:hover #cart-icon {
         filter: none;
     }
 }
