@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="en">
+    <meta charset="UTF-8">
     <title>Gift Store</title>
     <!-- Import styles -->
     <link rel="stylesheet" href="style.css">
@@ -41,9 +41,9 @@
         </div>
         <!-- Allow user to choose number of the same item -->
         <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
+          <label>Amount&nbsp;:&nbsp;</label>
           <!-- Get amount needed from user -->
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
+          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
         </div>
         <!-- Add to card button, adds the required item to the cart -->
         <button class="buy-button" type="button">Add to Cart</button>
@@ -58,8 +58,8 @@
           <p class="item-name">Item2</p>
         </div>
         <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
+          <label>Amount&nbsp;:&nbsp;</label>
+          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
@@ -73,8 +73,8 @@
           <p class="item-name">Item3</p>
         </div>
         <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
+          <label>Amount&nbsp;:&nbsp;</label>
+          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
@@ -88,8 +88,8 @@
           <p class="item-name">Item4</p>
         </div>
         <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
+          <label>Amount&nbsp;:&nbsp;</label>
+          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
@@ -103,8 +103,8 @@
           <p class="item-name">Item5</p>
         </div>
         <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
+          <label>Amount&nbsp;:&nbsp;</label>
+          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
@@ -118,8 +118,8 @@
           <p class="item-name">Item6</p>
         </div>
         <div class="item-amount">
-          <label for="amount">Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0"/>
+          <label>Amount&nbsp;:&nbsp;</label>
+          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
@@ -136,11 +136,11 @@
     <!-- Create a background blur when user inputs a invalid 'item-amount' -->
     <div id="screen-blur" class="hide-screen-blur">
       <!-- Opens alert box -->
-      <div id="alert-box">
+      <div class="alert-box">
         <!-- Alert header -->
-        <p id="alert-header"><strong>Hello there...</strong></p>
+        <p class="alert-header"><strong>Hello there...</strong></p>
         <!-- Alert message -->
-        <p id="alert-text">You can <strong>not</strong> add that amount to cart!</p>
+        <p class="alert-text">You can <strong>not</strong> add that amount to cart!</p>
         <!-- 'OK' button closes alert -->
         <button id="close-alert">OK</button>
       </div>
@@ -156,10 +156,10 @@
         <!-- Form elements/ prompts -->
         <div class="form-items">
           <!-- Get customer name -->
-          <span for="customer-name">Tell us your name!&emsp;&emsp;&emsp;</span>
+          <span>Tell us your name!&emsp;&emsp;&emsp;</span>
           <input type="text" name="customer-name" id="text-input-name" required>
           <!-- Get customer email -->
-          <span for="customer-email">And your email!&nbsp;&emsp;&emsp;&emsp;&emsp;</span>
+          <span>And your email!&nbsp;&emsp;&emsp;&emsp;&emsp;</span>
           <input type="email" name="customer-email" id="text-input-email" required>
         </div>
         <!-- When pressed validate name and email and store them in local storage -->
@@ -170,11 +170,11 @@
     </div>
     <div id="bad-input-warn" class="hide-screen-blur">
       <!-- Opens alert box -->
-      <div id="alert-box">
+      <div class="alert-box">
         <!-- Alert header -->
-        <p id="alert-header"><strong>Hello there...</strong></p>
+        <p class="alert-header"><strong>Hello there...</strong></p>
         <!-- Alert message -->
-        <p id="alert-text">Please check required <strong>fields</strong> again!</p>
+        <p class="alert-text">Please check required <strong>fields</strong> again!</p>
         <!-- 'OK' button closes alert -->
         <button id="close-warn">OK</button>
       </div>

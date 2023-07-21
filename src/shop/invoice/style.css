@@ -10,11 +10,11 @@
     font-size: medium;
 }
 
-#section-note {
+.section-note {
     margin: 5%;
 }
 
-#section-note > span {
+.section-note > span {
     color: var(--clr-accent-bg);
 }
 
@@ -26,7 +26,7 @@
     margin-right: auto;
 }
 
-#form > section {
+#form > div {
     width: 60%;
     padding: 3%;
     margin-left: auto;
@@ -36,7 +36,7 @@
     height: max-content;
 }
 
-#form > section > div {
+#form > div > div {
     display: grid;
     grid-template-areas: "a a";
     width: 80%;
@@ -47,16 +47,16 @@
 }
 
 
-#form > section > div > span {
+#form > div > div > span {
     width: 200px;
     margin: 5%;
 }
 
-#form > section > div > span > strong {
+#form > div > div > span > strong {
     color: var(--clr-accent-bg);
 }
 
-#form > section > div > input {
+#form > div > div > input {
     width: 200px;
     height: 25px;
     background-color: var(--clr-bg);
@@ -68,11 +68,11 @@
     font-size: 15px;
 }
 
-#form > section > div > div {
+#form > div > div > div {
     width: 200px;
 }
 
-#form > section > div > div > input {
+#form > div > div > div > input {
     width: 38px;
     height: 25px;
     background-color: var(--clr-bg);
@@ -82,7 +82,7 @@
     color: inherit;
 }
 
-#form > section > div > #confirm-button, #form > section > div > #clear-button {
+#form > div > div > #confirm-button, #form > div > div > #clear-button {
     height: 30px;
     background-color: var(--clr-accent-bg);
     color: var(--clr-bg);
@@ -95,11 +95,11 @@
     
 }
 
-#form > section > div > #confirm-button:hover, #form > section > div > #clear-button:hover {
+#form > div > div > #confirm-button:hover, #form > div > div > #clear-button:hover {
     transform: scale(112%);
 }
 
-#form > section > div > #confirm-button:active, #form > section > div > #clear-button:active {
+#form > div > div > #confirm-button:active, #form > div > div > #clear-button:active {
     transform: scale(102%);
     background-color: var(--clr-bg);
     color: var(--clr-fg);
@@ -172,7 +172,6 @@
     border-color: var(--clr-fg);
     border-style: solid;
     border-radius: 6px;
-
     transition-duration: 250ms;
 }
 

@@ -396,7 +396,7 @@
 }
 
 /* Styling for alert box */
-#screen-blur > #alert-box {
+#screen-blur > .alert-box {
     position: absolute;
     height: 200px;
     width: 500px;
@@ -409,7 +409,7 @@
 }
 
 /* Styling for alert message header */
-#screen-blur > #alert-box > #alert-header {
+#screen-blur > .alert-box > .alert-header {
     color: var(--clr-accent-bg);
     font-size: 150%;
     font-family: inherit;
@@ -417,7 +417,7 @@
 }
 
 /* Styling for alert text */
-#screen-blur > #alert-box > #alert-text {
+#screen-blur > .alert-box > .alert-text {
     color: inherit;
     font-family: inherit;
     font-size: large;
@@ -425,7 +425,7 @@
 }
 
 /* Styling for alert 'OK' button, when pressed closes alert */
-#screen-blur > #alert-box > #close-alert {
+#screen-blur > .alert-box > #close-alert {
     position: absolute;
     height: 30px;
     width: 100px;
@@ -444,12 +444,12 @@
 }
 
 /* Animate alert button on hover */
-#screen-blur > #alert-box > #close-alert:hover {
+#screen-blur > .alert-box > #close-alert:hover {
     transform: scale(112%);
 }
 
 /* Animate alert button on active */
-#screen-blur > #alert-box > #close-alert:active {
+#screen-blur > .alert-box > #close-alert:active {
     transform: scale(102%);
     background-color: var(--clr-bg);
     color: var(--clr-fg);
@@ -603,7 +603,7 @@
     transition-duration: 250ms;
 }
 
-#bad-input-warn > #alert-box {
+#bad-input-warn > .alert-box {
     position: absolute;
     height: 200px;
     width: 500px;
@@ -615,21 +615,21 @@
     box-shadow: var(--shdw-settings);
 }
 
-#bad-input-warn > #alert-box > #alert-header {
+#bad-input-warn > .alert-box > .alert-header {
     color: var(--clr-accent-bg);
     font-size: 150%;
     font-family: inherit;
     margin: 7%;
 }
 
-#bad-input-warn > #alert-box > #alert-text {
+#bad-input-warn > .alert-box > .alert-text {
     color: inherit;
     font-family: inherit;
     font-size: large;
     margin: 8%;
 }
 
-#bad-input-warn > #alert-box > #close-warn {
+#bad-input-warn > .alert-box > #close-warn {
     position: absolute;
     height: 30px;
     width: 100px;
@@ -647,11 +647,11 @@
     transition-duration: 250ms;
 }
 
-#bad-input-warn > #alert-box > #close-warn:hover {
+#bad-input-warn > .alert-box > #close-warn:hover {
     transform: scale(112%);
 }
 
-#bad-input-warn > #alert-box > #close-warn:active {
+#bad-input-warn > .alert-box > #close-warn:active {
     transform: scale(102%);
     background-color: var(--clr-bg);
     color: var(--clr-fg);

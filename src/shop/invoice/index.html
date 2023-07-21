@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="en">
+    <meta charset="UTF-8">
     <title>Check Out</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -20,7 +20,7 @@
     <h1 id="header">Invoice</h1>
     <h2 id="sub-header">Please enter and verify your details...</h2>
     <form id="form" novalidate onsubmit="return false">
-      <section id="order-details" class="card">
+      <div id="order-details" class="card">
         <h3>Order Details</h3>
         <div class="card">
           <span>Reference No.</span>
@@ -34,10 +34,10 @@
           <span>Cart Value (USD)</span>
           <span id="priceTotal"></span>
         </div>
-      </section>
-      <section class="card">
+      </div>
+      <div class="card">
         <h3>Payment Information</h3>
-        <p id="section-note"><span><strong>*</strong></span>&nbsp;Indicates a <span><strong>Required</strong></span> Field!</p>
+        <p class="section-note"><span><strong>*</strong></span>&nbsp;Indicates a <span><strong>Required</strong></span> Field!</p>
         <div class="card">
           <span>Card Number <strong>*</strong></span>
           <input type="text" name="card-no"  id="card-no" required>
@@ -57,10 +57,10 @@
           <span>Security Code <strong>*</strong></span>
           <input type="number" name="security-code" id="security-code" min="1" max="999" step="1" required>
         </div>
-      </section>
-      <section class="card">
+      </div>
+      <div class="card">
         <h3>Billing Address</h3>
-        <p id="section-note"><span><strong>*</strong></span> Indiates a <span><strong>Required</strong></span> field!</p>
+        <p class="section-note"><span><strong>*</strong></span> Indiates a <span><strong>Required</strong></span> field!</p>
         <div class="card">
           <span>Address 1 <strong>*</strong></span>
           <input type="text" name="address1" id="address1" required>
@@ -85,10 +85,10 @@
           <span>Country <strong>*</strong></span>
           <input type="text" name="country" id="country" required>
         </div>
-      </section>
-      <section class="card">
+      </div>
+      <div class="card">
         <h3>Contact Details</h3>
-        <p id="section-note"><span><strong>*</strong></span> Indicates a <span><strong>Required</strong></span> field</p>
+        <p class="section-note"><span><strong>*</strong></span> Indicates a <span><strong>Required</strong></span> field</p>
         <div class="card">
           <span>Buyer Name <strong>*</strong></span>
           <input type="text" name="customerName" id="customerName" required>
@@ -101,13 +101,13 @@
           <span>Phone no.</span>
           <input type="tel" name="phoneNo" id="phoneNo">
         </div>
-      </section>
-      <section class="card">
+      </div>
+      <div class="card">
         <div class="card">
           <input type="button" value="Confirm" id="confirm-button">
           <input type="reset" value="Clear" id="clear-button">
         </div>
-      </section>
+      </div>
     </form>
     <div id="error-dialog" class="hide-dialog">
       <div id="alert-box">
