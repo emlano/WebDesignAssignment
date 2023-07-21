@@ -19,7 +19,7 @@
     </nav>
     <h1 id="header">Invoice</h1>
     <h2 id="sub-header">Please enter and verify your details...</h2>
-    <form id="form">
+    <form id="form" novalidate onsubmit="return false">
       <section id="order-details" class="card">
         <h3>Order Details</h3>
         <div class="card">
@@ -40,17 +40,82 @@
         <p id="section-note"><span><strong>*</strong></span>&nbsp;Indicates a <span><strong>Required</strong></span> Field!</p>
         <div class="card">
           <span>Card Number <strong>*</strong></span>
-          <input type="text" name="card-no"  class="">
+          <input type="text" name="card-no"  id="card-no" required>
         </div>
         <div class="card">
           <span>Card Owner <strong>*</strong></span>
-          <input type="text" name="holder-name" class="cardholder-name">
+          <input type="text" name="holder-name" id="cardholder-name" required>
         </div>
         <div class="card">
           <span>Expiry Date <strong>*</strong></span>
-          <input type="date" name="card-expiry-date" id="card-expiry-date">
+          <div>
+            <span>MM </span><input type="number" name="expiry-month" id="expiry-month" min="1" max="12" step="1" required>
+            <span>YY </span><input type="number" name="expiry-year" id="expiry-year" min="00" max="99" step="1" required>
+          </div>
+        </div>
+        <div class="card">
+          <span>Security Code <strong>*</strong></span>
+          <input type="number" name="security-code" id="security-code" min="1" max="999" step="1" required>
+        </div>
+      </section>
+      <section class="card">
+        <h3>Billing Address</h3>
+        <p id="section-note"><span><strong>*</strong></span> Indiates a <span><strong>Required</strong></span> field!</p>
+        <div class="card">
+          <span>Address 1 <strong>*</strong></span>
+          <input type="text" name="address1" id="address1" required>
+        </div>
+        <div class="card">
+          <span>Address 2</span>
+          <input type="text" name="address2" id="address2">
+        </div>
+        <div class="card">
+          <span>City <strong>*</strong></span>
+          <input type="text" name="city" id="city" required>
+        </div>
+        <div class="card">
+          <span>State/Region </span>
+          <input type="text" name="region" id="region">
+        </div>
+        <div class="card">
+          <span>Postal Code <strong>*</strong></span>
+          <input type="text" name="postcode" id="postcode" required>
+        </div>
+        <div class="card">
+          <span>Country <strong>*</strong></span>
+          <input type="text" name="country" id="country" required>
+        </div>
+      </section>
+      <section class="card">
+        <h3>Contact Details</h3>
+        <p id="section-note"><span><strong>*</strong></span> Indicates a <span><strong>Required</strong></span> field</p>
+        <div class="card">
+          <span>Buyer Name <strong>*</strong></span>
+          <input type="text" name="customerName" id="customerName" required>
+        </div>
+        <div class="card">
+          <span>Email <strong>*</strong></span>
+          <input type="email" name="customerEmail" id="customerEmail" required>
+        </div>
+        <div class="card">
+          <span>Phone no.</span>
+          <input type="tel" name="phoneNo" id="phoneNo">
+        </div>
+      </section>
+      <section class="card">
+        <div class="card">
+          <input type="button" value="Confirm" id="confirm-button">
+          <input type="reset" value="Clear" id="clear-button">
         </div>
       </section>
     </form>
+    <div id="error-dialog" class="hide-dialog">
+      <div id="alert-box">
+        <p id="alert-header"><strong>Hold it...</strong></p>
+        <p id="alert-text">Please check required <strong>fields</strong> again!</p>
+        <div id="alert-data">Problematic field : <span id="fieldOutput">Customer Name</span></div>
+        <button id="close-warn">OK</button>
+      </div>
+    </div>
   </body>
 </html>

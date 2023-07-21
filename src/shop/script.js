@@ -244,9 +244,9 @@ alertButton.addEventListener('click', (event) => {
 
 // Event listner for checkout confirmation dialog, confirm button
 checkoutConfirm.addEventListener('click', (event) => {
-    var regex = /\S+@\S+\.\S+/;
     // Check if name field is empty or email field is invalid, return if true
-    if (checkoutName.value == "" || !(regex.test(checkoutEmail.value))) {
+    if (checkoutName.value == "" || !checkoutEmail.value.includes('@') || !checkoutEmail.value.includes('.')) {
+        console.log("hello");
         badInput.classList.toggle("show-screen-blur");
         warnCloseButton.addEventListener('click', (event) => {
             // Check if alert is open

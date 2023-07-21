@@ -594,7 +594,6 @@
 }
 
 #bad-input-warn {
-    position:fixed;
     position: fixed;
     top: 0vh;
     left: 0vw;
