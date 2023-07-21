@@ -9,6 +9,8 @@
  const checkoutCancel = document.getElementById("cancel-button");
  const checkoutName = document.getElementById("text-input-name");
  const checkoutEmail = document.getElementById("text-input-email");
+ const badInput = document.getElementById("bad-input-warn");
+ const warnCloseButton = document.getElementById("close-warn");
  
 //  Initiate cart, all items are stored here, and customer name, email
  var cartArray = [];
@@ -242,15 +244,22 @@ alertButton.addEventListener('click', (event) => {
 
 // Event listner for checkout confirmation dialog, confirm button
 checkoutConfirm.addEventListener('click', (event) => {
+    var regex = /\S+@\S+\.\S+/;
     // Check if name field is empty or email field is invalid, return if true
-    if (checkoutName.value == "" || !(() => {
-        var regex = /\S+@\S+\.\S+/;
-        return regex.test(checkoutEmail);
-    })) {
-        badInput = document.getElementById("bad-input-warn");
-        // badInput.classList.toggle("show-cart"); FIX
+    if (checkoutName.value == "" || !(regex.test(checkoutEmail.value))) {
+        badInput.classList.toggle("show-screen-blur");
+        warnCloseButton.addEventListener('click', (event) => {
+            // Check if alert is open
+            if (badInput.classList.contains("show-screen-blur")) {
+                // Closes alert
+                badInput.classList.remove("show-screen-blur");
+                // Stop propagation of click
+                event.stopPropagation();
+            }
+        })
     // Else store customer name and email
     } else {
+        checkoutConfirmPanel.classList.remove("show-screen-blur");
         sessionStorage.setItem("customerName", checkoutName.value);
         sessionStorage.setItem("customerEmail", checkoutEmail.value);
         sessionStorage.setItem("totalPrice", totalPrice);
