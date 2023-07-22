@@ -131,22 +131,15 @@
         </div>
         <button class="buy-button" type="button">Add to Cart</button>
       </div>
-      <button class="buy-button" type="button">Add to Cart</button>
     </div>
-    <!-- Third Item Card -->
-    <div class="card">
-      <div class="item">
-        <img src="../img/placeholder-movie.jpg" alt="item-3-image">
-      </div>
-      <div class="item-info">
-        <p class="price">$&nbsp;69.99</p>
-        <p class="item-name">Item3</p>
-      </div>
-      <div class="item-amount">
-        <label for="amount">Amount&nbsp;:&nbsp;</label>
-        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
-      </div>
-      <button class="buy-button" type="button">Add to Cart</button>
+    <!-- Shopping Cart panel, Hidden from view at load in -->
+    <div id="cart" class="hide-cart">
+      <!-- When no items are in cart, Show a placeholder text -->
+      <p id="cart-placeholder">No Items in Cart!</p>
+      <!-- Shows a greyed out "Clear Cart" button mockup, notifies user a yet unclickable button exists,  -->
+      <div id="clear-cart-disabled">Clear Cart</div>
+      <!-- Greyed out check out button mockup -->
+      <div id="checkout-disabled">Check Out</div> 
     </div>
     <!-- Create a background blur when user inputs a invalid 'item-amount' -->
     <div id="screen-blur" class="hide-screen-blur">
@@ -159,15 +152,6 @@
         <!-- 'OK' button closes alert -->
         <button id="close-alert">OK</button>
       </div>
-      <div class="item-info">
-        <p class="price">$&nbsp;69.99</p>
-        <p class="item-name">Item4</p>
-      </div>
-      <div class="item-amount">
-        <label for="amount">Amount&nbsp;:&nbsp;</label>
-        <input type="number" name="amount" class="amount" min="0" max="5" value="0" />
-      </div>
-      <button class="buy-button" type="button">Add to Cart</button>
     </div>
     <!-- Checkout confirmation dialog -->
     <div id="checkout-confirm" class="hide-screen-blur">

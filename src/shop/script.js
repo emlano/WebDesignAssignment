@@ -1,5 +1,3 @@
-import {showDialog} from "../common.js";
-
 //  Get DOM tags and save them to variables
  const cart = document.getElementById("cart");
  const cartButton = document.getElementById("cart-button");
@@ -19,7 +17,7 @@ import {showDialog} from "../common.js";
  var totalPrice = 0;
 
 //  Add event listeners for all 'add to cart' buttons
- for (let i = 0; i < allBuyButtons.length; i++) {
+ for (var i = 0; i < allBuyButtons.length; i++) {
     // If clicked..
     allBuyButtons[i].addEventListener('click', function() {
         // Get data from that item panel
@@ -47,7 +45,7 @@ import {showDialog} from "../common.js";
     // Check if the user has entered an unreasonable value for amount required
     // If yes, do not add object to cart
     if (itemAmount.toString().indexOf('.') != -1) {
-        showDialog("Hello There!", "You can't buy fractions of an item!");
+        screenBlur.classList.toggle("show-screen-blur");
         return;
     }
 
@@ -55,7 +53,7 @@ import {showDialog} from "../common.js";
 
     // Check if the itemAmount is in range
     if (itemAmount < 1 || itemAmount > 5 || isNaN(itemAmount)) {
-        showDialog("Hello There!", "You can not add that many items to the cart!");
+        screenBlur.classList.toggle("show-screen-blur");
         return;
     }
 
@@ -127,7 +125,6 @@ function fillCartTable() {
 
     // Get total price up to 2 decimal places
     totalPrice = totalPrice.toFixed(2);
-    localStorage.setItem('totalPrice', totalPrice);
     // Create clear cart button
     clearCartButton = elementFrom("button", "id", "clear-cart-enabled", "Clear Cart");
 
@@ -201,11 +198,8 @@ function normalizePrice(price, amount) {
     para = elementFrom("p", "id", "cart-placeholder", "No Items in Cart!");
     // Create disabled cart buttons
     clearCartButton = elementFrom("div", "id", "clear-cart-disabled", "Clear Cart");
-    
-    
     // Creaete disabled checkout buttons
     checkoutButton = elementFrom("div", "id", "checkout-disabled", "Check Out");
-    
 
     // Replace all elements within cart element with newly created para element
     cart.replaceChildren(para);
@@ -217,14 +211,6 @@ function normalizePrice(price, amount) {
     cartArray = [];
 
  }
-
-//  When click occurs within window, if event target was not in #cart
-// and if cart is open, close cart
- window.addEventListener('click', (event) => {
-    if (!event.target.closest('#cart') && cart.classList.contains('show-cart')) {
-        cart.classList.remove('show-cart');
-    }
- })
 
 //  Event listener for show cart button at navigation bar 
 cartButton.addEventListener('click', (event) => {
@@ -289,5 +275,3 @@ checkoutCancel.addEventListener('click', (event) => {
         checkoutConfirmPanel.classList.remove("show-screen-blur");
     }
 })
-
-console.log(customerName);

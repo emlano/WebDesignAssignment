@@ -167,8 +167,12 @@
 }
 
 /* Styling for shopping cart button */
-nav > ul > #cart-button {
-    display: flex;
+.navbar > ul {
+    align-items: center;
+}
+
+.navbar > ul > #cart-button {
+    display: inherit;
     align-items: center;
     padding: 2px;
     padding-right: 13px;
@@ -354,7 +358,7 @@ nav > ul > #cart-button {
 
 /* Styling for cart icon at navigation bar, changes color, depending on user preference or theme */
 #cart-button #cart-icon {
-    filter: none;
+    filter:none;
 }
 
 #cart-button:hover #cart-icon {
