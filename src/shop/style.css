@@ -176,15 +176,6 @@ nav > ul > #cart-button {
     right: 1%;
 }
 
-.navbar > ul > #cart-button {
-    display: inherit;
-    align-items: center;
-    padding: 2px;
-    padding-right: 13px;
-    position: absolute;
-    right: 1%;
-}
-
 /* Styling shopping cart placeholder text, which is displayed when cart is empty */
 #cart > #cart-placeholder {
     text-align: center;
@@ -668,7 +659,6 @@ nav > ul > #cart-button {
 
 #bad-input-warn > .alert-box > #close-warn:hover {
     transform: scale(112%);
-    cursor: pointer;
 }
 
 #bad-input-warn > .alert-box > #close-warn:active {
