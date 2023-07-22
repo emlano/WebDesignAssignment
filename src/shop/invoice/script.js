@@ -56,57 +56,107 @@ errorClose.addEventListener('click', (event) => {
 });
 
 function verifyData() {
-    if (isNaN(cardNo.value) || cardNo.value == "" || cardNo.value.toString().indexOf('.') != -1){
+    if (checkCardNo()){
         return [false, "Card Number"];
     }
 
-    if (cardholder.value == "") {
+    if (isEmpty(cardholder.value)) {
         return [false, "Card Owner"];
     }
 
-    if (expiryMonth.value == "" || isNaN(expiryMonth.value) || expiryMonth.value < 1 ||
-        expiryMonth.value > 12 || expiryMonth.value.toString().indexOf('.') != -1) {
+    if (checkExpiryMonth()) {
         return [false, "Expiry Month"];
     }
 
-    if (expiryYear.value == "" || isNaN(expiryYear.value) || expiryYear.value < 1 ||
-        expiryYear.value > 99 || expiryYear.value.toString().indexOf('.') != -1) {
+    if (checkExpiryYear()) {
         return [false, "Expiry Year"];
     }
 
-    if (securityCode.value == "" || isNaN(securityCode.value) || securityCode.value < 0 ||
-        securityCode.value > 999 || securityCode.value.toString().indexOf('.') != -1 ||
-        securityCode.value.length < 3) {
+    if (checkSecurityCode()) {
         return [false, "Secuirty Code"];
     }
 
-    if (address1.value == "") {
+    if (isEmpty(address1.value)) {
         return [false, "Address 1"];
     }
 
-    if (city.value == "") {
+    if (isEmpty(city.value)) {
         return [false, "City"];
     }
 
-    if (postcode.value == "") {
+    if (isEmpty(postcode.value)) {
         return [false, "Postal Code"];
     }
 
-    if (country.value == "") {
+    if (isEmpty(country.value)) {
         return [false, "Country"];
     }
 
-    if (nameElement.value == "") {
+    if (isEmpty(nameElement.value)) {
         return [false, "Buyer Name"];
     }
 
-    if (emailElement.value == "" || !emailElement.value.includes('@') || !emailElement.value.includes('.')) {
+    if (checkEmail()) {
         return [false, "Email"];
     }
 
-    if (isNaN(phoneNo.value) || (phoneNo.value.length != 10 && phoneNo.value != "")) {
+    if (checkPhoneNo()) {
         return [false, "Phone No."];
     }
 
     return [true, ""];
+}
+
+function checkCardNo() {
+    let value = cardNo.value;
+    return (isNaN(value) || isEmpty(value) || isFloat(value));
+}
+
+function checkExpiryMonth() {
+    let value = expiryMonth.value;
+    return (isEmpty(value) || isNaN(value) || isFloat(value) || isOutOfRange(value, 1, 12));
+}
+
+function checkExpiryYear() {
+    let value = expiryYear.value;
+    return (isEmpty(value) || isNaN(value) || isFloat(value) || isOutOfRange(value, 1, 99));
+}
+
+function checkSecurityCode() {
+    let value = securityCode.value;
+    return (isEmpty(value) || isNaN(value) || isFloat(value) || isOutOfRange(value, 0, 999) || isNotOfLength(value, 3));
+}
+
+function checkEmail() {
+    let value = emailElement.value;
+    return (isEmpty(value) || notContain(value, "@", "."));
+}
+
+function checkPhoneNo() {
+    let value = phoneNo.value;
+    if (isEmpty(value)) {
+        return false;
+    }
+
+    return (isNaN(value), isNotOfLength(value, 10));
+}
+
+function isEmpty(value) {
+    return (value == "");
+}
+
+function isFloat(value) {
+    return (value.indexOf('.') != -1);
+}
+
+function isOutOfRange(value, lower, upper) {
+    return (value < lower || value > upper);
+}
+
+function isNotOfLength(value, length) {
+    return (value.length != length);
+}
+
+function notContain(value, symbol1, symbol2) {
+    return !(value.includes(symbol1) && value.includes(symbol2));
 }
