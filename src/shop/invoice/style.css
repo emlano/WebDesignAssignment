@@ -84,26 +84,26 @@
 
 #form > div > div > #confirm-button, #form > div > div > #clear-button {
     height: 30px;
+    background-color: var(--clr-accent-bg);
+    color: var(--clr-bg);
+    font-weight: bold;
+    border: 3px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    transition-duration: 250ms;
     font-size: large;
-    font-weight: bold;
-    font-weight: bold;
-    padding: calc(var(--pdn-size) / 4);
-    background-color: var(--clr-btn-bg);
-    color: var(--clr-btn-fg);
-    border-radius: calc(var(--bdr-radius) / 2);
-    border: var(--bdr-settings);
-    box-shadow: var(--shdw-settings-small);
-    transition: var(--trans-settings);
+    box-shadow: var(--shdw-settings);
+    
 }
 
 #form > div > div > #confirm-button:hover, #form > div > div > #clear-button:hover {
-    box-shadow: var(--shdw-settings);
-    transform: scale(102%);
+    transform: scale(112%);
 }
 
 #form > div > div > #confirm-button:active, #form > div > div > #clear-button:active {
-    box-shadow: none;
-    transform: scale(98%);
+    transform: scale(102%);
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
 }
 
 #error-dialog {
@@ -162,19 +162,30 @@
 
 #error-dialog > #alert-box > #close-warn {
     position: absolute;
+    padding: 3px;
     height: 30px;
     width: 100px;
     right: 50px;
     bottom: 25px;
     font-size: large;
+    color: var(--clr-bg);
     font-family: inherit;
-    padding: calc(var(--pdn-size) / 4);
-    background-color: var(--clr-btn-bg);
-    color: var(--clr-btn-fg);
-    border-radius: calc(var(--bdr-radius) / 2);
-    border: var(--bdr-settings);
-    box-shadow: var(--shdw-settings-small);
-    transition: var(--trans-settings);
+    background-color: var(--clr-accent-bg);
+    border: 2px;
+    border-color: var(--clr-fg);
+    border-style: solid;
+    border-radius: 6px;
+    transition-duration: 250ms;
+}
+
+#error-dialog > #alert-box > #close-warn:hover {
+    transform: scale(112%);
+}
+
+#error-dialog > #alert-box > #close-warn:active {
+    transform: scale(102%);
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
 }
 
 .hide-dialog {
