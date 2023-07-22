@@ -11,13 +11,15 @@
 
   --clr-card-bg: #fafafaa0;
   --clr-card-fg: #1d1d1d;
-  --clr-card-bdr: #24242440;
+  --clr-card-bdr: #00000040;
 
   --clr-nav-bg: #d0d0d0a0;
   --clr-nav-fg: #000000;
 
   --clr-btn-bg: #e0e0e0;
   --clr-btn-fg: #2f2f2f;
+
+  --clr-overlay: #f0f0f040;
 
   --bdr-radius: 12px;
   --blr-radius: 24px;
@@ -26,7 +28,7 @@
   --shdw-settings: 0px 0px 12px #00000080;
   --shdw-settings-small: 0px 0px 6px #00000040;
   --bdr-settings: 1px solid var(--clr-card-bdr);
-  --trans-settings: cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+  --trans-settings: cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
 }
 
 /* Adapt to system-wide dark mode */
@@ -50,6 +52,8 @@
 
     --clr-btn-bg: #a0a0a0;
     --clr-btn-fg: #000000;
+
+    --clr-overlay: #00000040;
   }
 }
 
@@ -63,6 +67,21 @@ body {
   font-family: system-ui;
 
   transition: var(--trans-settings);
+}
+
+/* Page hero layout */
+.hero-container {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0 calc(var(--pdn-size) * -1); /* counteract body padding */
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--pdn-size);
 }
 
 /* General button styling */
@@ -91,6 +110,7 @@ button:active {
   transform: scale(98%);
 }
 
+/* special case button styling */
 .destructive {
   background-color: var(--clr-destruct-bg);
   color: var(--clr-destruct-fg);
@@ -191,40 +211,10 @@ nav > ul > li:active {
   -webkit-backdrop-filter: blur(var(--blr-radius));
 }
 
-/* Basic list view container styling */
-.list-view {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Basic grid view container styling */
-.grid-view {
-  display: grid;
-}
-
-.list-view,
-.grid-view {
-  gap: 12px;
-  padding: 12px;
-}
-
-/* Styling for large cards to be used as category/genre entrypoints */
-.genre-card {
-  font-size: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(images/background.webp);
-  background-repeat: no-repeat;
-  height: 300px;
-  margin: 30px;
-  color: #f0f0f0;
-
-  transition: var(--trans-settings);
-}
-
-.genre-card:hover {
-  transform: scale(102%);
+.content-container {
+  margin: 0 auto;
+  width: 1280px;
+  min-height: 100vh;
 }
 
 /* Dialog styles */
