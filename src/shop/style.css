@@ -102,7 +102,7 @@
     margin-top: 20px;
     font-size: large;
     font-family: inherit;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     border: 2px;
     border-radius: 6px;
@@ -232,7 +232,7 @@
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;
@@ -252,7 +252,7 @@
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-card-bg);
+    color: var(--clr-bg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;
@@ -357,20 +357,20 @@
 }
 
 /* Styling for cart icon at navigation bar, changes color, depending on user preference or theme */
-#cart-button > #cart-icon {
+#cart-button #cart-icon {
     filter:none;
 }
 
-#cart-button:hover > #cart-icon {
+#cart-button:hover #cart-icon {
     filter:invert();
 }
 
 @media (prefers-color-scheme: dark) {
-    #cart-button > #cart-icon {
+    #cart-button #cart-icon {
         filter: invert();
     }
 
-    #cart-button:hover > #cart-icon {
+    #cart-button:hover #cart-icon {
         filter: none;
     }
 }
