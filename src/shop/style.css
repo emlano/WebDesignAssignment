@@ -149,7 +149,7 @@
     box-shadow: var(--shdw-settings);
     background-color: var(--clr-card-bg);
     border-radius: var(--bdr-radius);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(32px);
     transition-duration: 250ms;
     transform-origin: top right;
 }
@@ -408,6 +408,7 @@
     transform: translate(-50%, -50%);
     background-color: var(--clr-card-bg);
     border-radius: 12px;
+    backdrop-filter: blur(32px);
     box-shadow: var(--shdw-settings);
 }
 
@@ -481,6 +482,7 @@
     transform: translate(-50%, -50%);
     background-color: var(--clr-card-bg);
     border-radius: 12px;
+    backdrop-filter: blur(32px);
     box-shadow: var(--shdw-settings); 
 }
 
@@ -495,9 +497,10 @@
 /* Confirmation dialog sub header */
 #checkout-confirm > #confirmation-dialog > #confirm-subheader {
     color: var(--clr-fg);
+    width: 400px;
     font-size: larger;
     font-family: inherit;
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
 /* Confirmation dialog form prompts */
@@ -639,6 +642,7 @@
     position: absolute;
     height: 30px;
     width: 100px;
+    padding: 3px;
     right: 50px;
     bottom: 25px;
     font-size: large;

@@ -126,6 +126,7 @@
     transform: translate(-50%, -50%);
     background-color: var(--clr-card-bg);
     border-radius: 12px;
+    backdrop-filter: blur(32px);
     box-shadow: var(--shdw-settings);
 }
 
