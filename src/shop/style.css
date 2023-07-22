@@ -102,7 +102,7 @@
     margin-top: 20px;
     font-size: large;
     font-family: inherit;
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     background-color: var(--clr-accent-bg);
     border: 2px;
     border-radius: 6px;
@@ -122,7 +122,7 @@
 #item-catalogue > .card > .buy-button:active {
     background-color: var(--clr-accent-fg);
     transform: scale(102%);
-    color: var(--clr-fg);
+    color: var(--clr-accent-bg);
 }
 
 /* Item quantity getter */
@@ -232,7 +232,7 @@
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;
@@ -252,7 +252,7 @@
     width: 300px;
     height: 30px;
     left: 50px;
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     background-color: var(--clr-accent-bg);
     font-family: inherit;
     font-size: large;
@@ -280,14 +280,14 @@
 #cart > #clear-cart-enabled:active {
     background-color: var(--clr-accent-fg);
     transform: scale(102%);
-    color: var(--clr-fg);
+    color: var(--clr-accent-bg);
 }
 
 /* Animate usable 'check out' button on clicked */
 #cart > #checkout-enabled:active {
     background-color: var(--clr-accent-fg);
     transform: scale(102%);
-    color: var(--clr-fg);
+    color: var(--clr-accent-bg);
 }
 
 /* Shows a table when the cart is not empty, listing items added to cart */
@@ -406,6 +406,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: var(--clr-card-fg);
     background-color: var(--clr-card-bg);
     border-radius: 12px;
     backdrop-filter: blur(32px);
@@ -437,7 +438,7 @@
     right: 50px;
     bottom: 25px;
     font-size: large;
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     font-family: inherit;
     background-color: var(--clr-accent-bg);
     border: 2px;
@@ -451,6 +452,7 @@
 /* Animate alert button on hover */
 #screen-blur > .alert-box > #close-alert:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 /* Animate alert button on active */
@@ -550,7 +552,7 @@
     right: 200px;
     bottom: 25px;
     font-size: large;
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     font-family: inherit;
     background-color: var(--clr-accent-bg);
     border: 2px;
@@ -570,7 +572,7 @@
     right: 50px;
     bottom: 25px;
     font-size: large;
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     font-family: inherit;
     background-color: var(--clr-accent-bg);
     border: 2px;
@@ -584,10 +586,12 @@
 /* Animations used for checkout confirmation dialog box */
 #checkout-confirm > #confirmation-dialog > #confirm-button:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 #checkout-confirm > #confirmation-dialog > #cancel-button:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 #checkout-confirm > #confirmation-dialog > #confirm-button:active {

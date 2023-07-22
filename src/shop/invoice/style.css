@@ -85,7 +85,7 @@
 #form > div > div > #confirm-button, #form > div > div > #clear-button {
     height: 30px;
     background-color: var(--clr-accent-bg);
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     font-weight: bold;
     border: 3px;
     border-color: var(--clr-fg);
@@ -98,6 +98,7 @@
 
 #form > div > div > #confirm-button:hover, #form > div > div > #clear-button:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 #form > div > div > #confirm-button:active, #form > div > div > #clear-button:active {
@@ -168,7 +169,7 @@
     right: 50px;
     bottom: 25px;
     font-size: large;
-    color: var(--clr-bg);
+    color: var(--clr-accent-fg);
     font-family: inherit;
     background-color: var(--clr-accent-bg);
     border: 2px;
@@ -180,6 +181,7 @@
 
 #error-dialog > #alert-box > #close-warn:hover {
     transform: scale(112%);
+    cursor: pointer;
 }
 
 #error-dialog > #alert-box > #close-warn:active {
