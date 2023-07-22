@@ -21,7 +21,7 @@ const errorElement = errorDialog.querySelector("#fieldOutput");
 const errorClose = errorDialog.querySelector("#close-warn");
 
 
-generateUniqueID(refId);
+refId.innerText = generateUniqueID();
 cartValue.innerText = "$ " + totalPrice;
 nameElement.value = customerName;
 emailElement.value = customerEmail;
@@ -34,7 +34,7 @@ function generateUniqueID() {
         id += keysArr[Math.floor(Math.random() * keysArr.length)];
     }
 
-    refId.innerText = id;
+    return id;
 }
 
 submitButton.addEventListener('click', (event) => {
