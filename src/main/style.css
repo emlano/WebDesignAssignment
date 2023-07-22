@@ -1,0 +1,128 @@
+@import "../common.css";
+
+#main-hero-image {
+  background-image: url("../img/main/hero-image-main.jpg");
+  background-size: cover;
+  font-size: 4rem;
+  border-radius: var(--bdr-radius);
+  transition: var(--trans-settings);
+}
+
+#main-hero-image .desc {
+  font-style: italic;
+  font-size: 2rem;
+}
+
+#main-hero-image .scroll-indicator {
+  margin: calc(var(--pdn-size) * 6) 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#main-hero-overlay {
+  background-color: var(--clr-overlay);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0px;
+  padding: calc(var(--pdn-size) * 24);
+
+  border-radius: var(--bdr-radius);
+
+  transition: var(--trans-settings);
+
+}
+
+#main-hero-overlay:hover {
+  opacity: 0;
+}
+
+/* styling for genre cards */
+.genre-list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--pdn-size);
+  margin: calc(var(--pdn-size) * 8) 0;
+}
+
+.bg-img-container {
+  background-size: cover;
+  padding: 0px;
+  border-radius: var(--bdr-radius);
+  transition: var(--trans-settings);
+}
+
+.bg-img-container:not(:last-child) {
+  margin-bottom: -300px;
+}
+
+.bg-img-container:hover {
+  margin-bottom: 60px;
+}
+
+.bg-img-container:hover > .genre {
+  backdrop-filter: blur(calc(var(--blr-radius) / 6));
+  -webkit-backdrop-filter: blur(calc(var(--blr-radius) / 6));
+}
+
+.genre {
+  background-color: var(--clr-overlay);
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 3rem;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  padding: calc(var(--pdn-size) * 2);
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  height: 480px;
+  transition: var(--trans-settings);
+}
+
+.genre a {
+  text-decoration: none;
+  text-align: center;
+
+  color: inherit;
+  background-color: inherit;
+
+  padding: var(--pdn-size) 0px;
+
+  border-radius: calc(var(--bdr-radius) / 2);
+  backdrop-filter: blur(var(--blr-radius));
+  -webkit-backdrop-filter: blur(var(--blr-radius));
+}
+
+#genre1 {
+  background-image: url("../img/main/card-image-fantasy.jpg");
+  z-index: 1;
+}
+
+#genre2 {
+  background-image: url("../img/main/card-image-scifi.jpg");
+  z-index: 2;
+}
+
+#genre3 {
+  background-image: url("../img/main/card-image-action.jpg");
+  z-index: 3;
+}
+
+#genre4 {
+  background-image: url("../img/main/card-image-thriller.jpg");
+  z-index: 4;
+}
+
+.content-container h1 {
+  font-size: 4rem;
+  text-align: center;
+}
