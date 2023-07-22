@@ -235,6 +235,7 @@ dialog {
   gap: calc(var(--pdn-size) / 2);
 
   scale: 0%;
+  backdrop-filter: none !important;
 
   transition: var(--trans-settings);
 }
