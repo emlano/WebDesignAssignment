@@ -11,9 +11,12 @@ import {showDialog} from "../common.js";
  const checkoutCancel = document.getElementById("cancel-button");
  const checkoutName = document.getElementById("text-input-name");
  const checkoutEmail = document.getElementById("text-input-email");
+ const badInput = document.getElementById("bad-input-warn");
+ const warnCloseButton = document.getElementById("close-warn");
  
 //  Initiate cart, all items are stored here, and customer name, email
  var cartArray = [];
+ var totalPrice = 0;
 
 //  Add event listeners for all 'add to cart' buttons
  for (let i = 0; i < allBuyButtons.length; i++) {
@@ -78,7 +81,6 @@ import {showDialog} from "../common.js";
 
 function fillCartTable() {
     // Initialize variable to calculate total
-    totalPrice = 0;
     // Initialize all element containers
     let table, tr, th, td, clearCartButton, checkoutButton, total, para;
     // Create table element with data
@@ -100,6 +102,7 @@ function fillCartTable() {
 
     // Iterate through the array
     for (let i = 0; i < cartArray.length; i++) {
+        totalPrice = 0;
         // Get the price of all same type items in cart (item.price * item.amount)
         let priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
         // Increment total with that value
@@ -127,29 +130,30 @@ function fillCartTable() {
     localStorage.setItem('totalPrice', totalPrice);
     // Create clear cart button
     clearCartButton = elementFrom("button", "id", "clear-cart-enabled", "Clear Cart");
-    // Add eventListener to clear-cart button, when clicked, clear and hide it
+
+    // Event listner for the clear cart button in cart
     clearCartButton.addEventListener('click', (event) => {
-        // Clear cart
+        // Clear whole cart
         clearCart();
-        // Hide cart
+        // Close cart as it is empty
         cart.classList.remove('show-cart');
-        // Stop click from opening cart again
         event.stopPropagation();
     })
+
     // Add button to cart panel
     cart.appendChild(clearCartButton);
+
     // Create check out button
     checkoutButton = elementFrom("button", "id", "checkout-enabled", "Check Out");
-    // Add eventListener to check out button
+
+    //  Event Listner for check out button in cart
     checkoutButton.addEventListener('click', (event) => {
         // Hide cart
         cart.classList.remove('show-cart');
-        // Show confirm button dialog
+        // Show checkout confirmation dialog
         checkoutConfirmPanel.classList.toggle("show-screen-blur");
-        // Stop click from closing cart
-        event.stopPropagation();
-        // Redirect to Check Out page
     })
+
     cart.appendChild(checkoutButton);
     // Create total div
     total = elementFrom("div", "id", "total-price", "");
@@ -184,7 +188,7 @@ function elementFrom(type, group, groupID, innerData) {
 
 // Get price of all items of the same type up to two decimal numbers
 function normalizePrice(price, amount) {
-    var decimal = price * amount;
+    let decimal = price * amount;
     decimal = decimal.toFixed(2);
     return decimal;
 }
@@ -192,7 +196,7 @@ function normalizePrice(price, amount) {
 // If clear cart button is pressed, replace written HTML with the placeholder HTML
  function clearCart() {
     // Initialize placeholder element containers
-    var para, clearCartButton, checkoutButton
+    let para, clearCartButton, checkoutButton
     // Create placeholder text element
     para = elementFrom("p", "id", "cart-placeholder", "No Items in Cart!");
     // Create disabled cart buttons
@@ -232,6 +236,15 @@ cartButton.addEventListener('click', (event) => {
     event.stopPropagation();
 })
 
+// While cart open, if click occures outside of cart panel
+window.addEventListener('click', (event) => {
+    if (!(event.target.closest("#cart"))) {
+        // Close cart
+        cart.classList.remove("show-cart");
+        event.stopPropagation();
+    }
+})
+
 // Event listener for alert 'OK' button, when clicked closes alert
 alertButton.addEventListener('click', (event) => {
     // Check if alert is open
@@ -246,16 +259,24 @@ alertButton.addEventListener('click', (event) => {
 // Event listner for checkout confirmation dialog, confirm button
 checkoutConfirm.addEventListener('click', (event) => {
     // Check if name field is empty or email field is invalid, return if true
-    if (checkoutName.value == "" || !(() => {
-        var regex = /\S+@\S+\.\S+/;
-        return regex.test(checkoutEmail);
-    })) {
-        return;
+    if (checkoutName.value == "" || !checkoutEmail.value.includes('@') || !checkoutEmail.value.includes('.')) {
+        console.log("hello");
+        badInput.classList.toggle("show-screen-blur");
+        warnCloseButton.addEventListener('click', (event) => {
+            // Check if alert is open
+            if (badInput.classList.contains("show-screen-blur")) {
+                // Closes alert
+                badInput.classList.remove("show-screen-blur");
+                // Stop propagation of click
+                event.stopPropagation();
+            }
+        })
     // Else store customer name and email
     } else {
-        localStorage.setItem("customerName", checkoutName.value);
-        localStorage.setItem('customerEmail', checkoutEmail.value);
-        // customerEmail = checkoutEmail.value;
+        checkoutConfirmPanel.classList.remove("show-screen-blur");
+        sessionStorage.setItem("customerName", checkoutName.value);
+        sessionStorage.setItem("customerEmail", checkoutEmail.value);
+        sessionStorage.setItem("totalPrice", totalPrice);
         window.location.replace("invoice/");
 
     } 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="en">
+    <meta charset="UTF-8">
     <title>Check Out</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -13,17 +13,16 @@
         <li><a href="../../main">Home</a></li>
         <li><a href="../../comment">Comments</a></li>
         <li id="current-page"><a href="../">Shop</a></li>
-        <li><a href="../../quiz">Quiz</a></li>
+        <li><a href="../../quiz/">Quiz</a></li>
         <li><a href="../../map">Site Map</a></li>
         <li><a href="../../aboutus">About Us</a></li>
       </ul>
-      <!-- Opens shopping cart -->
       <ul class="nav-end"></ul>
     </nav>
     <h1 id="header">Invoice</h1>
     <h2 id="sub-header">Please enter and verify your details...</h2>
-    <form id="form">
-      <section id="order-details" class="card">
+    <form id="form" novalidate onsubmit="return false">
+      <div id="order-details" class="card">
         <h3>Order Details</h3>
         <div class="card">
           <span>Reference No.</span>
@@ -37,23 +36,88 @@
           <span>Cart Value (USD)</span>
           <span id="priceTotal"></span>
         </div>
-      </section>
-      <section class="card">
+      </div>
+      <div class="card">
         <h3>Payment Information</h3>
-        <p id="section-note"><span><strong>*</strong></span>&nbsp;Indicates a <span><strong>Required</strong></span> Field!</p>
+        <p class="section-note"><span><strong>*</strong></span>&nbsp;Indicates a <span><strong>Required</strong></span> Field!</p>
         <div class="card">
           <span>Card Number <strong>*</strong></span>
-          <input type="text" name="card-no"  class="">
+          <input type="text" name="card-no"  id="card-no" required>
         </div>
         <div class="card">
           <span>Card Owner <strong>*</strong></span>
-          <input type="text" name="holder-name" class="cardholder-name">
+          <input type="text" name="holder-name" id="cardholder-name" required>
         </div>
         <div class="card">
           <span>Expiry Date <strong>*</strong></span>
-          <input type="date" name="card-expiry-date" id="card-expiry-date">
+          <div>
+            <span>MM </span><input type="number" name="expiry-month" id="expiry-month" min="1" max="12" step="1" required>
+            <span>YY </span><input type="number" name="expiry-year" id="expiry-year" min="00" max="99" step="1" required>
+          </div>
         </div>
-      </section>
+        <div class="card">
+          <span>Security Code <strong>*</strong></span>
+          <input type="number" name="security-code" id="security-code" min="1" max="999" step="1" required>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Billing Address</h3>
+        <p class="section-note"><span><strong>*</strong></span> Indiates a <span><strong>Required</strong></span> field!</p>
+        <div class="card">
+          <span>Address 1 <strong>*</strong></span>
+          <input type="text" name="address1" id="address1" required>
+        </div>
+        <div class="card">
+          <span>Address 2</span>
+          <input type="text" name="address2" id="address2">
+        </div>
+        <div class="card">
+          <span>City <strong>*</strong></span>
+          <input type="text" name="city" id="city" required>
+        </div>
+        <div class="card">
+          <span>State/Region </span>
+          <input type="text" name="region" id="region">
+        </div>
+        <div class="card">
+          <span>Postal Code <strong>*</strong></span>
+          <input type="text" name="postcode" id="postcode" required>
+        </div>
+        <div class="card">
+          <span>Country <strong>*</strong></span>
+          <input type="text" name="country" id="country" required>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Contact Details</h3>
+        <p class="section-note"><span><strong>*</strong></span> Indicates a <span><strong>Required</strong></span> field</p>
+        <div class="card">
+          <span>Buyer Name <strong>*</strong></span>
+          <input type="text" name="customerName" id="customerName" required>
+        </div>
+        <div class="card">
+          <span>Email <strong>*</strong></span>
+          <input type="email" name="customerEmail" id="customerEmail" required>
+        </div>
+        <div class="card">
+          <span>Phone no.</span>
+          <input type="tel" name="phoneNo" id="phoneNo">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card">
+          <input type="button" value="Confirm" id="confirm-button">
+          <input type="reset" value="Clear" id="clear-button">
+        </div>
+      </div>
     </form>
+    <div id="error-dialog" class="hide-dialog">
+      <div id="alert-box">
+        <p id="alert-header"><strong>Hello there...</strong></p>
+        <p id="alert-text">Please check required <strong>fields</strong> again!</p>
+        <div id="alert-data">Problematic field : <span id="fieldOutput">Customer Name</span></div>
+        <button id="close-warn">OK</button>
+      </div>
+    </div>
   </body>
 </html>
