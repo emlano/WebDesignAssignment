@@ -94,7 +94,7 @@ dialog > img {
   border-bottom: var(--bdr-settings);
 }
 
-.page-nav > li > a:link {
+.page-nav > li > a {
   display: block;
 
   color: inherit;
