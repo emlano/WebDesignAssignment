@@ -1,195 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Gift Store</title>
-    <!-- Import styles -->
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <!-- Create navigation bar -->
-    <nav>
-      <ul class="nav-start"></ul>
-      <ul class="nav-mid">
-        <li><a href="../main">Home</a></li>
-        <li><a href="../comment">Comments</a></li>
-        <li id="current-page"><a href="./">Shop</a></li>
-        <li><a href="../quiz">Quiz</a></li>
-        <li><a href="../sitemap">Site Map</a></li>
-        <li><a href="../gallery">Gallery</a></li>
-        <li><a href="../aboutus">About Us</a></li>
-      </ul>
-      <ul class="nav-end">
-        <li id="cart-button">
-          <div>
-            <img src="../img/material_shopping_cart.svg" id="cart-icon" alt="shopping-cart">
-            Cart
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <!-- Page headers and sub headers -->
-    <h1 id="header">Welcome to the Store!</h1>
-    <h2 id="header-two">Get something to remember your favorite movies!</h2>
-    <!-- Store catagloue, contains 6 item cards -->
-    <div id="item-catalogue">
-      <!-- Each card displays a item image, price and item name -->
-      <div class="card">
-        <div class="item">
-          <!-- Item image source -->
-          <img src="../img/Shop/chucky-pop-figure.jpg" alt="item-1-image">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gift Store</title>
+  <!-- Import styles -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Create navigation bar -->
+  <nav>
+    <ul class="nav-start">
+      <li id="site-logo">
+        <img src="/img/logo.png" alt="The site logo, a box of popcorn">
+        PopcornTime
+      </li>
+    </ul>
+    <ul class="nav-mid">
+      <li><a href="/main">Home</a></li>
+      <li><a href="/comment">Comments</a></li>
+      <li id="current-page"><a href="/shop">Shop</a></li>
+      <li><a href="/quiz">Quiz</a></li>
+      <li><a href="/sitemap">Site Map</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+    </ul>
+    <ul class="nav-end">
+      <li id="cart-button">
+        <div>
+          <img src="../img/material_shopping_cart.svg" id="cart-icon" alt="shopping-cart">
+          Cart
         </div>
-        <!-- Item information panel -->
-        <div class="item-info">
-          <!-- Item price -->
-          <p class="price">$&nbsp;86.99</p>
-          <!-- Item name -->
-          <p class="item-name">Chucky Pop Figurine</p>
-        </div>
-        <!-- Allow user to choose number of the same item -->
-        <div class="item-amount">
-          <label>Amount&nbsp;:&nbsp;</label>
-          <!-- Get amount needed from user -->
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
-        </div>
-        <!-- Add to card button, adds the required item to the cart -->
-        <button class="buy-button" type="button">Add to Cart</button>
+      </li>
+
+    </ul>
+  </nav>
+
+
+  <!-- Page headers and sub headers -->
+  <h1 id="header">Welcome to the Store!</h1>
+  <h2 id="header-two">Get something to remember your favorite movies!</h2>
+  <!-- Store catagloue, contains 6 item cards -->
+  <div id="item-catalogue">
+    <!-- Each card displays a item image, price and item name -->
+    <div class="card">
+      <div class="item">
+        <!-- Item image source -->
+        <img src="../img/Shop/chucky-pop-figure.jpg" alt="item-1-image">
       </div>
-      <!-- Second Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/Shop/micheal-myers-pop-figure.jpg" alt="item-2-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;92.99</p>
-          <p class="item-name">Micheal Myers Pop Figurine</p>
-        </div>
-        <div class="item-amount">
-          <label>Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
+      <!-- Item information panel -->
+      <div class="item-info">
+        <!-- Item price -->
+        <p class="price">$&nbsp;86.99</p>
+        <!-- Item name -->
+        <p class="item-name">Chucky Pop Figurine</p>
       </div>
-      <!-- Third Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/Shop/harry-potter-pop-figure.jpg" alt="item-3-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;79.99</p>
-          <p class="item-name">Harry Potter Pop Figurine</p>
-        </div>
-        <div class="item-amount">
-          <label>Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
+      <!-- Allow user to choose number of the same item -->
+      <div class="item-amount">
+        <label>Amount&nbsp;:&nbsp;</label>
+        <!-- Get amount needed from user -->
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0">
       </div>
-      <!-- Fourth Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/Shop/lady-galadriel-pop-figure.jpg" alt="item-4-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;121.99</p>
-          <p class="item-name">Lady Galadriel Pop Figurine</p>
-        </div>
-        <div class="item-amount">
-          <label>Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
-      </div>
-      <!-- Fifth Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/Shop/luke-skywalker-pop-figurine.jpg" alt="item-5-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;96.99</p>
-          <p class="item-name">Luke Skywalker Pop Figurine</p>
-        </div>
-        <div class="item-amount">
-          <label>Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
-      </div>
-      <!-- Sixth Item Card -->
-      <div class="card">
-        <div class="item">
-          <img src="../img/Shop/john-wick-pop-figurine.jpg" alt="item-6-image">
-        </div>
-        <div class="item-info">
-          <p class="price">$&nbsp;84.99</p>
-          <p class="item-name">John Wick Pop Figurine</p>
-        </div>
-        <div class="item-amount">
-          <label>Amount&nbsp;:&nbsp;</label>
-          <input type="number" name="amount" class="amount" min="0" max="5" value="0">
-        </div>
-        <button class="buy-button" type="button">Add to Cart</button>
-      </div>
+      <!-- Add to card button, adds the required item to the cart -->
+      <button class="buy-button" type="button">Add to Cart</button>
     </div>
-    <!-- Shopping Cart panel, Hidden from view at load in -->
-    <div id="cart" class="hide-cart">
-      <!-- When no items are in cart, Show a placeholder text -->
-      <p id="cart-placeholder">No Items in Cart!</p>
-      <!-- Shows a greyed out "Clear Cart" button mockup, notifies user a yet unclickable button exists,  -->
-      <div id="clear-cart-disabled">Clear Cart</div>
-      <!-- Greyed out check out button mockup -->
-      <div id="checkout-disabled">Check Out</div> 
-    </div>
-    <!-- Create a background blur when user inputs a invalid 'item-amount' -->
-    <div id="screen-blur" class="hide-screen-blur">
-      <!-- Opens alert box -->
-      <div class="alert-box">
-        <!-- Alert header -->
-        <p class="alert-header"><strong>Hey! there...</strong></p>
-        <!-- Alert message -->
-        <p class="alert-text">You can <strong>not</strong> add that amount to cart!</p>
-        <!-- 'OK' button closes alert -->
-        <button id="close-alert">OK</button>
+    <!-- Second Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/Shop/micheal-myers-pop-figure.jpg" alt="item-2-image">
       </div>
-    </div>
-    <!-- Checkout confirmation dialog -->
-    <div id="checkout-confirm" class="hide-screen-blur">
-      <!-- Stop form auto submission -->
-      <form id="confirmation-dialog" onsubmit="return false" novalidate>
-        <!-- Dialog header -->
-        <p id="confirm-header"><b>...Almost done!</b></p>
-        <!-- Dialog subheader -->
-        <p id="confirm-subheader">Just need little bit more info...</p>
-        <!-- Form elements/ prompts -->
-        <div class="form-items">
-          <!-- Get customer name -->
-          <span>Tell us your name!&emsp;&emsp;&emsp;</span>
-          <input type="text" name="customer-name" id="text-input-name" required>
-          <!-- Get customer email -->
-          <span>And your email!&nbsp;&emsp;&emsp;&emsp;&emsp;</span>
-          <input type="email" name="customer-email" id="text-input-email" required>
-        </div>
-        <!-- When pressed validate name and email and store them in local storage -->
-        <button id="confirm-button" onclick="return">Confirm</button>
-        <!-- Cancel checkout and return to page -->
-        <button type="reset" id="cancel-button">Cancel</button>
-      </form>
-    </div>
-    <div id="bad-input-warn" class="hide-screen-blur">
-      <!-- Opens alert box -->
-      <div class="alert-box">
-        <!-- Alert header -->
-        <p class="alert-header"><strong>Hey! there...</strong></p>
-        <!-- Alert message -->
-        <p class="alert-text">Please check required <strong>fields</strong> again!</p>
-        <!-- 'OK' button closes alert -->
-        <button id="close-warn">OK</button>
+      <div class="item-info">
+        <p class="price">$&nbsp;92.99</p>
+        <p class="item-name">Micheal Myers Pop Figurine</p>
       </div>
+      <div class="item-amount">
+        <label>Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0">
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
     </div>
-    <div id="footer">
-      All copyrighted materials seen in this website are used with the express permission of the copyright holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
-      <br><a href="../page-editor/studentOne">Page Editor</a>
+    <!-- Third Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/Shop/harry-potter-pop-figure.jpg" alt="item-3-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;79.99</p>
+        <p class="item-name">Harry Potter Pop Figurine</p>
+      </div>
+      <div class="item-amount">
+        <label>Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0">
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
     </div>
-  </body>
+    <!-- Fourth Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/Shop/lady-galadriel-pop-figure.jpg" alt="item-4-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;121.99</p>
+        <p class="item-name">Lady Galadriel Pop Figurine</p>
+      </div>
+      <div class="item-amount">
+        <label>Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0">
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
+    </div>
+    <!-- Fifth Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/Shop/luke-skywalker-pop-figurine.jpg" alt="item-5-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;96.99</p>
+        <p class="item-name">Luke Skywalker Pop Figurine</p>
+      </div>
+      <div class="item-amount">
+        <label>Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0">
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
+    </div>
+    <!-- Sixth Item Card -->
+    <div class="card">
+      <div class="item">
+        <img src="../img/Shop/john-wick-pop-figurine.jpg" alt="item-6-image">
+      </div>
+      <div class="item-info">
+        <p class="price">$&nbsp;84.99</p>
+        <p class="item-name">John Wick Pop Figurine</p>
+      </div>
+      <div class="item-amount">
+        <label>Amount&nbsp;:&nbsp;</label>
+        <input type="number" name="amount" class="amount" min="0" max="5" value="0">
+      </div>
+      <button class="buy-button" type="button">Add to Cart</button>
+    </div>
+  </div>
+  <!-- Shopping Cart panel, Hidden from view at load in -->
+  <div id="cart" class="hide-cart">
+    <!-- When no items are in cart, Show a placeholder text -->
+    <p id="cart-placeholder">No Items in Cart!</p>
+    <!-- Shows a greyed out "Clear Cart" button mockup, notifies user a yet unclickable button exists,  -->
+    <div id="clear-cart-disabled">Clear Cart</div>
+    <!-- Greyed out check out button mockup -->
+    <div id="checkout-disabled">Check Out</div>
+  </div>
+  <!-- Create a background blur when user inputs a invalid 'item-amount' -->
+  <div id="screen-blur" class="hide-screen-blur">
+    <!-- Opens alert box -->
+    <div class="alert-box">
+      <!-- Alert header -->
+      <p class="alert-header"><strong>Hey! there...</strong></p>
+      <!-- Alert message -->
+      <p class="alert-text">You can <strong>not</strong> add that amount to cart!</p>
+      <!-- 'OK' button closes alert -->
+      <button id="close-alert">OK</button>
+    </div>
+  </div>
+  <!-- Checkout confirmation dialog -->
+  <div id="checkout-confirm" class="hide-screen-blur">
+    <!-- Stop form auto submission -->
+    <form id="confirmation-dialog" onsubmit="return false" novalidate>
+      <!-- Dialog header -->
+      <p id="confirm-header"><b>...Almost done!</b></p>
+      <!-- Dialog subheader -->
+      <p id="confirm-subheader">Just need little bit more info...</p>
+      <!-- Form elements/ prompts -->
+      <div class="form-items">
+        <!-- Get customer name -->
+        <span>Tell us your name!&emsp;&emsp;&emsp;</span>
+        <input type="text" name="customer-name" id="text-input-name" required>
+        <!-- Get customer email -->
+        <span>And your email!&nbsp;&emsp;&emsp;&emsp;&emsp;</span>
+        <input type="email" name="customer-email" id="text-input-email" required>
+      </div>
+      <!-- When pressed validate name and email and store them in local storage -->
+      <button id="confirm-button" onclick="return">Confirm</button>
+      <!-- Cancel checkout and return to page -->
+      <button type="reset" id="cancel-button">Cancel</button>
+    </form>
+  </div>
+  <div id="bad-input-warn" class="hide-screen-blur">
+    <!-- Opens alert box -->
+    <div class="alert-box">
+      <!-- Alert header -->
+      <p class="alert-header"><strong>Hey! there...</strong></p>
+      <!-- Alert message -->
+      <p class="alert-text">Please check required <strong>fields</strong> again!</p>
+      <!-- 'OK' button closes alert -->
+      <button id="close-warn">OK</button>
+    </div>
+  </div>
+  <div id="footer">
+    All copyrighted materials seen in this website are used with the express permission of the copyright holders or
+    under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
+    <br><a href="../page-editor/studentOne">Page Editor</a>
+  </div>
+</body>
+
 </html>
