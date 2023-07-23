@@ -123,6 +123,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    flex-direction: row-reverse;
  }
 
  .container > img {
@@ -157,7 +158,7 @@
  }
 
  #reverse-flex {
-    flex-direction: row-reverse;
+    flex-direction: unset;
  }
 
  #footer {
