@@ -73,7 +73,7 @@ function verifyData() {
     }
 
     if (checkSecurityCode()) {
-        return [false, "Secuirty Code"];
+        return [false, "Security Code"];
     }
 
     if (isEmpty(address1.value)) {

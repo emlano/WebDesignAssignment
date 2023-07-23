@@ -1,9 +1,10 @@
-@import url("../../../common.css");
+@import url("../../common.css");
 
 #subheader {
     padding: 3%;
     text-align: center;
     font-size: 200%;
+    text-shadow: var(--shdw-settings-small);
 }
 
 #subheader > a {
@@ -16,7 +17,7 @@
 #subheader > a:hover {
     font-size: 200%;
     font-weight: bolder;
-    text-shadow: var(--shdw-settings-small);
+
 }
 
 .description {
@@ -32,7 +33,10 @@
     color: var(--clr-accent-bg);
 }
 
-.genre-card {
+.hero-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     width: 51vw;
@@ -41,7 +45,7 @@
     transition-duration: 250ms;
 }
 
-.genre-card > img {
+.hero-container > img {
     width: 50vw;
     height: 50vh;
     border-radius: var(--bdr-radius);
@@ -49,23 +53,24 @@
     transition-duration: inherit;
 }
 
-.genre-card > #header {
+.hero-container > #header {
+   color: #fff;
     text-align: center;
     position: absolute;
-    font-size: 90%;
+    font-size: 250%;
     text-shadow: var(--shdw-settings);
     opacity: 0%;
     transition-duration: inherit;
 
 }
 
-.genre-card:hover > img {
+.hero-container:hover > img {
     filter: blur(calc(var(--blr-radius) / 4));
 }
 
-.genre-card:hover > #header {
+.hero-container:hover > #header {
     opacity: 100%;
-    font-size: 100%;
+    font-size: 300%;
 }
 
 #tolkien {
@@ -157,6 +162,7 @@
 
  .card {
     margin-top: 5%;
+    margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
     height: 3vh;
@@ -189,6 +195,7 @@
     z-index: 10;
     transform: var(--trans-settings);
     transition-duration: 250ms;
+    box-shadow: var(--shdw-settings-small);
 
  }
 

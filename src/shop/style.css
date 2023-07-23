@@ -380,8 +380,8 @@
     position: fixed;
     top: 0vh;
     left: 0vw;
-    width: 99vw;
-    height: 99vh;
+    width: 100vw;
+    height: 100vh;
     backdrop-filter: blur(24px);
     transition-duration: 250ms;
 }
