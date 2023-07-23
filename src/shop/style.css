@@ -690,3 +690,24 @@
     backdrop-filter: blur(var(--blr-radius));
     -webkit-backdrop-filter: blur(var(--blr-radius));
   }
+
+  .nav-start > div {
+    display: flex;
+    width: 20px;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .nav-start > div > img {
+    width: 25px;
+    height: 35px;
+    margin-right: 20px;
+    margin-top: 3px;
+    margin-left: 5px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .nav-start > div > img {
+        filter: invert();
+      }
+  }
