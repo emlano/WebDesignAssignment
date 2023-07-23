@@ -5,6 +5,13 @@
   line-height: 1.75rem;
 }
 
+.content-container p::first-letter {
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  color: var(--clr-accent-bg);
+}
+
 .content-container > * {
   margin: calc(var(--pdn-size) * 4) 0;
 }
