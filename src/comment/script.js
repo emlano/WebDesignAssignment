@@ -1,3 +1,5 @@
+import { showDialog } from "../common.js";
+
 const form = document.forms[0];
 
 const usageInfoSet = document.querySelector("#usage-info-set");
@@ -66,8 +68,14 @@ resetBtn.addEventListener("click", () => {
 
 // connect to submit signal
 submitBtn.addEventListener("click", (event) => {
-  if (!allValidators.every(validator => { return validator(); })) {
-    event.preventDefault();
+  for (let i = 0; i < allValidators.length; i++) {
+    const [success, errorElement] = allValidators[i]();
+    if (!success) {
+      event.preventDefault();
+      showDialog("Invalid Inputs!", "Please fix all invalid inputs before trying to submit again.");
+      errorElement.scrollIntoView({ block: "center", inline: "center" });
+      return;
+    }
   }
 });
 
@@ -119,10 +127,10 @@ function runValidators(element, validations, errorElement) {
 
     if (!success) {
       errorElement.textContent = error;
-      return false;
+      return [false, errorElement];
     }
   }
 
   errorElement.textContent = "";
-  return true;
+  return [true, null];
 }
