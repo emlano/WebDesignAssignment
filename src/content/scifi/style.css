@@ -1,7 +1,7 @@
 @import "/common.css";
 
 .content-container p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.75rem;
 }
 
@@ -65,7 +65,59 @@ dialog > img {
   background-image: url("../../img/scifi/viet-cong-rebels.png");
 }
 
+#science-card {
+  background-image: url("../../img/scifi/science-delorean.png");
+}
+
 #examples-card {
   background-image: url("../../img/scifi/interstellar-struggle.png");
   background-position: center;
+}
+
+.page-nav {
+  position: fixed;
+  right: calc(var(--pdn-size) * 3);
+  bottom: calc(var(--pdn-size) * 3);
+
+  margin: 0 auto;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.page-nav > li {
+  list-style-type: none;
+}
+
+.page-nav > li:not(:last-child) {
+  border-bottom: var(--bdr-settings);
+}
+
+.page-nav > li > a:link {
+  display: block;
+
+  color: inherit;
+  background-color: none;
+
+  border-radius: var(--bdr-radius);
+  padding: calc(var(--pdn-size) / 2) var(--pdn-size);
+
+  text-decoration: none;
+  font-size: 1.5em;
+
+  transition: var(--trans-settings);
+}
+
+.page-nav > li > a:visited {
+  color: var(--clr-destruct-bg);
+}
+
+.page-nav > li > a:hover {
+  scale: 110%;
+  color: var(--clr-accent-bg);
+}
+
+.page-nav > li > a:active {
+  scale: 95%;
 }

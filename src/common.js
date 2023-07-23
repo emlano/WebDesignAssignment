@@ -1,6 +1,6 @@
 export function showDialog(title, text, additionalWidgets) {
   const dialog = document.createElement("dialog");
-  const dialogTitle = document.createElement("h3");
+  const dialogTitle = document.createElement("h1");
   const dialogText = document.createElement("p");
   const closeButton = document.createElement("button");
 
