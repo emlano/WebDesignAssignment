@@ -212,7 +212,6 @@ nav > ul {
 nav > ul > li {
   list-style-type: none;
   text-decoration: none;
-  border-radius: var(--bdr-radius);
 
   transition: var(--trans-settings);
 }
@@ -223,6 +222,7 @@ nav > ul > li > * {
   color: inherit;
   background-color: none;
   text-decoration: inherit;
+  text-align: center;
   transition: inherit;
 }
 
@@ -233,6 +233,7 @@ nav > ul > li#current-page {
 
 nav > ul > li:hover,
 nav > ul > li:active {
+  border-radius: var(--bdr-radius);
   background-color: var(--clr-accent-bg);
   color: var(--clr-accent-fg);
   cursor: pointer;
@@ -245,6 +246,14 @@ nav > ul > li:active {
 .nav-mid {
   justify-content: center;
   flex-shrink: 0.5;
+}
+
+.nav-mid > li {
+  width: 100%;
+}
+
+.nav-mid > li:not(:last-child) {
+  border-right: var(--bdr-settings);
 }
 
 .nav-end {
