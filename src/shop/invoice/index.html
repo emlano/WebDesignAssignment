@@ -26,17 +26,21 @@
     <h2 id="sub-header">Please enter and verify your details...</h2>
     <!-- Start HTML form, Form does not validate or submit on its own -->
     <form id="form" novalidate onsubmit="return false">
+      <!-- Fields are contained within container "card"-->
       <div id="order-details" class="card">
         <h3>Order Details</h3>
         <div class="card">
+          <!-- Show a Reference No. to the user -->
           <span>Reference No.</span>
           <span id="refNo"></span>
         </div>
         <div class="card">
+          <!-- Show description of the Invoice -->
           <span>Description</span>
           <span>Gift Store Items</span>
         </div>
         <div class="card">
+          <!-- Show total amount of items bought -->
           <span>Cart Value (USD)</span>
           <span id="priceTotal"></span>
         </div>
@@ -45,14 +49,17 @@
         <h3>Payment Information</h3>
         <p class="section-note"><span><strong>*</strong></span>&nbsp;Indicates a <span><strong>Required</strong></span> Field!</p>
         <div class="card">
+          <!-- Prompt user for credit card number -->
           <span>Card Number <strong>*</strong></span>
           <input type="text" name="card-no"  id="card-no" required>
         </div>
         <div class="card">
+          <!-- Prompt user for owner of the credit card -->
           <span>Card Owner <strong>*</strong></span>
           <input type="text" name="holder-name" id="cardholder-name" required>
         </div>
         <div class="card">
+          <!-- Prompt user for the expiry month/year of the card -->
           <span>Expiry Date <strong>*</strong></span>
           <div>
             <span>MM </span><input type="number" name="expiry-month" id="expiry-month" min="1" max="12" step="1" required>
@@ -60,14 +67,17 @@
           </div>
         </div>
         <div class="card">
+          <!-- Prompt user for the security code of the credit card -->
           <span>Security Code <strong>*</strong></span>
           <input type="number" name="security-code" id="security-code" min="1" max="999" step="1" required>
         </div>
       </div>
       <div class="card">
         <h3>Billing Address</h3>
+        <!-- Text within container, informing user of required values -->
         <p class="section-note"><span><strong>*</strong></span> Indiates a <span><strong>Required</strong></span> field!</p>
         <div class="card">
+          <!-- Prompt for address -->
           <span>Address 1 <strong>*</strong></span>
           <input type="text" name="address1" id="address1" required>
         </div>
@@ -76,18 +86,22 @@
           <input type="text" name="address2" id="address2">
         </div>
         <div class="card">
+          <!-- Prompt for city -->
           <span>City <strong>*</strong></span>
           <input type="text" name="city" id="city" required>
         </div>
         <div class="card">
+          <!-- Prompt for state -->
           <span>State/Region </span>
           <input type="text" name="region" id="region">
         </div>
         <div class="card">
+          <!-- Prompt for postal code -->
           <span>Postal Code <strong>*</strong></span>
           <input type="text" name="postcode" id="postcode" required>
         </div>
         <div class="card">
+          <!-- Prompt user for country -->
           <span>Country <strong>*</strong></span>
           <input type="text" name="country" id="country" required>
         </div>
@@ -96,33 +110,41 @@
         <h3>Contact Details</h3>
         <p class="section-note"><span><strong>*</strong></span> Indicates a <span><strong>Required</strong></span> field</p>
         <div class="card">
+          <!-- Buyer name would be autofilled when loaded in -->
           <span>Buyer Name <strong>*</strong></span>
           <input type="text" name="customerName" id="customerName" required>
         </div>
         <div class="card">
+          <!-- Email will be autofilled -->
           <span>Email <strong>*</strong></span>
           <input type="email" name="customerEmail" id="customerEmail" required>
         </div>
         <div class="card">
+          <!-- Can leave phone number empty else, must input a valid number -->
           <span>Phone no.</span>
           <input type="tel" name="phoneNo" id="phoneNo">
         </div>
       </div>
       <div class="card">
         <div class="card">
+          <!-- Confirm and submit the form -->
           <input type="button" value="Confirm" id="confirm-button">
+          <!-- Clear form button -->
           <input type="reset" value="Clear" id="clear-button">
         </div>
       </div>
     </form>
+    <!-- Error shown to user when a field is incorrectly filled -->
     <div id="error-dialog" class="hide-dialog">
       <div id="alert-box">
         <p id="alert-header"><strong>Hey! there...</strong></p>
         <p id="alert-text">Please check required <strong>fields</strong> again!</p>
+        <!-- Points user to the field with issues -->
         <div id="alert-data">Problematic field : <span id="fieldOutput">Customer Name</span></div>
         <button id="close-warn">OK</button>
       </div>
     </div>
+    <!-- Footer shows copyright disclaimer and a link to page editor -->
     <div id="footer">
       All copyrighted materials seen in this website are used with the express permission of the copyright holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
       <br><a href="../../page-editor/studentOne">Page Editor</a>

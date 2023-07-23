@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>PopcornTime - Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <ul class="nav-start"></ul>
+    <ul class="nav-mid">
+      <li id="current-page"><a href="/main">Home</a></li>
+      <li><a href="/comment">Comments</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="Quiz.html">Quiz</a></li>
+      <li><a href="/sitemap">Site Map</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+    </ul>
+    <ul class="nav-end"></ul>
+  </nav>
+<!-- Quiz - Info box  -->
+
+<div class="infobox">
+  <div class="infotitle">
+      <h2>Rules of this Quiz</h2>
+      
+  </div>
+  <div class="infolist">
+      <div class="info">1. You will have only <span>60 seconds</span> to complete the Quiz.</div>
+      <div class="info">2. You can only select an answer once.</div>
+      <div class="info">3. You can't select any option once time goes off.</div>
+      <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+      <div class="info">5. You'll get points on the basis of your correct answers.</div>
+      <div class="info">6. If the time runs out while you are doing the quiz the correct answer will be shown then a continue button will appeare.</div>
+  </div>
+
+  <div class="buttons">
+      <button class="continue">Start</button>
+  </div>
+</div>
+
+<!-- Quiz - Quiz box  -->  
+
+<div class="quizbox">
+  <header>
+      <div class="title">Movie Quiz</div>
+      <div class="timer">
+          <div class="timetext">Time Left:</div>
+          <div class="timerTime">60</div>
+      </div>
+  </header>
+
+  <section>
+      <div class="question">
+          <!-- Insert the questions through javaScript -->
+      </div>
+      <div class="answerlist">
+          <!-- Insert the options through javaScript -->
+      </div>
+  </section>
+
+  <footer>
+      <div class="questionNo">
+          <!-- Insert through javaScript -->
+      </div>
+      <button class="next"><span>Next</span></button>
+  </footer>
+</div>
+
+<!-- Quiz - Results box  -->
+
+<div class="resultbox">
+  <div class="completeText">You've completed the quiz</div>
+  <div class="scoreText">
+      <!-- Insert the through javaScript -->
+  </div>
+  <div class="buttons">
+      <button class="quit">Quit</button>
+  </div>
+  </div>
+  <script src="New folder/script.js"></script>
+  <script src="New folder/questions.js"></script>
+</body>
+
+</html>

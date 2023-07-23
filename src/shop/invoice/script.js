@@ -1,3 +1,4 @@
+// Get and store all required elements
 const customerName = sessionStorage.customerName;
 const customerEmail = sessionStorage.customerEmail;
 const totalPrice = sessionStorage.totalPrice;
@@ -20,12 +21,14 @@ const errorDialog = document.querySelector("#error-dialog");
 const errorElement = errorDialog.querySelector("#fieldOutput");
 const errorClose = errorDialog.querySelector("#close-warn");
 
-
+// Generate and store a unique ID in element
 refId.innerText = generateUniqueID();
+// Get and store total price, customer name, email from store page
 cartValue.innerText = "$ " + totalPrice;
 nameElement.value = customerName;
 emailElement.value = customerEmail;
 
+// Generate a unique ID of numbers from 0 - 9
 function generateUniqueID() {
     let id = "";
     const keysArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -37,9 +40,12 @@ function generateUniqueID() {
     return id;
 }
 
+// Listen for a click on the submit button
 submitButton.addEventListener('click', (event) => {
+    // Verify if fields are correctly filled
     let [boolean, field] = verifyData();
     if (!boolean) {
+        // Show error 
         errorElement.innerText = field;
         errorDialog.classList.toggle('show-dialog');
     
