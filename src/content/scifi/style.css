@@ -1,0 +1,61 @@
+@import "/common.css";
+
+.content-container p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+.content-container > * {
+  margin: calc(var(--pdn-size) * 4) 0;
+}
+
+.img-bg {
+  height: 30vw;
+  padding: 0px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transition: var(--trans-settings);
+}
+
+.img-bg > .img-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  height: fit-content;
+  padding: var(--pdn-size);
+  gap: var(--pdn-size);
+}
+
+.movie-info {
+  width: 45%;
+}
+
+.movie-info > img {
+  float: left;
+  height: 32ch;
+
+  padding: 0;
+  margin: var(--pdn-size);
+}
+
+#intro-card {
+  background-image: url("../../img/scifi/not-brave-enough-for-politics.png");
+}
+
+#political-card {
+  background-image: url("../../img/scifi/viet-cong-rebels.png");
+}
+
+#examples-card {
+  background-image: url("../../img/scifi/interstellar-struggle.png");
+  background-position: center;
+}
