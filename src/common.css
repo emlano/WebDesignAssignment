@@ -1,3 +1,57 @@
+/* setup interface font */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter\ regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter\ 100.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("fonts/inter\ 200.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("fonts/Inter\ 300.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("fonts/Inter\ 500.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("fonts/Inter\ 600.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("fonts/Inter\ 700.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("fonts/Inter\ 800.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("fonts/Inter\ 900.ttf");
+  font-weight: 900;
+}
+
 /* Global variables to be used throughout the site */
 :root {
   --clr-bg: #ffffff;
@@ -29,6 +83,8 @@
   --shdw-settings-small: 0px 0px 6px #00000040;
   --bdr-settings: 1px solid var(--clr-card-bdr);
   --trans-settings: cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
+
+  font-family: Inter, sans;
 }
 
 /* Adapt to system-wide dark mode */
@@ -63,8 +119,6 @@ body {
 
   color: var(--clr-fg);
   background-color: var(--clr-bg);
-
-  font-family: system-ui;
 
   transition: var(--trans-settings);
 }
