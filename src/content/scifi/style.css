@@ -84,6 +84,8 @@ dialog > img {
 
   display: flex;
   flex-direction: column;
+
+  z-index: 10;
 }
 
 .page-nav > li {
@@ -94,7 +96,7 @@ dialog > img {
   border-bottom: var(--bdr-settings);
 }
 
-.page-nav > li > a {
+.page-nav > li > a:link {
   display: block;
 
   color: inherit;

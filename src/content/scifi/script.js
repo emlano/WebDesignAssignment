@@ -11,12 +11,3 @@ document.querySelectorAll(".movie-info > img").forEach(img => {
     showDialog(title, "", [imgElement]);
   });
 });
-
-// Scroll to the top
-document
-  .querySelector("#page-top-link")
-  .addEventListener("click", () => document.body.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "auto",
-  }));
