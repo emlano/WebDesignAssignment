@@ -119,6 +119,7 @@ body {
 
   color: var(--clr-fg);
   background-color: var(--clr-bg);
+  accent-color: var(--clr-accent-bg); /* set page wide accent */
 
   transition: var(--trans-settings);
 }
@@ -139,7 +140,8 @@ body {
 }
 
 /* General button styling */
-button {
+button,
+.button {
   font-weight: bold;
   padding: calc(var(--pdn-size) / 2);
 
@@ -154,12 +156,14 @@ button {
   transition: var(--trans-settings);
 }
 
-button:hover {
+button:hover,
+.button:hover {
   box-shadow: var(--shdw-settings);
   transform: scale(102%);
 }
 
-button:active {
+button:active,
+.button:active {
   box-shadow: none;
   transform: scale(98%);
 }
@@ -280,6 +284,11 @@ nav > ul > li:active {
   margin: 0 auto;
   width: 1280px;
   min-height: 100vh;
+}
+
+.content-container h1 {
+  font-size: 4rem;
+  text-align: center;
 }
 
 /* Dialog styles */
