@@ -121,8 +121,3 @@
   background-image: url("../img/main/card-image-thriller.jpg");
   z-index: 4;
 }
-
-.content-container h1 {
-  font-size: 4rem;
-  text-align: center;
-}
