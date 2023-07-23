@@ -49,6 +49,12 @@
   border-radius: var(--bdr-radius);
   box-shadow: var(--shdw-settings-small);
   border: var(--bdr-radius);
+
+  cursor: pointer;
+}
+
+dialog > img {
+  height: 70vh;
 }
 
 #intro-card {
