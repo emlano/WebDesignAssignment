@@ -78,6 +78,7 @@
 }
 
 function fillCartTable() {
+    totalPrice = 0;
     // Initialize variable to calculate total
     // Initialize all element containers
     let table, tr, th, td, clearCartButton, checkoutButton, total, para;
@@ -100,7 +101,6 @@ function fillCartTable() {
 
     // Iterate through the array
     for (let i = 0; i < cartArray.length; i++) {
-        totalPrice = 0;
         // Get the price of all same type items in cart (item.price * item.amount)
         let priceOfAll = normalizePrice(cartArray[i].price, cartArray[i].amount);
         // Increment total with that value
