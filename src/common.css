@@ -124,7 +124,7 @@ button:active {
 /* Navbar component styles */
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
   color: var(--clr-nav-fg);
   background-color: var(--clr-nav-bg);
@@ -146,7 +146,9 @@ nav {
 
 nav > ul {
   display: flex;
-  flex: 1 1 0;
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
   margin: 0px;
   gap: calc(var(--pdn-size) / 3);
   border-radius: var(--bdr-radius);
@@ -188,7 +190,7 @@ nav > ul > li:active {
 
 .nav-mid {
   justify-content: center;
-  flex: 2 1 0;
+  flex-shrink: 0.5;
 }
 
 .nav-end {
