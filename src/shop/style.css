@@ -607,6 +607,7 @@
     color: var(--clr-fg);
 }
 
+/* Styling for dialog box background that appears when user enters inappropriate inputs */
 #bad-input-warn {
     position: fixed;
     top: 0vh;
@@ -617,6 +618,7 @@
     transition-duration: 250ms;
 }
 
+/* Styling for dialog box itself */
 #bad-input-warn > .alert-box {
     position: absolute;
     height: 200px;
@@ -629,6 +631,7 @@
     box-shadow: var(--shdw-settings);
 }
 
+/* Dialog header styling */
 #bad-input-warn > .alert-box > .alert-header {
     color: var(--clr-accent-bg);
     font-size: 150%;
@@ -636,6 +639,7 @@
     margin: 7%;
 }
 
+/* Dialog text styling */
 #bad-input-warn > .alert-box > .alert-text {
     color: inherit;
     font-family: inherit;
@@ -643,6 +647,7 @@
     margin: 8%;
 }
 
+/* Dialog box button (OK) button */
 #bad-input-warn > .alert-box > #close-warn {
     position: absolute;
     height: 30px;
@@ -672,6 +677,7 @@
     color: var(--clr-fg);
 }
 
+/* Footer at the very bottom of the page, holds the copyright disclaimer and the link to page editor */
 #footer {
     margin-top: 5%;
     margin-bottom: 2%;
@@ -689,22 +695,4 @@
     box-shadow: var(--shdw-settings);
     backdrop-filter: blur(var(--blr-radius));
     -webkit-backdrop-filter: blur(var(--blr-radius));
-  }
-
-  .nav-start > li {
-    display: flex;
-    width: 100px;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .nav-start > li > img {
-    width: 20px;
-    height: 20px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .nav-start > li > img {
-        filter: invert();
-      }
   }
