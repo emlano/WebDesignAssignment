@@ -41,10 +41,14 @@
 
 .movie-info > img {
   float: left;
-  height: 32ch;
+  height: 24ch;
 
-  padding: 0;
-  margin: var(--pdn-size);
+  margin: 0;
+  margin-right: var(--pdn-size);
+
+  border-radius: var(--bdr-radius);
+  box-shadow: var(--shdw-settings-small);
+  border: var(--bdr-radius);
 }
 
 #intro-card {
