@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sitemap</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  
+  <nav>
+    <ul class="nav-start"></ul>
+    <ul class="nav-mid">
+      <li><a href="../main">Home</a></li>
+      <li><a href="../comment">Comments</a></li>
+      <li><a href="../shop">Shop</a></li>
+      <li><a href="../quiz">Quiz</a></li>
+      <li id="current-page"><a href="../sitemap">Site Map</a></li>
+      <li><a href="../gallery">Gallery</a></li>
+      <li><a href="../aboutus">About Us</a></li>
+    </ul>
+    <ul class="nav-end"></ul>
+  </nav>
+
+
+  <div class="container">
+    <h1>Sitemap</h1>
+
+    <div class="diagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650">
+        <!-- Home -->
+        <a href="../main" class="nav-link">
+          <circle cx="500" cy="100" r="70" fill="#ff5722" />
+          <text x="500" y="105" text-anchor="middle" fill="#fff">Home</text>
+        </a>
+
+        <!-- Comments -->
+        <a href="../comment" class="nav-link">
+          <circle cx="100" cy="300" r="70" fill="#6fbf4e" />
+          <text x="100" y="305" text-anchor="middle" fill="#fff">Comments</text>
+        </a>
+
+        <!-- Shop -->
+        <a href="../shop" class="nav-link">
+          <circle cx="300" cy="300" r="70" fill="#ffc107" />
+          <text x="300" y="305" text-anchor="middle" fill="#fff">Shop</text>
+        </a>
+
+        <!-- Quiz -->
+        <a href="../quiz" class="nav-link">
+          <circle cx="500" cy="300" r="70" fill="#de3d1d" />
+          <text x="500" y="305" text-anchor="middle" fill="#fff">Quiz</text>
+        </a>
+
+        <!-- Sitemap -->
+        <a href="../sitemap" class="nav-link">
+          <circle cx="700" cy="300" r="70" fill="#9c27b0" />
+          <text x="700" y="305" text-anchor="middle" fill="#fff">Sitemap</text>
+        </a>
+
+        <!-- About us -->
+        <a href="../aboutus" class="nav-link">
+          <circle cx="900" cy="300" r="70" fill="#0328fc" />
+          <text x="900" y="305" text-anchor="middle" fill="#fff">About us</text>
+        </a>
+
+        <!-- Connections -->
+        <line x1="500" y1="170" x2="500" y2="230" stroke="#333" />
+        <line x1="170" y1="300" x2="230" y2="300" stroke="#333" />
+        <line x1="370" y1="300" x2="430" y2="300" stroke="#333" />
+        <line x1="570" y1="300" x2="630" y2="300" stroke="#333" />
+        <line x1="770" y1="300" x2="830" y2="300" stroke="#333" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    // Optional: Add a smooth scroll behavior to the navigation links
+    const links = document.querySelectorAll('.nav-link');
+
+    for (const link of links) {
+      link.addEventListener('click', smoothScroll);
+    }
+
+    function smoothScroll(event) {
+      event.preventDefault();
+      const targetId = event.target.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      const offsetTop = targetElement.offsetTop;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+</html>

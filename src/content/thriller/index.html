@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thriller Movies</title>
+
+  <style>
+    @import url("../../common.css");
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-image:url(wal1.jpg);
+      padding: 40px;
+      text-align: center;
+      background-size: cover;
+      
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .movie-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .movie-card {
+      background-color: #222;
+      border-radius: 10px;
+      overflow:auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      width: 300px;
+      height: 400px;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: width 0.5s;
+    }
+
+    .movie-image {
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .movie-details {
+      padding: 100px;
+      height: 100%;
+      display: none;
+    }
+
+    .movie-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .movie-description {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+ 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .expanded {
+      width: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul class="nav-start"></ul>
+    <ul class="nav-mid">
+      <li id="current-page"><a href="../../main">Home</a></li>
+      <li><a href="../../comment">Comments</a></li>
+      <li><a href="../../shop">Shop</a></li>
+      <li><a href="../../quiz">Quiz</a></li>
+      <li><a href="../../sitemap">Site Map</a></li>
+      <li><a href="../../gallery">Gallery</a></li>
+      <li><a href="../../aboutus">About Us</a></li>
+    </ul>
+    <ul class="nav-end"></ul>
+  </nav>
+
+  <header >
+    <h1>Thriller Movies</h1>
+  </header>
+
+ 
+  
+  
+
+  <article>
+
+    <h2>The Thriller Movie Genre</h2>
+    <p>
+      The thriller genre is one of the most gripping and popular genres in the film industry. Known for their intense plots, suspenseful narratives, and heart-pounding action, thriller movies keep audiences on the edge of their seats. The genre often combines elements of mystery, crime, action, and psychological drama to create a thrilling and unforgettable cinematic experience.
+    </p>
+    <p>
+      Thriller movies have been captivating audiences for decades, and their popularity has seen both highs and lows over the years.
+    </p>
+    <br>
+    <br>
+
+    <h2>Popularity Over the Years</h2>
+    <p>
+      Thriller movies first gained significant popularity in the 1940s and 1950s, with classic films like Alfred Hitchcock's "Psycho" and "Rear Window" setting the stage for the genre's success. In the 1970s and 1980s, thriller movies experienced a surge in popularity, with the emergence of iconic films such as "Jaws," "The Exorcist," and "Silence of the Lambs."
+    </p>
+    <p>
+      The 1990s and early 2000s were also marked by the success of thriller movies, with franchises like "The Bourne Identity" and "Mission: Impossible" captivating global audiences. In recent years, thriller movies continue to thrive, with innovative storytelling and high-octane action keeping the genre fresh and engaging.
+    </p>
+    <br>
+    <br>
+
+    <h2>Stunt Accidents in Thrillers</h2>
+    <p>
+      The production of thriller movies often involves intense action sequences and stunts, which can sometimes lead to accidents on set. Stunt work comes with inherent risks, and filmmakers and stunt coordinators work tirelessly to ensure the safety of their cast and crew. Despite precautions, there have been unfortunate instances of stunt accidents in thriller movies that remind us of the dedication and bravery of those working behind the scenes to bring thrilling scenes to life.
+    </p>
+    <br>
+   <br>
+    <h2>Directors Interested in the Thriller Genre</h2>
+    <p>
+      The thriller genre has attracted some of the most talented and visionary directors in the film industry. From the master of suspense, Alfred Hitchcock, to modern-day auteurs like Christopher Nolan and David Fincher, many directors have made significant contributions to the genre. These filmmakers are known for their ability to craft intricate and suspenseful stories that keep audiences guessing until the final frame.
+    </p>
+    <p>
+      Through their unique storytelling and innovative techniques, directors interested in the thriller genre continue to push the boundaries of cinematic storytelling and deliver unforgettable movie experiences.
+    </p>
+    <br>
+    <br>
+  </article>
+
+
+   <!--  movie cards  -->
+
+  <div class="movie-container">
+    <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+      <div class="movie-image" style="background-image: url('smile.jpg');"></div>
+      <div class="movie-details">
+        <div class="movie-title">SMILE</div>
+        <div class="movie-description">A therapist named Rose Cotter, who, after witnessing the bizarre suicide of a patient, goes through increasingly disturbing and daunting experiences, leading her to believe what she is experiencing is supernatural.</div>
+      </div>
+    </div>
+
+    <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+      <div class="movie-image" style="background-image: url('lambs.jpg');"></div>
+      <div class="movie-details">
+        <div class="movie-title">THE SILENCE OF THE LAMBS</div>
+        <div class="movie-description">A young FBI trainee who is hunting a serial killer named "Buffalo Bill", who skins his female victims. To catch him, she seeks the advice of the imprisoned Dr. Hannibal Lecter, a brilliant psychiatrist and cannibalistic serial killer.</div>
+      </div>
+    </div>
+
+    <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('scream.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">SCREAM VI</div>
+          <div class="movie-description">Scream VI (also known as Scream 6) is a 2023 slasher film. The film serves as a sequel to Scream (2022)—also known as Scream 5—and is the sixth installment of the Scream franchise. It is the first film not to feature Neve Campbell or David Arquette.</div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('Invitation.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">THE INVITATION</div>
+          <div class="movie-description">Thompson and written by Blair Butler. The film stars Nathalie Emmanuel and Thomas Doherty. Inspired by the novel Dracula by Bram Stoker, the film follows a young woman who, following her mother's death, meets long-lost family members for the first time, only to discover the dark secrets they carry with them.</div>
+        </div>
+      </div>
+    
+      
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('megan.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">MEGAN</div>
+          <div class="movie-description">M3GAN (pronounced "Megan") is a 2022 American science fiction horror film directed by Gerard Johnstone. It was written by Akela Cooper from a story by Cooper and James Wan (who also produced with Jason Blum).</div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('12Monkeys.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">12 MONKEYS</div>
+          <div class="movie-description">In a future world devastated by disease, a convict is sent back in time to gather information about the man-made virus that wiped out most of the human population on the planet. James Cole, a prisoner of the state in the year 2035, can earn parole if he agrees to travel back in time and thwart a devastating plague.</div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('Doctorsleep.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title"> DOCTOR SLEEP</div>
+          <div class="movie-description">Doctor Sleep is a 2019 American supernatural horror film written and directed by Mike Flanagan. The sequel to Stanley Kubrick's The Shining (1980), it is based on the 2013 Stephen King novel of the same name, itself a sequel to the novel bearing the original's title (1977).</div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('unlocked.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">UNLOCKED</div>
+          <div class="movie-description">UNLOCKED is a new Netflix thriller from South Korea about a serial killer who stalks his victims via their smartphones. In fact, he even seems to choose his victims at random; If they lose their phone and he finds it, then they're his next victim.</div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('identity.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">IDENTITY</div>
+          <div class="movie-description">Stranded at a desolate Nevada motel during a nasty rain storm, ten strangers become acquainted with each other when they realize that they're being killed off one by one. 10 strangers are brought together during a weather emergency, only to discover a far greater danger awaits them in this suspense-drama.</div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('Missery.png');"></div>
+        <div class="movie-details">
+          <div class="movie-title">MISERY</div>
+          <div class="movie-description">After a serious car crash, novelist Paul Sheldon (James Caan) is rescued by former nurse Annie Wilkes (Kathy Bates), who claims to be his biggest fan. Annie brings him to her remote cabin to recover, where her obsession takes a dark turn when she discovers Sheldon is killing off her favorite character from his novels.
+        </div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('PanicRoom.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">PANIC ROOM</div>
+          <div class="movie-description">Meg Altman (Jodie Foster) is recently divorced and buying a house in the Upper West Side of Manhattan. It has a panic room. On their first night in the house, they get invaded by three criminals (Forest Whitaker, Dwight Yoakam, Jared Leto) intend on getting something from the previous owner left in the panic room.</div>
+        </div>
+      </div>
+
+      <div class="movie-card animate-fadeIn" onclick="toggleExpand(this)">
+        <div class="movie-image" style="background-image: url('theimitationgame.jpg');"></div>
+        <div class="movie-details">
+          <div class="movie-title">THE IMITATION GAME</div>
+          <div class="movie-description">THE IMITATION GAME portrays the nail-biting race against time by Turing and his brilliant team of code-breakers at Britain's top-secret Government Code and Cypher School at Bletchley Park, during the darkest days of World War II.</div>
+        </div>
+      </div>
+
+  </div>
+
+  <script>
+    let expandedCard = null;
+
+function toggleExpand(card) {
+  if (expandedCard !== card) {
+    // Close the previously expanded card if there is any opened
+    if (expandedCard) {
+      expandedCard.classList.remove('expanded');
+      const details = expandedCard.querySelector('.movie-details');
+      details.style.display = 'none';
+    }
+
+    expandedCard = card;
+  }
+
+  card.classList.toggle('expanded');
+  const details = card.querySelector('.movie-details');
+  details.style.display = card.classList.contains('expanded') ? 'block' : 'none';
+}
+  </script>
+</body>
+</html>
