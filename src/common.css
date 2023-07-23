@@ -79,8 +79,8 @@
   --blr-radius: 24px;
   --pdn-size: 12px;
 
-  --shdw-settings: 0px 0px 12px #00000080;
-  --shdw-settings-small: 0px 0px 6px #00000040;
+  --shdw-settings: 0px 0px 12px #20202080;
+  --shdw-settings-small: 0px 0px 6px #20202040;
   --bdr-settings: 1px solid var(--clr-card-bdr);
   --trans-settings: cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
 

@@ -1,0 +1,121 @@
+@import "../common.css";
+
+:root {
+  --clr-input-bg: #ffffff;
+  --clr-input-fg: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-input-bg: #404040;
+    --clr-input-fg: #ffffff;
+  }
+}
+
+#user-comment-form {
+  margin: calc(var(--pdn-size) * 2) auto;
+  width: 720px;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--pdn-size);
+}
+
+#user-comment-form > fieldset {
+  border: 2px solid var(--clr-card-bdr);
+  border-radius: var(--bdr-radius);
+
+  padding: calc(var(--pdn-size) * 4);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--pdn-size);
+}
+
+#user-comment-form > fieldset > legend {
+  font-size: 2rem;
+  width: fit-content;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  transition: var(--trans-settings);
+  transform-origin: top;
+}
+
+.input-container > * {
+  padding: var(--pdn-size);
+}
+
+.error-msg,
+.input-container > .main-label {
+  font-weight: bold;
+  margin: calc(var(--pdn-size) / 2) 0;
+}
+
+.error-msg {
+  font-size: 0.8rem;
+  height: 0.8rem;
+  color: var(--clr-destruct-bg);
+}
+
+input,
+select,
+textarea {
+  accent-color: inherit;
+
+  background-color: var(--clr-input-bg);
+  color: var(--clr-input-fg);
+
+  font-size: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+input[type=text],
+input[type=radio],
+select,
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  resize: none;
+
+  border-radius: var(--bdr-radius);
+  border: var(--bdr-settings);
+}
+
+.horizontal-row {
+  display: flex;
+}
+
+.horizontal-row > * {
+  width: 100%;
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type=radio] {
+  position: relative;
+
+  width: 1rem;
+  height: 1rem;
+
+  border-radius: var(--bdr-radius);
+  background-color: var(--clr-fg);
+
+  transition: var(--trans-settings);
+}
+
+input[type=radio]:checked {
+  background-color: var(--clr-accent-fg);
+  border: 0.35rem solid var(--clr-accent-bg);
+  scale: 125%;
+}

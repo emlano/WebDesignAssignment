@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>PopcornTime - User Comments</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="module" defer></script>
+</head>
+
+<body>
+  <nav>
+    <ul class="nav-start"></ul>
+    <ul class="nav-mid">
+      <li id="current-page"><a href="/main">Home</a></li>
+      <li><a href="/comment">Comments</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="/quiz">Quiz</a></li>
+      <li><a href="/sitemap">Site Map</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+    </ul>
+    <ul class="nav-end"></ul>
+  </nav>
+  <div class="content-container">
+    <h1>User Comments and Feedback</h1>
+    <form method="post" action="mailto:abrar.20220503@iit.ac.lk" enctype="text/plain" id="user-comment-form" novalidate>
+
+      <fieldset id="personal-info-set">
+        <legend>Personal information</legend>
+
+        <div class="card input-container">
+          <label for="first-name-input" class="main-label">First name.</label>
+          <input type="text" name="first-name" id="first-name-input" placeholder="John">
+          <span class="error-msg" id="first-name-error"></span>
+        </div>
+
+        <div class="card input-container">
+          <label for="last-name-input" class="main-label">Last name.</label>
+          <input type="text" name="last-name" id="last-name-input" placeholder="Doe">
+          <span class="error-msg" id="last-name-error"></span>
+        </div>
+      </fieldset>
+
+      <fieldset id="usage-info-set">
+        <legend>Usage information</legend>
+
+        <div class="card input-container">
+
+          <label for="device-selector" class="main-label">
+            What device did you use to access this website? (Optional)
+          </label>
+          <select name="device" id="device-selector">
+            <option value="nodevice">--Select Device--</option>
+            <option value="desktop">Desktop</option>
+            <option value="laptop">Laptop</option>
+            <option value="phone">Phone</option>
+          </select>
+
+          <span class="error-msg" id="device-error"></span>
+        </div>
+
+        <div class="card input-container">
+          <div class="main-label">What is your usecase for the website?</div>
+
+          <div>
+            <input type="radio" name="usecase" value="leisure" id="leisure">
+            <label for="leisure">Leisure Use</label>
+          </div>
+
+          <div>
+            <input type="radio" name="usecase" value="academic" id="academic">
+            <label for="academic">Academic Use</label>
+          </div>
+
+          <div>
+            <input type="radio" name="usecase" value="commercial" id="commercial">
+            <label for="commercial">Commercial Use</label>
+          </div>
+
+          <div>
+            <input type="radio" name="usecase" value="other" id="other">
+            <label for="other">Other use</label>
+          </div>
+
+          <span class="error-msg" id="usecase-error"></span>
+        </div>
+
+        <div class="card input-container">
+          <label for="other-reason" class="main-label">Explain your usecase. (Optional)</label>
+          <textarea name="other-reason" id="other-reason" rows="16"></textarea>
+          <span class="error-msg" id="other-reason-error"></span>
+        </div>
+      </fieldset>
+
+      <fieldset id="rating-info-set">
+        <legend>Site rating</legend>
+
+        <div class="card input-container">
+          <div class="main-label">How would you rate your satisfaction with our site? Where 0 is
+            extremely dissatisfied and 10 is extremely satisfied.</div>
+
+          <div class="horizontal-row">
+            <div class="radio-container">
+              <label for="1">1</label>
+              <input type="radio" name="site-rating" id="1" value="1">
+            </div>
+
+            <div class="radio-container">
+              <label for="2">2</label>
+              <input type="radio" name="site-rating" id="2" value="2">
+            </div>
+
+            <div class="radio-container">
+              <label for="3">3</label>
+              <input type="radio" name="site-rating" id="3" value="3">
+            </div>
+
+            <div class="radio-container">
+              <label for="4">4</label>
+              <input type="radio" name="site-rating" id="4" value="4">
+            </div>
+
+            <div class="radio-container">
+              <label for="5">5</label>
+              <input type="radio" name="site-rating" id="5" value="5">
+            </div>
+
+            <div class="radio-container">
+              <label for="6">6</label>
+              <input type="radio" name="site-rating" id="6" value="6">
+            </div>
+
+            <div class="radio-container">
+              <label for="7">7</label>
+              <input type="radio" name="site-rating" id="7" value="7">
+            </div>
+
+            <div class="radio-container">
+              <label for="8">8</label>
+              <input type="radio" name="site-rating" id="8" value="8">
+            </div>
+
+            <div class="radio-container">
+              <label for="9">9</label>
+              <input type="radio" name="site-rating" id="9" value="9">
+            </div>
+
+            <div class="radio-container">
+              <label for="10">10</label>
+              <input type="radio" name="site-rating" id="10" value="10">
+            </div>
+          </div>
+
+          <span class="error-msg" id="site-rating-error"></span>
+        </div>
+
+        <div class="card input-container">
+          <label for="rating-reason" class="main-label">Please enter the reason for this rating.</label>
+          <textarea name="rating-reason" id="rating-reason" rows="16"></textarea>
+          <span class="error-msg" id="rating-reason-error"></span>
+        </div>
+      </fieldset>
+
+      <input type="submit" value="Submit" class="button suggested">
+      <input type="reset" value="Reset Form" class="button destructive">
+
+    </form>
+  </div>
+</body>
+
+</html>
