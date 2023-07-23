@@ -77,6 +77,18 @@ submitBtn.addEventListener("click", (event) => {
       return;
     }
   }
+
+  form.submit();
+  setTimeout(() => {
+    const thanksCard = document.createElement("div");
+
+    form.remove();
+    thanksCard.classList.add("card", "radio-container");
+    thanksCard.textContent = "Thank you for taking your time to provide invaluable feedback to our project!";
+
+    document.querySelector(".content-container h1").textContent = "Thank You!";
+    document.querySelector(".content-container").append(thanksCard);
+  }, 1000);
 });
 
 // validation functions for building handlers
