@@ -69,11 +69,8 @@
 }
 
 .genre {
-  background-color: var(--clr-overlay);
-
   display: flex;
   flex-direction: column;
-
   font-size: 3rem;
 
   box-sizing: border-box;
