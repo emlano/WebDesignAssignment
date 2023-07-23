@@ -160,16 +160,24 @@
     flex-direction: row-reverse;
  }
 
- .card {
+ #footer {
     margin-top: 5%;
     margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
     height: 3vh;
-    width: 90vw;
+    width: 89vw;
     font-size: small;
     text-align: center;
- }
+    padding: var(--pdn-size);
+    color: var(--clr-card-fg);
+    background-color: var(--clr-card-bg);
+    border-radius: var(--bdr-radius);
+    border: var(--bdr-settings);
+    box-shadow: var(--shdw-settings);
+    backdrop-filter: blur(var(--blr-radius));
+   -webkit-backdrop-filter: blur(var(--blr-radius));
+      }
 
  #back-to-top {
     margin: 0%;

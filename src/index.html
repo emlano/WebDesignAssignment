@@ -84,6 +84,26 @@
         border-style: solid;
         box-shadow: var(--shdw-settings);
       }
+
+      #footer {
+        margin-top: 5%;
+        margin-bottom: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 3vh;
+        width: 90vw;
+        font-size: small;
+        text-align: center;
+        padding: var(--pdn-size);
+        color: var(--clr-card-fg);
+        background-color: var(--clr-card-bg);
+        border-radius: var(--bdr-radius);
+        border: var(--bdr-settings);
+        box-shadow: var(--shdw-settings);
+        backdrop-filter: blur(var(--blr-radius));
+        -webkit-backdrop-filter: blur(var(--blr-radius));
+      }
+
     </style>
   </head>
   <body>
@@ -134,5 +154,9 @@
     </div>
       <!-- Redirection counter -->
     <div id="timer">Redirecting in... <span id="timeLeft">4</span></div>
+    <div id="footer" class="card">
+      All copyrighted materials seen in this website are used with the express permission of the copyright holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
+      <br>
+    </div>
   </body>
 </html>
