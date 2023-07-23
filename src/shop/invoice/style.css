@@ -10,10 +10,12 @@
     font-size: medium;
 }
 
+/* Notes to user that fields marked with star are required */
 .section-note {
     margin: 5%;
 }
 
+/* Highlight "*", "Required" */
 .section-note > span {
     color: var(--clr-accent-bg);
 }
@@ -26,6 +28,7 @@
     margin-right: auto;
 }
 
+/* Style each form section */
 #form > div {
     width: 60%;
     padding: 3%;
@@ -36,6 +39,7 @@
     height: max-content;
 }
 
+/* Subsection styling */
 #form > div > div {
     display: grid;
     grid-template-areas: "a a";
@@ -46,16 +50,18 @@
     justify-content: space-evenly;
 }
 
-
+/* Style of field prompts */
 #form > div > div > span {
     width: 200px;
     margin: 5%;
 }
 
+/* Style of the "*" next to field names */
 #form > div > div > span > strong {
     color: var(--clr-accent-bg);
 }
 
+/* Style of input tags */
 #form > div > div > input {
     width: 200px;
     height: 25px;
@@ -68,10 +74,12 @@
     font-size: 15px;
 }
 
+/* Styling for expiry data */
 #form > div > div > div {
     width: 200px;
 }
 
+/* Styling for date inputs */
 #form > div > div > div > input {
     width: 38px;
     height: 25px;
@@ -82,6 +90,7 @@
     color: inherit;
 }
 
+/* Style of buttons */
 #form > div > div > #confirm-button, #form > div > div > #clear-button {
     height: 30px;
     background-color: var(--clr-accent-bg);
@@ -107,6 +116,7 @@
     color: var(--clr-fg);
 }
 
+/* Styling for dialog that comes up when a field is incorrectly filled */
 #error-dialog {
     position: fixed;
     width: 99vw;
@@ -190,6 +200,7 @@
     color: var(--clr-fg);
 }
 
+/* Class used to show / hide error message */
 .hide-dialog {
     transform: scale(0%);
     opacity: 0%;

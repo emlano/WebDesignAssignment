@@ -48,7 +48,7 @@ submitButton.addEventListener('click', (event) => {
         // Show error 
         errorElement.innerText = field;
         errorDialog.classList.toggle('show-dialog');
-    
+    // Redirect to Checkout Confirm
     } else {
         window.location.replace("checkout/");
     } 
@@ -56,11 +56,13 @@ submitButton.addEventListener('click', (event) => {
     event.stopPropagation();
 })
 
+// If OK button was clicked on button, close error
 errorClose.addEventListener('click', (event) => {
     errorDialog.classList.remove('show-dialog');
     event.stopPropagation();
 });
 
+// Verify all fields
 function verifyData() {
     if (checkCardNo()){
         return [false, "Card Number"];
@@ -147,22 +149,27 @@ function checkPhoneNo() {
     return (isNaN(value), isNotOfLength(value, 10));
 }
 
+// Check if value is empty
 function isEmpty(value) {
     return (value == "");
 }
 
+// Check if value is float
 function isFloat(value) {
     return (value.indexOf('.') != -1);
 }
 
+// Check if value is out of a given range
 function isOutOfRange(value, lower, upper) {
     return (value < lower || value > upper);
 }
 
+// Check if value is not of given value
 function isNotOfLength(value, length) {
     return (value.length != length);
 }
 
+// Check if value does not contain symbols
 function notContain(value, symbol1, symbol2) {
     return !(value.includes(symbol1) && value.includes(symbol2));
 }

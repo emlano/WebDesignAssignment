@@ -20,6 +20,7 @@
 
 }
 
+/* Main description summary */
 .description {
     width: 75vw;
     margin-left: auto;
@@ -33,6 +34,7 @@
     color: var(--clr-accent-bg);
 }
 
+/* Display banner */
 .hero-container {
     display: flex;
     align-content: center;
@@ -73,6 +75,7 @@
     font-size: 300%;
 }
 
+/* Tolkien section */
 #tolkien {
     display: flex;
     align-items: center;
@@ -113,6 +116,7 @@
     padding-top: 10%;
  }
 
+ /* Contains each content sections */
  .container {
     margin: 10% 0% 0% 0%;
     width: 60vw;
@@ -157,6 +161,7 @@
     font-size: 250%;
  }
 
+ /* Alternate flex direction */
  #reverse-flex {
     flex-direction: unset;
  }
@@ -208,6 +213,7 @@
 
  }
 
+ /* Make icon change color based on browser color theme */
  @media (prefers-color-scheme: dark) {
      #back-to-top > a > div > img {
         filter: unset;
