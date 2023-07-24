@@ -21,6 +21,7 @@ export function showDialog(title, text, additionalWidgets) {
 
   // start closing dialog on click
   closeButton.addEventListener("click", () => {
+    dialog.close();
   });
 
   // once dialog closed remove element
