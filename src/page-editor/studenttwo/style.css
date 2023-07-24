@@ -1,0 +1,68 @@
+@import "/common.css";
+
+img {
+  height: 100%;
+
+  border-radius: inherit;
+  transition: var(--trans-settings);
+
+  z-index: 9; /* less than navbar */
+}
+
+img:hover {
+  scale: 105%;
+}
+
+#gh-link {
+  display: block;
+  margin: 0 auto;
+
+  height: 200px;
+  width: 200px;
+
+  border-radius: 100%;
+  border: var(--bdr-settings);
+  box-shadow: var(--shdw-settings);
+  z-index: 8; /* less than image */
+}
+
+.page-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: calc(var(--pdn-size) * 2);
+
+  padding: calc(var(--pdn-size) * 2);
+}
+
+.page-list > .card {
+  width: 70%;
+}
+
+.page-list > .card > ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--pdn-size);
+}
+
+.page-list > .card a {
+  color: inherit;
+}
+
+.page-list > .card h3 {
+  color: var(--clr-accent-bg);
+}
+
+.page-list > .card h3:hover,
+.page-list > .card h3:active {
+  color: var(--clr-destruct-bg);
+}
+
+a.button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  text-decoration: none;
+}
