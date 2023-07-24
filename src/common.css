@@ -368,3 +368,17 @@ dialog .dialog-text {
 
   transition: inherit;
 }
+
+/* footer styling */
+footer {
+  position: relative;
+  bottom: var(--pdn-size);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer > * {
+  text-decoration: none;
+}
