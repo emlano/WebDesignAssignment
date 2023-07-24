@@ -63,11 +63,6 @@
   margin-bottom: 60px;
 }
 
-.bg-img-container:hover > .genre {
-  backdrop-filter: blur(calc(var(--blr-radius) / 6));
-  -webkit-backdrop-filter: blur(calc(var(--blr-radius) / 6));
-}
-
 .genre {
   display: flex;
   flex-direction: column;
