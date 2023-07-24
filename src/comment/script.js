@@ -1,4 +1,4 @@
-import { showDialog } from "../common.js";
+import { showDialog } from "/common.js";
 
 const form = document.forms[0];
 

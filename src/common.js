@@ -1,3 +1,7 @@
+/*
+ * Authored by Abrar Ahmed.
+ * Role: Student 2.
+ */
 export function showDialog(title, text, additionalWidgets) {
   const dialog = document.createElement("dialog");
   const dialogTitle = document.createElement("h1");

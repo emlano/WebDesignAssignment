@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>English Movie Site </title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
 
   <nav>
-    <ul class="nav-start"></ul>
+    <ul class="nav-start">
+      <li id="site-logo">
+        <img src="/img/logo.png" alt="The site logo, a box of popcorn">
+        PopcornTime
+      </li>
+    </ul>
     <ul class="nav-mid">
-      <li><a href="../main">Home</a></li>
-      <li><a href="../comment">Comments</a></li>
-      <li><a href="../shop">Shop</a></li>
-      <li><a href="../quiz">Quiz</a></li>
-      <li><a href="../sitemap">Site Map</a></li>
-      <li id="current-page"><a href="./">Gallery</a></li>
-      <li><a href="../aboutus">About Us</a></li>
+      <li><a href="/main">Home</a></li>
+      <li><a href="/comment">Comments</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="/quiz">Quiz</a></li>
+      <li><a href="/sitemap">Site Map</a></li>
+      <li id="current-page"><a href="/gallery">Gallery</a></li>
+      <li><a href="/aboutus">About Us</a></li>
     </ul>
     <ul class="nav-end"></ul>
   </nav>
@@ -26,102 +33,103 @@
     <h1>
       Welcome to the English Movie Site <br> <br> Movie of The Year <br><br> 2011-2022
     </h1>
-    
 
-   
-    
+
+
+
     <div class="color-theme-buttons">
-        <div class="color-theme-buttons">
-            <button onclick="changeColorTheme({ background: '#000000', font: '#ffffff' })">
-              <span class="icon">🌙</span> 
-            </button>
-            <button onclick="changeColorTheme({ background: '#0e65c2', font: '#ffffff' })">
-              <span class="icon">🔵</span> 
-            </button>
-            <button onclick="changeColorTheme({ background: '#ffa500', font: '#000000' })">
-              <span class="icon">🧡</span> 
-            </button>
-            <button onclick="changeToRandomColor()">
-              <span class="icon">🎨</span> 
-            </button>
-            <button onclick="revertToDefault()">  
-              <span class="icon">↺</span> 
-            </button>
-          </div>
-          
+      <div class="color-theme-buttons">
+        <button onclick="changeColorTheme({ background: '#000000', font: '#ffffff' })">
+          <span class="icon">🌙</span>
+        </button>
+        <button onclick="changeColorTheme({ background: '#0e65c2', font: '#ffffff' })">
+          <span class="icon">🔵</span>
+        </button>
+        <button onclick="changeColorTheme({ background: '#ffa500', font: '#000000' })">
+          <span class="icon">🧡</span>
+        </button>
+        <button onclick="changeToRandomColor()">
+          <span class="icon">🎨</span>
+        </button>
+        <button onclick="revertToDefault()">
+          <span class="icon">↺</span>
+        </button>
+      </div>
+
     </div>
-    
+
     <div class="font-size-buttons">
-        <button onclick="changeFontSize(14)">
-          <span class="icon">A-</span>
-        </button>
-        <button onclick="changeFontSize(16)">
-          <span class="icon">A</span> 
-        </button>
-        <button onclick="changeFontSize(18)">
-          <span class="icon">A+</span> 
-        </button>
+      <button onclick="changeFontSize(14)">
+        <span class="icon">A-</span>
+      </button>
+      <button onclick="changeFontSize(16)">
+        <span class="icon">A</span>
+      </button>
+      <button onclick="changeFontSize(18)">
+        <span class="icon">A+</span>
+      </button>
+    </div>
+
+
+    <iframe id="movie-iframe" src="" frameborder="0"></iframe>
+
+
+    <div class="image-gallery">
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2011.jpeg" alt="Movie 1" onclick="openMovieDetails('Movie 1')">
+        <p>2011</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2012.jpg" alt="Movie 2" onclick="openMovieDetails('Movie 2')">
+        <p>2012</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2013.jpeg" alt="Movie 3" onclick="openMovieDetails('Movie 3')">
+        <p>2013</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2014.jpeg" alt="Movie 4" onclick="openMovieDetails('Movie 4')">
+        <p>2014</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2015.jpeg" alt="Movie 5" onclick="openMovieDetails('Movie 5')">
+        <p>2015</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2016.jpg" alt="Movie 6" onclick="openMovieDetails('Movie 6')">
+        <p>2016</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2017.jpg" alt="Movie 7" onclick="openMovieDetails('Movie 7')">
+        <p>2017</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2018.jpeg" alt="Movie 8" onclick="openMovieDetails('Movie 8')">
+        <p>2018</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2019.jpeg" alt="Movie 9" onclick="openMovieDetails('Movie 9')">
+        <p>2019</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2020.jpeg" alt="Movie 10" onclick="openMovieDetails('Movie 10')">
+        <p>2020</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2021.jpg" alt="Movie 11" onclick="openMovieDetails('Movie 11')">
+        <p>2021</p>
+      </div>
+      <div class="image-item card">
+        <img src="/src/img/movie_posters/2022.jpg" alt="Movie 12" onclick="openMovieDetails('Movie 12')">
+        <p>2022</p>
       </div>
 
-      
-     <iframe id="movie-iframe" src="" frameborder="0"></iframe>
+    </div>
 
 
-        <div class="image-gallery">
-          <div class="image-item card">
-            <img src="/src/img/movie_posters/2011.jpeg" alt="Movie 1" onclick="openMovieDetails('Movie 1')" > 
-            <p>2011</p>
-          </div>
-          <div class="image-item card">
-            <img src="/src/img/movie_posters/2012.jpg" alt="Movie 2" onclick="openMovieDetails('Movie 2')">
-            <p>2012</p>
-          </div>
-          <div class="image-item card">
-            <img src="/src/img/movie_posters/2013.jpeg" alt="Movie 3" onclick="openMovieDetails('Movie 3')">
-            <p>2013</p>
-          </div>
-          <div class="image-item card">
-            <img src="/src/img/movie_posters/2014.jpeg" alt="Movie 4" onclick="openMovieDetails('Movie 4')">
-            <p>2014</p>
-          </div>
-          <div class="image-item card">
-            <img src="/src/img/movie_posters/2015.jpeg" alt="Movie 5" onclick="openMovieDetails('Movie 5')">
-            <p>2015</p>
-          </div>
-            <div class="image-item card">
-            <img src="/src/img/movie_posters/2016.jpg" alt="Movie 6" onclick="openMovieDetails('Movie 6')">
-            <p>2016</p>
-          </div>
-            <div class="image-item card">
-            <img src="/src/img/movie_posters/2017.jpg" alt="Movie 7" onclick="openMovieDetails('Movie 7')">
-            <p>2017</p>
-          </div>
-          <div class="image-item card">
-            <img src="/src/img/movie_posters/2018.jpeg" alt="Movie 8" onclick="openMovieDetails('Movie 8')">
-            <p>2018</p>
-          </div>
-            <div class="image-item card">
-            <img src="/src/img/movie_posters/2019.jpeg" alt="Movie 9" onclick="openMovieDetails('Movie 9')">
-            <p>2019</p>
-          </div>
-            <div class="image-item card">
-            <img src="/src/img/movie_posters/2020.jpeg" alt="Movie 10" onclick="openMovieDetails('Movie 10')">
-            <p>2020</p>
-          </div>
-            <div class="image-item card">
-            <img src="/src/img/movie_posters/2021.jpg" alt="Movie 11" onclick="openMovieDetails('Movie 11')">
-            <p>2021</p>
-          </div>
-            <div class="image-item card">
-            <img src="/src/img/movie_posters/2022.jpg" alt="Movie 12" onclick="openMovieDetails('Movie 12')">
-            <p>2022</p>
-          </div>
-          
-      </div>
-     
-   
-  
-    
+
+
   </div>
 </body>
+
 </html>
