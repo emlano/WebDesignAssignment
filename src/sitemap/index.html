@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Sitemap</title>
+  <title> Sitemap</title>
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -30,42 +30,42 @@
   </nav>
 
   <div class="container">
-    <h1>Sitemap</h1>
+    <h1>PopcornTime Sitemap</h1>
 
     <div class="diagram">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650">
         <!-- Home -->
-        <a href="../main" class="nav-link">
+        <a href="/main" class="nav-link">
           <circle cx="500" cy="100" r="70" fill="#ff5722" />
           <text x="500" y="105" text-anchor="middle" fill="#fff">Home</text>
         </a>
 
         <!-- Comments -->
-        <a href="../comment" class="nav-link">
+        <a href="/comment" class="nav-link">
           <circle cx="100" cy="300" r="70" fill="#6fbf4e" />
           <text x="100" y="305" text-anchor="middle" fill="#fff">Comments</text>
         </a>
 
         <!-- Shop -->
-        <a href="../shop" class="nav-link">
+        <a href="/shop" class="nav-link">
           <circle cx="300" cy="300" r="70" fill="#ffc107" />
           <text x="300" y="305" text-anchor="middle" fill="#fff">Shop</text>
         </a>
 
         <!-- Quiz -->
-        <a href="../quiz" class="nav-link">
+        <a href="/quiz" class="nav-link">
           <circle cx="500" cy="300" r="70" fill="#de3d1d" />
           <text x="500" y="305" text-anchor="middle" fill="#fff">Quiz</text>
         </a>
 
         <!-- Sitemap -->
-        <a href="../sitemap" class="nav-link">
+        <a href="/sitemap" class="nav-link">
           <circle cx="700" cy="300" r="70" fill="#9c27b0" />
           <text x="700" y="305" text-anchor="middle" fill="#fff">Sitemap</text>
         </a>
 
         <!-- About us -->
-        <a href="../aboutus" class="nav-link">
+        <a href="/aboutus" class="nav-link">
           <circle cx="900" cy="300" r="70" fill="#0328fc" />
           <text x="900" y="305" text-anchor="middle" fill="#fff">About us</text>
         </a>
@@ -81,6 +81,7 @@
   </div>
 
   <script>
+    
     // Optional: Add a smooth scroll behavior to the navigation links
     const links = document.querySelectorAll('.nav-link');
 
@@ -99,6 +100,24 @@
         behavior: 'smooth'
       });
     }
+
+     // Add event listeners to the SVG links
+     const svgLinks = document.querySelectorAll('.nav-link');
+
+for (const svgLink of svgLinks) {
+  svgLink.addEventListener('click', handleSVGLinkClick);
+}
+
+function handleSVGLinkClick(event) {
+  // Prevent default link behavior
+  event.preventDefault();
+
+  // Get the href attribute of the clicked SVG link
+  const href = event.currentTarget.getAttribute('href');
+
+  // Redirect to the specified URL
+  window.location.href = href;
+}
   </script>
 
 </body>
