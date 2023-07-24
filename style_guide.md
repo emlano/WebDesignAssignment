@@ -1,0 +1,12 @@
+# Style Guide
+- Use CSS variables where possible.
+- Always test the site with both light and dark modes.
+- Any foreground color (-fg suffix) will have readable contrast when placed atop any background color (-bg suffix). The only exception to this rule are the two different accent color variables (--clr-accent, --clr-destruct). These variables have a bg color that contrasts fairly well with any other non-accent bg variable.
+- In addition to the base (--clr-bg, --clr-fg) pair there are other color variables that can be used. These variables can be paired with the alternating bg/fg pair of other non-accent color variables.
+- The --bdr-radius, --pdn-size, --blr-radius and other similar variables provide sizing that must be used in order to remain consistent with the other pages in the site.
+- If the above value variables are too small or too big for your particular widget please make use of the calc() function in CSS to adjust the value. Multiplying or dividing the value is recommended so that if the values for the variable are changed the relative sizing between widgets remain the same.
+- It is also recommended to use 'rem' units for sizing text related items such as font size and line height. The 'rem' unit is relative to the size of the root element and as such allows users to easily adjust the font size of the entire page to their liking if properly used.
+- Avoid sharp contrasty edges as much as possible make us of the --bdr-radius and --bdr-settings variables to apply the border-radius and border properties in order to make elements have consistently smooth rounded corners.
+- When nesting controls inside a rounded container you may use calc() to divide the --bdr-radius in half. This will make the nested controls stand out better.
+- When using semi-transparent background colors for any component it is highly recommended to use a blur() filter on the background using backdrop-filter and -webkit-backdrop-filter. The blur radius used should be --blr-radius. This is done to ensure that the image behind the element does not adversely affect the readability of text contained within it.
+- If images are being used in the page consider adding an element on top of the image with --clr-overlay set as it's background color. This can help regulate the brightness of the image when switching between light and dark mode on site.
