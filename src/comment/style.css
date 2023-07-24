@@ -1,5 +1,8 @@
 @import "/common.css";
 
+/*
+ * setup page local variables
+ */
 :root {
   --clr-input-bg: #ffffff;
   --clr-input-fg: #000000;
@@ -12,6 +15,9 @@
   }
 }
 
+/*
+ * basic layout with form element
+ */
 #user-comment-form {
   margin: calc(var(--pdn-size) * 2) auto;
   width: 720px;
@@ -21,6 +27,10 @@
   gap: var(--pdn-size);
 }
 
+/*
+ * style input groups with subtle border
+ * also setup layout
+ */
 #user-comment-form > fieldset {
   border: 2px solid var(--clr-card-bdr);
   border-radius: var(--bdr-radius);
@@ -37,6 +47,10 @@
   width: fit-content;
 }
 
+/*
+ * container that may house an input
+ * or a connected group of inputs (bunch of radio buttons)
+ */
 .input-container {
   display: flex;
   flex-direction: column;
@@ -49,18 +63,27 @@
   padding: var(--pdn-size);
 }
 
+/*
+ * label and other text styling
+ */
 .error-msg,
 .input-container > .main-label {
   font-weight: bold;
   margin: calc(var(--pdn-size) / 2) 0;
 }
 
+/*
+ * error styling
+ */
 .error-msg {
   font-size: 0.8rem;
   height: 0.8rem;
   color: var(--clr-destruct-bg);
 }
 
+/*
+ * set colors for all used form elements
+ */
 input,
 select,
 textarea {
@@ -72,10 +95,16 @@ textarea {
   font-size: 1rem;
 }
 
+/*
+ * use to hide conditional inputs
+ */
 .hide {
   display: none;
 }
 
+/*
+ * remove default styling and set some base styles
+ */
 input[type=text],
 input[type=radio],
 select,
@@ -88,6 +117,9 @@ textarea {
   border: var(--bdr-settings);
 }
 
+/*
+ * horizontal container
+ */
 .horizontal-row {
   display: flex;
 }
@@ -96,12 +128,19 @@ textarea {
   width: 100%;
 }
 
+/*
+ * hold items vertically
+ * useful for large container groups
+ */
 .radio-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/*
+ * style radio button indicator
+ */
 input[type=radio] {
   position: relative;
 

@@ -1,6 +1,6 @@
 import { showDialog } from "../../common.js";
 
-// Add an image dialog to all the images inside a .movie-info card
+// Show an image dialog on click for all the images inside a .movie-info card
 document.querySelectorAll(".movie-info > img").forEach(img => {
   img.addEventListener("click", event => {
     const imgElement = document.createElement("img");
