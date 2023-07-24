@@ -1,6 +1,10 @@
 import { showDialog } from "/common.js";
 
+// fetch all required elements
 const form = document.forms[0];
+
+const nameInputList = document.querySelectorAll("#personal-info-set input[type=text]");
+const ratingReasonArea = document.querySelector("#rating-info-set textarea");
 
 const usageInfoSet = document.querySelector("#usage-info-set");
 const usecaseRadioList = form.elements["usecase"];
@@ -9,16 +13,18 @@ const usecaseError = document.querySelector("#usecase-error");
 const siteRatingRadioList = form.elements["site-rating"];
 const siteRatingError = document.querySelector("#site-rating-error");
 
-const nameInputList = document.querySelectorAll("#personal-info-set input[type=text]");
-const ratingReasonArea = document.querySelector("#rating-info-set textarea");
-
 const submitBtn = document.querySelector("input[type=submit]");
 const resetBtn = document.querySelector("input[type=reset]");
 
+// store all validation handlers
 const allValidators = [];
-let isReasonCardShown = false;
 
-// Define input handlers
+// define input handlers
+const nameInputHandler = (event) => {
+  const errorElement = event.target.nextElementSibling;
+  return runValidators(event.target, [validateTextNotEmpty, validateTextNumeric], errorElement);
+};
+
 const usecaseRadioListHandlers = () => {
   displayReasonCard(usecaseRadioList);
   return runValidators(usecaseRadioList, [validateRadio], usecaseError);
@@ -28,17 +34,18 @@ const siteRatingRadioListHandlers = () => {
   return runValidators(siteRatingRadioList, [validateRadio], siteRatingError);
 };
 
-const nameInputHandler = (event) => {
-  const errorElement = event.target.nextElementSibling;
-  return runValidators(event.target, [validateTextNotEmpty, validateTextNumeric], errorElement);
-};
-
 const textAreaListHandler = (event) => {
   const errorElement = event.target.nextElementSibling;
   return runValidators(event.target, [validateTextNotEmpty], errorElement);
 }
 
-// Connect handlers to event signals
+// connect handlers to event signals
+// also add handlers to the handler list
+nameInputList.forEach(input => {
+  allValidators.push(() => nameInputHandler({ target: input }));
+  input.addEventListener("input", nameInputHandler)
+});
+
 allValidators.push(usecaseRadioListHandlers);
 usecaseRadioList.forEach(
   radio => radio.addEventListener("change", usecaseRadioListHandlers)
@@ -49,11 +56,6 @@ siteRatingRadioList.forEach(
   radio => radio.addEventListener("change", siteRatingRadioListHandlers)
 );
 
-nameInputList.forEach(input => {
-  allValidators.push(() => nameInputHandler({ target: input }));
-  input.addEventListener("input", nameInputHandler)
-});
-
 allValidators.push(() => textAreaListHandler({ target: ratingReasonArea }));
 ratingReasonArea.addEventListener("input", textAreaListHandler);
 
@@ -62,23 +64,34 @@ allValidators.forEach(validator => validator());
 
 // connect to reset signal
 resetBtn.addEventListener("click", () => {
+  // reset form before re-running validators
+  // needed because validators would use old data otherwise
   form.reset();
   allValidators.forEach(validator => validator());
 });
 
 // connect to submit signal
 submitBtn.addEventListener("click", (event) => {
+  // run each validation handler
   for (let i = 0; i < allValidators.length; i++) {
     const [success, errorElement] = allValidators[i]();
+
+    // if any validation failed
     if (!success) {
-      event.preventDefault();
+      event.preventDefault(); // don't email form
+      // show error dialog
       showDialog("Invalid Inputs!", "Please fix all invalid inputs before trying to submit again.");
+      // scroll to first invalid input
       errorElement.scrollIntoView({ block: "center", inline: "center" });
       return;
     }
   }
 
+  // if validation successfull submit
   form.submit();
+
+  // show thank you card after delay
+  // needed to allow time for the submission event to actually send the info
   setTimeout(() => {
     const thanksCard = document.createElement("div");
 
@@ -104,6 +117,7 @@ function displayReasonCard(radioList) {
 }
 
 function validateRadio(radioList) {
+  // if none of the options are selected
   if (radioList.value.length === 0) {
     return [false, "An option must be selected!"];
   }
@@ -114,6 +128,9 @@ function validateRadio(radioList) {
 function validateTextNumeric(element) {
   const text = element.value;
 
+  // check if each character can be a number
+  // loop is needed because isNaN will return false
+  // even if string contains numbers with other alpha chars
   for (let i = 0; i < text.length; i++) {
     if (!isNaN(text.charAt(i))) {
       return [false, "Input cannot contain numbers!"];
@@ -133,6 +150,13 @@ function validateTextNotEmpty(element) {
   return [true, null];
 }
 
+/*
+ * run all validators for the corresponding element and
+ * set error message if any one fails
+ *
+ * will return false and the error message element if
+ * any one validator fails
+ */
 function runValidators(element, validations, errorElement) {
   for (let i = 0; i < validations.length; i++) {
     const [success, error] = validations[i](element);

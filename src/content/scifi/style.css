@@ -5,6 +5,7 @@
   line-height: 1.75rem;
 }
 
+/* style the first alpha letter of each para */
 .content-container p::first-letter {
   font-size: 1.75rem;
   font-weight: bold;
@@ -12,10 +13,12 @@
   color: var(--clr-accent-bg);
 }
 
+/* add padding to all content */
 .content-container > * {
   margin: calc(var(--pdn-size) * 4) 0;
 }
 
+/* setup header bg img */
 .img-bg {
   height: 30vw;
   padding: 0px;
@@ -32,6 +35,11 @@
   align-items: center;
 }
 
+/*
+ * movie grid
+ *
+ * flex used for simplicity
+ */
 .movie-grid {
   display: flex;
   justify-content: center;
@@ -46,6 +54,9 @@
   width: 45%;
 }
 
+/*
+ * make images float to the left of text
+ */
 .movie-info > img {
   float: left;
   height: 24ch;
@@ -58,8 +69,15 @@
   border: var(--bdr-radius);
 
   cursor: pointer;
+
+  transition: var(--trans-settings);
 }
 
+.movie-info > img:hover {
+  scale: 105%;
+}
+
+/* set image size for viewer */
 dialog > img {
   height: 70vh;
 }
@@ -81,10 +99,14 @@ dialog > img {
   background-position: center;
 }
 
+/*
+ * position page local nav to be in a
+ * fixed place
+ */
 .page-nav {
   position: fixed;
-  right: calc(var(--pdn-size) * 3);
-  bottom: calc(var(--pdn-size) * 3);
+  right: var(--pdn-size);
+  bottom: calc(var(--pdn-size) * 8);
 
   margin: 0 auto;
   width: fit-content;
@@ -99,10 +121,16 @@ dialog > img {
   list-style-type: none;
 }
 
+/*
+ * do not show border for li element in list
+ */
 .page-nav > li:not(:last-child) {
   border-bottom: var(--bdr-settings);
 }
 
+/*
+ * style anchors to fit surrounding look
+ */
 .page-nav > li > a:link {
   display: block;
 

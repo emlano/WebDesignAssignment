@@ -5,10 +5,12 @@
   <meta charset="utf-8">
   <title>PopcornTime - Science Fiction</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" type="module" defer></script>
+  <script src="script.js" type="module"></script>
 </head>
 
 <body>
+
+  <!--navbar-->
   <nav>
     <ul class="nav-start">
       <li id="site-logo">
@@ -28,8 +30,11 @@
     <ul class="nav-end"></ul>
   </nav>
 
+  <!--main page content-->
   <div class="content-container">
     <h1>Science Fiction</h1>
+
+    <!--internal page navigation-->
     <ul class="page-nav card">
       <li><a href="#">Page Top</a></li>
       <li><a href="#intro-card">Introduction</a></li>
@@ -37,6 +42,8 @@
       <li><a href="#science-card">Science</a></li>
       <li><a href="#examples-card">Examples</a></li>
     </ul>
+
+    <!--section heading card-->
     <div class="card img-bg" id="intro-card">
       <div class="img-overlay">
         <h2 class="card">Introduction</h2>
@@ -66,6 +73,8 @@
       ever-expanding universe of sci-fi, be prepared to witness not only a visual spectacle but also a thought-provoking
       exploration of the possible, the impossible, and everything that lies beyond the stars.
     </p>
+
+    <!--section heading card-->
     <div class="card img-bg" id="political-card">
       <div class="img-overlay">
         <h2 class="card">Politics</h2>
@@ -86,6 +95,8 @@
       the same time, they serve as a reminder of the enduring struggle for human rights and civil liberties, urging
       audiences to remain vigilant in safeguarding their own societies against the encroachment of authoritarianism.
     </p>
+
+    <!--section heading card-->
     <div class="card img-bg" id="science-card">
       <div class="img-overlay">
         <h2 class="card">Science</h2>
@@ -112,12 +123,18 @@
       real-world scientists to draw inspiration from these creative speculations while reminding us that our
       technological advancements are limited only by the bounds of our imagination.
     </p>
+
+    <!--section heading card-->
     <div class="card img-bg" id="examples-card">
       <div class="img-overlay">
         <h2 class="card">Examples</h2>
       </div>
     </div>
+
+    <!--movie card grid (flex actually :p)-->
     <div class="movie-grid" id="movie-grid">
+
+      <!--movie card-->
       <div class="card movie-info">
         <img src="../../img/scifi/poster-stalker.png" alt="Stalker movie poster">
         <h3>Stalker (1979)</h3>
@@ -129,6 +146,8 @@
           that grants the deepest desires of anyone who enters.
         </p>
       </div>
+
+      <!--movie card-->
       <div class="card movie-info">
         <img src="../../img/scifi/poster-interstellar.png" alt="Interstellar movie poster">
         <h3>Interstellar (2014)</h3>
@@ -140,6 +159,8 @@
           intelligence.
         </p>
       </div>
+
+      <!--movie card-->
       <div class="card movie-info">
         <img src="../../img/scifi/poster-solaris.png" alt="Solaris movie poster">
         <h3>Solaris (1972)</h3>
@@ -153,6 +174,8 @@
           wife, Hari, who committed suicide years earlier.
         </p>
       </div>
+
+      <!--movie card-->
       <div class="card movie-info">
         <img src="../../img/scifi/poster-backtothefuture.png" alt="Back to the future movie poster">
         <h3>Back to the Future (1985)</h3>
@@ -166,6 +189,8 @@
           it reaches a speed of 88 miles per hour.
         </p>
       </div>
+
+      <!--movie card-->
       <div class="card movie-info">
         <img src="../../img/scifi/poster-godzilla.png" alt="Godzilla movie poster">
         <h3>Godzilla (2014)</h3>
@@ -179,6 +204,8 @@
           alpha-predator named Godzilla, awakened by mankind's arrogance with nuclear power.
         </p>
       </div>
+
+      <!--movie card-->
       <div class="card movie-info">
         <img src="../../img/scifi/poster-jurassic.png" alt="Jurassic park movie poster">
         <h3>Jurassic Park (1993)</h3>
@@ -193,6 +220,14 @@
       </div>
     </div>
   </div>
+  <footer class="card">
+    <small>
+      All copyrighted materials seen in this website are used with the express permission of the copyright
+      holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
+    </small>
+    <a href="/page-editor/studenttwo" class="button suggested">Author: Student 2</a>
+  </footer>
+
 </body>
 
 </html>

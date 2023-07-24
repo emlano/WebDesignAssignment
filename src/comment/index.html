@@ -5,10 +5,12 @@
   <meta charset="utf-8">
   <title>PopcornTime - User Comments</title>
   <link rel="stylesheet" href="/comment/style.css">
-  <script src="/comment/script.js" type="module" defer></script>
+  <script src="/comment/script.js" type="module"></script>
 </head>
 
 <body>
+
+  <!--navbar-->
   <nav>
     <ul class="nav-start">
       <li id="site-logo">
@@ -16,6 +18,8 @@
         PopcornTime
       </li>
     </ul>
+
+    <!--page nav links-->
     <ul class="nav-mid">
       <li><a href="/main">Home</a></li>
       <li id="current-page"><a href="/comment">Comments</a></li>
@@ -27,10 +31,14 @@
     </ul>
     <ul class="nav-end"></ul>
   </nav>
+
+  <!--page content holder-->
   <div class="content-container">
     <h1>User Comments and Feedback</h1>
+    <!--comments form-->
     <form method="post" action="mailto:abrar.20220503@iit.ac.lk" enctype="text/plain" id="user-comment-form" novalidate>
 
+      <!--name inputs-->
       <fieldset id="personal-info-set">
         <legend>Personal information</legend>
 
@@ -47,6 +55,7 @@
         </div>
       </fieldset>
 
+      <!--usage inputs-->
       <fieldset id="usage-info-set">
         <legend>Usage information</legend>
 
@@ -66,6 +75,7 @@
         </div>
 
         <div class="card input-container">
+          <!--psuedo label for radio group-->
           <div class="main-label">What is your usecase for the website?</div>
 
           <div>
@@ -91,6 +101,7 @@
           <span class="error-msg" id="usecase-error"></span>
         </div>
 
+        <!--hidden textarea for other option-->
         <div class="card input-container">
           <label for="other-reason" class="main-label">Explain your usecase. (Optional)</label>
           <textarea name="other-reason" id="other-reason" rows="16"></textarea>
@@ -102,6 +113,7 @@
         <legend>Site rating</legend>
 
         <div class="card input-container">
+          <!--psuedo label for radio group-->
           <div class="main-label">How would you rate your satisfaction with our site? Where 0 is
             extremely dissatisfied and 10 is extremely satisfied.</div>
 
@@ -167,11 +179,20 @@
         </div>
       </fieldset>
 
+      <!--form submission/reset controls-->
       <input type="submit" value="Submit" class="button suggested">
       <input type="reset" value="Reset Form" class="button destructive">
 
     </form>
   </div>
+  <footer class="card">
+    <small>
+      All copyrighted materials seen in this website are used with the express permission of the copyright
+      holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
+    </small>
+    <a href="/page-editor/studenttwo" class="button suggested">Author: Student 2</a>
+  </footer>
+
 </body>
 
 </html>
