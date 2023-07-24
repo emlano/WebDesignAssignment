@@ -58,6 +58,12 @@
   border: var(--bdr-radius);
 
   cursor: pointer;
+
+  transition: var(--trans-settings);
+}
+
+.movie-info > img:hover {
+  scale: 105%;
 }
 
 dialog > img {

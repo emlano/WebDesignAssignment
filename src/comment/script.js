@@ -2,6 +2,9 @@ import { showDialog } from "/common.js";
 
 const form = document.forms[0];
 
+const nameInputList = document.querySelectorAll("#personal-info-set input[type=text]");
+const ratingReasonArea = document.querySelector("#rating-info-set textarea");
+
 const usageInfoSet = document.querySelector("#usage-info-set");
 const usecaseRadioList = form.elements["usecase"];
 const usecaseError = document.querySelector("#usecase-error");
@@ -9,16 +12,17 @@ const usecaseError = document.querySelector("#usecase-error");
 const siteRatingRadioList = form.elements["site-rating"];
 const siteRatingError = document.querySelector("#site-rating-error");
 
-const nameInputList = document.querySelectorAll("#personal-info-set input[type=text]");
-const ratingReasonArea = document.querySelector("#rating-info-set textarea");
-
 const submitBtn = document.querySelector("input[type=submit]");
 const resetBtn = document.querySelector("input[type=reset]");
 
 const allValidators = [];
-let isReasonCardShown = false;
 
 // Define input handlers
+const nameInputHandler = (event) => {
+  const errorElement = event.target.nextElementSibling;
+  return runValidators(event.target, [validateTextNotEmpty, validateTextNumeric], errorElement);
+};
+
 const usecaseRadioListHandlers = () => {
   displayReasonCard(usecaseRadioList);
   return runValidators(usecaseRadioList, [validateRadio], usecaseError);
@@ -28,17 +32,17 @@ const siteRatingRadioListHandlers = () => {
   return runValidators(siteRatingRadioList, [validateRadio], siteRatingError);
 };
 
-const nameInputHandler = (event) => {
-  const errorElement = event.target.nextElementSibling;
-  return runValidators(event.target, [validateTextNotEmpty, validateTextNumeric], errorElement);
-};
-
 const textAreaListHandler = (event) => {
   const errorElement = event.target.nextElementSibling;
   return runValidators(event.target, [validateTextNotEmpty], errorElement);
 }
 
 // Connect handlers to event signals
+nameInputList.forEach(input => {
+  allValidators.push(() => nameInputHandler({ target: input }));
+  input.addEventListener("input", nameInputHandler)
+});
+
 allValidators.push(usecaseRadioListHandlers);
 usecaseRadioList.forEach(
   radio => radio.addEventListener("change", usecaseRadioListHandlers)
@@ -48,11 +52,6 @@ allValidators.push(siteRatingRadioListHandlers);
 siteRatingRadioList.forEach(
   radio => radio.addEventListener("change", siteRatingRadioListHandlers)
 );
-
-nameInputList.forEach(input => {
-  allValidators.push(() => nameInputHandler({ target: input }));
-  input.addEventListener("input", nameInputHandler)
-});
 
 allValidators.push(() => textAreaListHandler({ target: ratingReasonArea }));
 ratingReasonArea.addEventListener("input", textAreaListHandler);
