@@ -42,7 +42,8 @@ function generateUniqueID() {
 
 // Listen for a click on the submit button
 submitButton.addEventListener('click', (event) => {
-    // Verify if fields are correctly filled
+    // Verify if fields are correctly filled,
+    // returns a array containing a boolean and an error message
     let [boolean, field] = verifyData();
     if (!boolean) {
         // Show error 
@@ -115,38 +116,44 @@ function verifyData() {
     return [true, ""];
 }
 
+// Return true if card no field is empty/is not a number or is containing a decimal value
 function checkCardNo() {
     let value = cardNo.value;
     return (isNaN(value) || isEmpty(value) || isFloat(value));
 }
 
+// Return true if expiry month is empty/not a number/is a decimal value/is out of range 1 - 12
 function checkExpiryMonth() {
     let value = expiryMonth.value;
     return (isEmpty(value) || isNaN(value) || isFloat(value) || isOutOfRange(value, 1, 12));
 }
 
+// Return true if expiry year is empty/not a number/is a decimal value/is out of range 1 - 99
 function checkExpiryYear() {
     let value = expiryYear.value;
     return (isEmpty(value) || isNaN(value) || isFloat(value) || isOutOfRange(value, 1, 99));
 }
 
+// Return true if security code is empty/not a number/is a decima/is out of range 0 - 99/is not of length 3
 function checkSecurityCode() {
     let value = securityCode.value;
     return (isEmpty(value) || isNaN(value) || isFloat(value) || isOutOfRange(value, 0, 999) || isNotOfLength(value, 3));
 }
 
+// Return true if email is empty/does not contain the characters "@", "."
 function checkEmail() {
     let value = emailElement.value;
     return (isEmpty(value) || notContain(value, "@", "."));
 }
 
+// Return false phone number is empty (as this is an optional field), else if phone is not a number or not of length 10, or is a decimal value
 function checkPhoneNo() {
     let value = phoneNo.value;
     if (isEmpty(value)) {
         return false;
     }
 
-    return (isNaN(value), isNotOfLength(value, 10));
+    return (isNaN(value) || isNotOfLength(value, 10) || isFloat(value));
 }
 
 // Check if value is empty

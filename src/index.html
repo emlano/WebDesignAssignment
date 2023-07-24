@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <!-- Refresh to main page after 4 seconds -->
-    <meta http-equiv="refresh" content="4; url=main/">
+    <meta http-equiv="refresh" content="4; url=/main">
     <title>Splash Page</title>
     <script>
       let count = 3;
@@ -85,24 +85,30 @@
         box-shadow: var(--shdw-settings);
       }
 
-      /* Footer */
-      #footer {
-        margin-top: 5%;
-        margin-bottom: 2%;
+
+      footer {
+        margin-top: 3%;
+      }
+
+      footer > .card {
+        height: inherit;
+        width: inherit;
         margin-left: auto;
         margin-right: auto;
-        height: 3vh;
-        width: 90vw;
+      }
+
+      footer > .card > a {
+        display: inline-block;
+        margin-left: 10px;
+        width: 100px;
         font-size: small;
         text-align: center;
-        padding: var(--pdn-size);
-        color: var(--clr-card-fg);
-        background-color: var(--clr-card-bg);
-        border-radius: var(--bdr-radius);
-        border: var(--bdr-settings);
-        box-shadow: var(--shdw-settings);
-        backdrop-filter: blur(var(--blr-radius));
-        -webkit-backdrop-filter: blur(var(--blr-radius));
+        height: 10px;
+      }
+
+      footer > .card  > a:link, footer > .card  > a:visited, footer > .card  > a:hover, footer > .card  > a:active {
+        color: var(--clr-btn-fg);
+        text-decoration: unset;
       }
 
     </style>
@@ -125,7 +131,7 @@
     <div id="box">
       <!-- Import images to be used in the first and last cards -->
       <div class="card">
-        <img src="img/Splash/splash-icon-cinema-beginning.jpg" alt="splash-cinema-icon">
+        <img src="/img/Splash/splash-icon-cinema-beginning.jpg" alt="splash-cinema-icon">
       </div>
       <div class="card">
         <h3>Student 1</h3>
@@ -162,9 +168,11 @@
     
     <!-- Redirection counter -->
     <div id="timer">Redirecting in... <span id="timeLeft">4</span></div>
-    <div id="footer" class="card">
-      All copyrighted materials seen in this website are used with the express permission of the copyright holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
-      <br><a href="page-editor/studentOne">Page Editor</a>
-    </div>
+    <footer>
+      <div class="card">
+        All copyrighted materials seen in this website are used with the express permission of the copyright holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
+        <a href="/page-editor/studentOne"><div class="button">Page Editor</div></a>
+      </div>
+    </footer>
   </body>
 </html>

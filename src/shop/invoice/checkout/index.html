@@ -3,27 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Checkout Done</title>
-  <link rel="stylesheet" href="../../../common.css">
+  <link rel="stylesheet" href="/common.css">
   <style>
-    #footer {
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 3vh;
-    width: 90vw;
-    font-size: small;
-    text-align: center;
-    padding: var(--pdn-size);
-    color: var(--clr-card-fg);
-    background-color: var(--clr-card-bg);
-    border-radius: var(--bdr-radius);
-    border: var(--bdr-settings);
-    box-shadow: var(--shdw-settings);
-    backdrop-filter: blur(var(--blr-radius));
-    -webkit-backdrop-filter: blur(var(--blr-radius));
-  }
-
   h1 {
     text-align: center;
     margin-top: 10%;
@@ -32,27 +13,59 @@
   h2 {
     text-align: center;
   }
+
+  footer {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
+  }
+
+  footer > .card {
+    height: inherit;
+    width: inherit;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  footer > .card > a {
+    display: inline-block;
+    margin-left: 10px;
+    width: 100px;
+    font-size: small;
+    text-align: center;
+    height: 10px;
+  }
+
+  footer > .card  > a:link, footer > .card  > a:visited, footer > .card  > a:hover, footer > .card  > a:active {
+    color: var(--clr-btn-fg);
+    text-decoration: unset;
+  }
   </style>
 </head>
 <body>
   <nav>
     <ul class="nav-start"></ul>
     <ul class="nav-mid">
-      <li><a href="../../../main">Home</a></li>
-      <li><a href="../../../comment">Comments</a></li>
-      <li id="current-page"><a href="../../../shop">Shop</a></li>
-      <li><a href="../../../quiz">Quiz</a></li>
-      <li><a href="../../../sitemap">Site Map</a></li>
-      <li><a href="../../../gallery">Gallery</a></li>
-      <li><a href="../../../aboutus">About Us</a></li>
+      <li><a href="/main">Home</a></li>
+      <li><a href="/comment">Comments</a></li>
+      <li id="current-page"><a href="/shop">Shop</a></li>
+      <li><a href="/quiz">Quiz</a></li>
+      <li><a href="/sitemap">Site Map</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/aboutus">About Us</a></li>
     </ul>
     <ul class="nav-end"></ul>
   </nav>
   <h1>Checkout Complete!</h1>
   <h2>Thank you for shopping with us!</h2>
-  <div id="footer" class="card">
-    All copyrighted materials seen in this website are used with the express permission of the copyright holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
-    <br><a href="../../../page-editor/studentOne">Page Editor</a>
-  </div>
+  
+  <footer>
+    <div class="card">
+      All copyrighted materials seen in this website are used with the express permission of the copyright holders or under the 'Fair Use Policy' outline in the Copyright Act of 1976, 17 U.S.C. § 107
+      <a href="/page-editor/studentOne"><div class="button">Page Editor</div></a>
+    </div>
+  </footer>
 </body>
 </html>
