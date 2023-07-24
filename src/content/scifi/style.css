@@ -83,8 +83,8 @@ dialog > img {
 
 .page-nav {
   position: fixed;
-  right: calc(var(--pdn-size) * 3);
-  bottom: calc(var(--pdn-size) * 3);
+  right: var(--pdn-size);
+  bottom: calc(var(--pdn-size) * 8);
 
   margin: 0 auto;
   width: fit-content;
