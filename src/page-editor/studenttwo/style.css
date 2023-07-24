@@ -60,9 +60,9 @@ img:hover {
   color: var(--clr-destruct-bg);
 }
 
-a.button {
+a.button.page-marker {
   display: block;
   width: fit-content;
-  margin: 0 auto;
+  margin: calc(var(--pdn-size) * 2) auto;
   text-decoration: none;
 }
